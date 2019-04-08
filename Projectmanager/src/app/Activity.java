@@ -1,4 +1,26 @@
 package app;
 
-public class Activity {
+class Activity extends Project {
+    private String activityName;
+    private double totalActiviyTime;
+    private double estimatedActivityTime;
+    private int startTime;
+    private int endTime;
+
+    Activity(String inputActivity){
+        super(inputActivity);
+    }
+
+    public void setTotalActivityTime(double inputTime){
+        totalActiviyTime += inputTime;
+    }
+
+    public void setEstimateTime(double inputEstimateTime){
+        estimatedActivityTime = inputEstimateTime;
+    }
+
+    public void setPlannedWeeks(int inputStartTime, int inputEndTime){
+        startTime = inputStartTime;
+        endTime = inputEndTime;
+    }
 }
