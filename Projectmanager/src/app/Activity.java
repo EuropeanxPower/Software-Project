@@ -1,7 +1,7 @@
 package app;
 
 class Activity extends Project {
-    private String activityName;
+    public String activityName;
     private double totalActiviyTime;
     private double estimatedActivityTime;
     private int startTime;
@@ -10,6 +10,8 @@ class Activity extends Project {
     Activity(String inputActivity){
         super(inputActivity);
     }
+
+    public Activity
 
     public void setTotalActivityTime(double inputTime){
         totalActiviyTime += inputTime;

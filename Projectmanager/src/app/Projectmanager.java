@@ -1,5 +1,5 @@
 package app;
 
-public class Projectmanager extends Developer {
-    
+public class Projectmanager {
+    private ArrayList projects;
 }
