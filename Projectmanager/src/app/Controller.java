@@ -8,8 +8,8 @@ import java.util.*;
 
 public class Controller {
 
-    public String ID;
-    public List<String> userIDs = new ArrayList<String>(Arrays.asList("SKP", "PTRO", "AL"));
+
+    public List<String> userIDs = new ArrayList<String>(Arrays.asList("VWJ", "NA", "CP", "TM"));
 
     BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
@@ -17,10 +17,6 @@ public class Controller {
     public String errorMessage;
 
     public Controller() {
-        System.out.println("Please enter your login");
-        Scanner login = new Scanner(System.in);
-        ID = login.next();
-        Login(ID);
     }
     public void read()throws IOException {
         StringTokenizer operation = new StringTokenizer(in.readLine());
@@ -30,25 +26,15 @@ public class Controller {
 
         }
     }
-    public void Login(String ID){
-            if (userIDs.contains(ID)){
-                loggedIn = true;
-                System.out.println("True");
-            }
-            else{
-                errorMessage = "User ID doesn't exists";
-                new Errorhandler("User ID doesn't exists");
-                System.out.println(errorMessage);
-            }
-    }
+    public void Login(String userID){
+        if (userIDs.contains(userID)){
+            loggedIn = true;
+            System.out.println("True");
+        }
+        else{
+            errorMessage = "User ID doesn't exists";
+            new Errorhandler("User ID doesn't exists");
+        }
 
-    public void createProject(String projectName, int startWeek, int deadline){
-        Project project = new Project(projectName, startWeek, deadline);
     }
-
-    public void addActivity(String projectName, String activityName, double estimatedTime, int startWeek, int deadline){
-        
-        Activity activity = new activity(projectName, activityName, estimatedTime, startWeek, deadline);
-    }
-
 }

@@ -1,18 +1,9 @@
 package app;
 
-public class Errorhandler {
+public class Errorhandler extends Exception {
 
-    String errorMessage = "";
-
-    public Errorhandler(String errorMessage){
-        this.errorMessage=errorMessage;
-    }
-
-    public String getErrorMessage() {
-        return errorMessage;
-    }
-
-    public void setErrorMessage(String errorMessage) {
-        this.errorMessage = errorMessage;
+    public Errorhandler(String errormessage) {
+        super (errormessage);
     }
 }
+
