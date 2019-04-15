@@ -3,15 +3,20 @@ package app;
 import java.util.ArrayList;
 
 public class Developer {
-    private String userID;
+    public String userID;
     private ArrayList activities;
-    private ArrayList projects;
-    private Boolean isDeveloper;
-    private Boolean isProjectmanager;
-    private Boolean isAdministrator;
+    public ArrayList projects;
+    public Boolean isDeveloper = true;
+    public Boolean isProjectmanager = false;
+    public Boolean isAdministrator = false;
+    
+    public Developer(String ID) {
+    	this.userID = ID;
+    }
     
     public void setProjectmanager(String projectName){
         isProjectmanager=true;
+        isDeveloper = false;
 
     }
 

@@ -2,19 +2,19 @@ package app;
 
 import java.util.ArrayList;
 
-class Project {
-    private String projectName;
-    private double projectTime;
-    private ArrayList activities = new ArrayList<>();
-    private String projectmanager;
-    private ArrayList developers;
+public class Project {
+    public String Name;
+    public double projectTime;
+    private ArrayList<Activity> activities = new ArrayList<Activity>();
+    private String projectmanagerID;
+    public ArrayList developers;
     private int startDate;
     private int endDate;
 
-    Project(String inputName, int inputStartDate, int inputEndDate){
-        projectName = inputName;
-        startDate = inputStartDate;
-        endDate = inputEndDate;
+    public Project(String inputName, int inputStartDate, int inputEndDate){
+        this.Name = inputName;
+        this.setStartDate(inputStartDate);
+        this.setEndDate(inputEndDate);
     }
 
     public void addDeveloper(String userID){
@@ -22,7 +22,7 @@ class Project {
     }
 
     public void setProjectmanager(String userID){
-        projectmanager = userID;
+        projectmanagerID = userID;
     }
 
     public void setTotalActivityTime(double totalActivityTime){
@@ -30,7 +30,23 @@ class Project {
     }
 
     public void AddActivity(Activity activity){
-        activities.add(activity.activityName);
+        activities.add(activity);
     }
+
+	public int getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(int endDate) {
+		this.endDate = endDate;
+	}
+
+	public int getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(int startDate) {
+		this.startDate = startDate;
+	}
 
 }
