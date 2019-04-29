@@ -52,22 +52,7 @@ public class Controller {
         }
         else{
             projectNames.add(name);
-            System.out.println("A project with name " + name + " has been created");
-        }
-        if(name.contains("pesto")){
-            System.out.println("########################################################");
-            System.out.println("########################################################");
-            System.out.println("##        ##       ##        ##          ###         ###");
-            System.out.println("##  ####  ##  #######  ############  ######   #####   ##");
-            System.out.println("##  ####  ##  #######  ############  ######  ##   ##  ##");
-            System.out.println("##  ####  ##  #######  ############  ######  ##   ##  ##");
-            System.out.println("##        ##       ##        ######  ######  ##   ##  ##");
-            System.out.println("##  ########  #############  ######  ######  ##   ##  ##");
-            System.out.println("##  ########  #############  ######  ######  ##   ##  ##");
-            System.out.println("##  ########  #############  ######  ######   #####   ##");
-            System.out.println("##  ########       ##        ######  #######         ###");
-            System.out.println("########################################################");
-            System.out.println("########################################################");
+            System.out.println("A project with name " +name+ " has been created");
         }
         
     }
@@ -78,7 +63,7 @@ public class Controller {
         }
         else{
             userIDs.add(name);
-            System.out.println("Welcome to the team " +name);
+            System.out.println("Welcome to the team, " +name);
         }
     }
 

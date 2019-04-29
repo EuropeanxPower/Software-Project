@@ -6,13 +6,17 @@ Feature: Create project
     Given These Projectnames are contained in the system
       | Tele-Kipper |
       | Sort-Pick |
+    And These User IDs are contained in the system
+      | SKP |
+      | PTRO |
+      | AL |
 
   Scenario: Developer add a project
     Given Developer is logged in
-    When Write "add project" + "Boost-Fix"
+    When Add project with name "Boost-Fix"
     Then A project with name "Boost-Fix" is added
 
   Scenario: Developer indicates a name, which already exists
     Given Developer is logged in
-    When Write "add project" + "Tele-Kipper"
-    Then Errormessage "A project with this name already exists"
+    When Add project with name "Tele-Kipper"
+    Then Errormessage "There is already a project with this name"
