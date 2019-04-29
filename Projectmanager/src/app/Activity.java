@@ -14,7 +14,7 @@ public class Activity extends Project {
     public void addDeveloper(String userID){
         developers.add(userID);
     }
-    
+
     public ArrayList getdeveloper(){
         return developers;
     }
