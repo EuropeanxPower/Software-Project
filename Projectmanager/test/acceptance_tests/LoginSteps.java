@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
 
 public class LoginSteps {
     public Controller controller;
-    public String userID;
+    public String currentUserID;
 
     public LoginSteps(Controller controller){
         this.controller=controller;
@@ -27,14 +27,14 @@ public class LoginSteps {
 
     @When("Login with {string}")
     public void login_with(String string) {
-        controller.Login(string);
-        userID = string;
+        controller.Login();
+        currentUserID = string;
     }
 
 
     @Then("User is logged in")
     public void user_is_logged_in() {
-        assertTrue(controller.userIDs.contains(userID));
+        assertTrue(controller.userIDs.contains(currentUserID));
         assertTrue(controller.loggedIn == true);
     }
 
