@@ -1,23 +1,17 @@
 package app;
 
-import java.util.ArrayList;
+/*import java.util.ArrayList;
 import java.util.List;
 
-public class Project {
-    public String name;
+public class Project extends Activity{
     private String projectmanagerID = "VWJ";
-    //private ArrayList<Activity> activities = new ArrayList<Activity>();
-    public ArrayList developers;
     public List<Activity> activities = new ArrayList<Activity>();
     public int startDate;
     public int endDate;
     public double projectTime;
 
     public Project(String inputName, int inputStartDate, int inputEndDate, String userID){
-        this.name = inputName;
-        this.setStartDate(inputStartDate);
-        this.setEndDate(inputEndDate);
-        developers.add(userID);
+        super(name, start, end, userID);
     }
 
     public void addDeveloper(String userID){
@@ -33,8 +27,8 @@ public class Project {
     }
     
     public void addActivity(String activityName, int start, int end, String userID){
-        if (findActivity(activityName) > -1) {
-            System.out.println("Activity " + activityName + " already exists");
+        if (findActivity(activityName) != -1) {
+            System.out.println("Activity: " + activityName + " already exists");
         } else {
             activities.add(new Activity(name, start, end, userID));
         }            
@@ -52,20 +46,4 @@ public class Project {
         return status;
     }
 
-	public int getEndDate() {
-		return endDate;
-	}
-
-	public void setEndDate(int endDate) {
-		this.endDate = endDate;
-	}
-
-	public int getStartDate() {
-		return startDate;
-	}
-
-	public void setStartDate(int startDate) {
-		this.startDate = startDate;
-	}
-
-}
+}*/

@@ -1,15 +1,21 @@
-package app;
+/*package app;
 
 import java.util.ArrayList;
 
-public class Activity extends Project {
+public class Activity {
+    public int startDate;
+    public int endDate;
+    public ArrayList developers;
+    public String name;
     private double totalActiviyTime;
     private double estimatedActivityTime;
 
     public Activity(String name, int start, int end, String userID){
-        super(name, start, end, userID);
+        this.name = inputName;
+        this.setStartDate(inputStartDate);
+        this.setEndDate(inputEndDate);
+        developers.add(userID);
     }
-
 
     public void addDeveloper(String userID){
         developers.add(userID);
@@ -27,13 +33,26 @@ public class Activity extends Project {
         estimatedActivityTime = inputEstimateTime;
     }
 
-    public void setPlannedWeeks(int inputStartTime, int inputEndTime){
-        startDate = inputStartTime;
-        endDate = inputEndTime;
-    }
+    public int getEndDate() {
+		return endDate;
+	}
 
-    public String getActivityName() {
+	public void setEndDate(int endDate) {
+		this.endDate = endDate;
+	}
+
+	public int getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(int startDate) {
+		this.startDate = startDate;
+	}
+
+    public String getName() {
         return name;
     }
 
-}
+    
+
+}*/

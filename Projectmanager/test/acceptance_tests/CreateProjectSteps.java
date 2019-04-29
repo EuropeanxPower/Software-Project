@@ -12,11 +12,11 @@ import static org.junit.Assert.*;
 
 public class CreateProjectSteps {
     public Controller controller;
-    public String userID;
+    public LoginSteps login;
 
-    public CreateProjectSteps(Controller controller, String userID){
+    public CreateProjectSteps(Controller controller, LoginSteps loginSteps){
         this.controller=controller;
-        this.userID=userID;
+        this.login=loginSteps;
     }
 
     @Given("These Projectnames are contained in the system")
@@ -26,7 +26,8 @@ public class CreateProjectSteps {
 
     @Given("Developer is logged in")
     public void developer_is_logged_in() {
-        assertTrue(controller.userIDs.contains(userID));
+        assertTrue(controller.userIDs.contains(login.currentUserID));
+        assertTrue(controller.loggedIn==true);
     }
 
     @When("Add project with name {string}")

@@ -27,7 +27,7 @@ public class LoginSteps {
 
     @When("Login with {string}")
     public void login_with(String string) {
-        controller.Login(currentUserID);
+        controller.Login(string);
         currentUserID = string;
     }
 
@@ -44,6 +44,7 @@ public class LoginSteps {
     }
 
 }
+
 
 
 

@@ -15,4 +15,4 @@ Feature: Create project
   Scenario: Developer indicates a name, which already exists
     Given Developer is logged in
     When Write "add project" + "Tele-Kipper"
-    Then Errormessage "There is already a project with this name"
+    Then Errormessage "A project with this name already exists"

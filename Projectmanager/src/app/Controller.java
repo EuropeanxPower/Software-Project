@@ -7,7 +7,7 @@ import java.sql.SQLOutput;
 import java.util.*;
 
 public class Controller {
-    public static String userID;
+    public static String currentUserID;
     // public View view;
     public List<String> userIDs = new ArrayList<String>(Arrays.asList("VWJ", "NA", "CP", "TM"));
     public List<String> projectNames = new ArrayList<String>(Arrays.asList("Tele-Kipper", "Sort-Pick"));
@@ -16,13 +16,12 @@ public class Controller {
     public String errorMessage;
 
     String userInput;
-    int screen;
 
     public Controller(){
     }
 
     public void Login(String userID){
-        this.userID = userID;
+        this.currentUserID = userID;
         if (userIDs.contains(userID)){
             loggedIn = true;
             System.out.println("Logged in");
@@ -34,34 +33,53 @@ public class Controller {
         }
     }
 
-    public void Overview(){
-        System.out.println("Press 1 to go to active project.");
-        System.out.println("Press 2 to go to create new project.");
-        System.out.println("Press 3 to go to add a new developer to the system.");
-        userInput = scanner.next();
-        if (userInput == "1"){
-            screen = 3;
-        }
-        else if (userInput == "2"){
-            screen = 4;
-        }
-        else if (userInput == "3"){
-            screen = 5;
+    public void GoToProject(String name){
+        if (projectNames.contains(name)){
+            System.out.println("Welcome to " + name);
         }
         else{
-            System.out.println("Invalid input");
+            errorMessage = "To be determined";
+            new Errorhandler("To be determined");
+            System.out.println("No project named " + name + " exists");
         }
     }
-    
+
     public void CreateProject(String name){
         if (projectNames.contains(name)){
-            errorMessage = "There is already a project with this name";
-            new Errorhandler("There is already a project with this name");
-            System.out.println("There is already a project with this name");
+            errorMessage = "A project with this name already exists";
+            new Errorhandler("A project with this name already exists");
+            System.out.println("A project with this name already exists");
         }
         else{
             projectNames.add(name);
-            System.out.println("A project with name " + name + " is created");
+            System.out.println("A project with name " + name + " has been created");
+        }
+        if(name.contains("pesto")){
+            System.out.println("########################################################");
+            System.out.println("########################################################");
+            System.out.println("##        ##       ##        ##          ###         ###");
+            System.out.println("##  ####  ##  #######  ############  ######   #####   ##");
+            System.out.println("##  ####  ##  #######  ############  ######  ##   ##  ##");
+            System.out.println("##  ####  ##  #######  ############  ######  ##   ##  ##");
+            System.out.println("##        ##       ##        ######  ######  ##   ##  ##");
+            System.out.println("##  ########  #############  ######  ######  ##   ##  ##");
+            System.out.println("##  ########  #############  ######  ######  ##   ##  ##");
+            System.out.println("##  ########  #############  ######  ######   #####   ##");
+            System.out.println("##  ########       ##        ######  #######         ###");
+            System.out.println("########################################################");
+            System.out.println("########################################################");
+        }
+        
+    }
+    
+    public void AddDeveloper(String name){
+        if (userIDs.contains(name)){
+            System.out.println(name +" is already in the system");
+        }
+        else{
+            userIDs.add(name);
+            System.out.println("Welcome to the team " +name);
         }
     }
+
 }
