@@ -6,44 +6,14 @@ public class View {
 
     Controller controller;
 
-    public View() {
-        controller = new Controller();
-    }
-
     // Case 1 is Login Screen
     // Case 2 is General Overview
+    // Case 3 is Project Overview
+    // Case 4 is Create Project
+    // Case 5 is Add New Developer to System
+    // Case # is Go to project "..."
 
-    public void screens(){
-      int screen = 1;
-
-      while(true){
-        switch (screen){
-          case 1: 
-            controller.Login();
-          case 2:
-            controller.Overview();
-            if (controller.userInput == 1){
-              screen = 3;
-            }
-            else if (controller.userInput == 2){
-              screen = 4;
-            }
-            else if (controller.userInput == 3){
-              screen = 5;
-            } else{
-              System.out.println("Invalid input");
-            }
-            break;
-          case 3:
-            // Function
-            screen = 2;
-            break;
-          case 4:
-            // Function
-            screen = 2;
-            break;
-        }
-      }
+    public View() {
     }
 
 }

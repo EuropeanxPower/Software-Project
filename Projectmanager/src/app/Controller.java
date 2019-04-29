@@ -8,29 +8,46 @@ import java.util.*;
 
 public class Controller {
     public static String currentUserID;
-
+    // public View view;
     public List<String> userIDs = new ArrayList<String>(Arrays.asList("VWJ", "NA", "CP", "TM"));
     public List<String> projectNames = new ArrayList<String>(Arrays.asList("Tele-Kipper", "Sort-Pick"));
-
-    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
     public Boolean loggedIn = false;
     public String errorMessage;
 
-    Scanner input = new Scanner(System.in);
-    int userInput;
+    Scanner scanner = new Scanner(System.in);
+    String userInput;
+    int screen;
 
-    public Controller() {
-    }
-    public void read()throws IOException {
-        StringTokenizer operation = new StringTokenizer(in.readLine());
+    public Controller(){
+        screen = 1;
 
-        String command = operation.nextToken();
+        while(true){
+            switch (screen){
+            case 1: 
+                Login();
+            case 2:
+                System.out.println("Press 1 to go to active project.");
+                System.out.println("Press 2 to go to create new project.");
+                System.out.println("Press 3 to go to add a new developer to the system.");
+                Overview();
+            break;
+          case 3:
+            // Function
+            screen = 2;
+            break;
+          case 4:
+            // Function
+            screen = 2;
+            break;
+        }
+      }        
     }
+
     public void Login(){
         while (loggedIn == false) {
             System.out.println("Please enter your login");
-            currentUserID = input.next();
+            currentUserID = scanner.next();
             if (userIDs.contains(currentUserID)){
                 loggedIn = true;
                 System.out.println("Logged in");
@@ -44,10 +61,18 @@ public class Controller {
     }
 
     public void Overview(){
-        System.out.println("Press 1 to go to active project.");
-        System.out.println("Press 2 to go to create new project.");
-        System.out.println("Press 3 to go to add a new developer to the system.");
-        userInput = input.nextInt();
+        userInput = scanner.next();
+        if (userInput == "1"){
+            screen = 3;
+        }
+        else if (userInput == "2"){
+            screen = 4;
+        }
+        else if (userInput == "3"){
+            screen = 5;
+        } else{
+            System.out.println("Invalid input");
+        }
     }
     
     public void CreateProject(String name){

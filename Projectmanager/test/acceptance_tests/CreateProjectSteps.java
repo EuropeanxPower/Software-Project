@@ -4,18 +4,21 @@ import app.Controller;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import acceptance_tests.LoginSteps;
 
 import java.util.List;
 
-import static junit.framework.TestCase.assertTrue;
+import static org.junit.Assert.*;
 
 public class CreateProjectSteps {
     public Controller controller;
+    public String userID;
 
-    public CreateProjectSteps(Controller controller){
+    public CreateProjectSteps(Controller controller, String userID){
         this.controller=controller;
+        this.userID=userID;
     }
-hej
+
     @Given("These Projectnames are contained in the system")
     public void these_Projectnames_are_contained_in_the_system(List<String> dataTable) {
         controller.projectNames = dataTable;
@@ -23,7 +26,7 @@ hej
 
     @Given("Developer is logged in")
     public void developer_is_logged_in() {
-        assertTrue(controller.loggedIn == true);
+        assertTrue(controller.userIDs.contains(userID));
     }
 
     @When("Add project with name {string}")

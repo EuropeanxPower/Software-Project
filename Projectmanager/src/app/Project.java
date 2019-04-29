@@ -1,21 +1,23 @@
 package app;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Project {
-    public String projectName;
-    public double projectTime;
-    //private ArrayList<Activity> activities = new ArrayList<Activity>();
+    public String name;
     private String projectmanagerID = "VWJ";
+    //private ArrayList<Activity> activities = new ArrayList<Activity>();
     public ArrayList developers;
-    private int startDate;
-    private int endDate;
+    public List<Activity> activities = new ArrayList<Activity>();
+    public int startDate;
+    public int endDate;
+    public double projectTime;
 
-    public Project(String inputName, int inputStartDate, int inputEndDate, ArrayList developers){
-        this.projectName = inputName;
+    public Project(String inputName, int inputStartDate, int inputEndDate, String userID){
+        this.name = inputName;
         this.setStartDate(inputStartDate);
         this.setEndDate(inputEndDate);
-        this.developers = developers;
+        developers.add(userID);
     }
 
     public void addDeveloper(String userID){
@@ -29,10 +31,26 @@ public class Project {
     public void setTotalActivityTime(double totalActivityTime){
         projectTime += totalActivityTime;
     }
+    
+    public void addActivity(String activityName, int start, int end, String userID){
+        if (findActivity(activityName) > -1) {
+            System.out.println("Activity " + activityName + " already exists");
+        } else {
+            activities.add(new Activity(name, start, end, userID));
+        }            
+    }
 
-    /*public void AddActivity(Activity activity){
-        activities.add(activity);
-    }*/
+    public int findActivity(String name) {
+        int status = -1;
+        for (int a = 0; a < activities.size(); a++) {
+            if (activities.get(a).getActivityName() == name) {
+                status = a;
+            } else {
+                status = -1;
+            }
+        }
+        return status;
+    }
 
 	public int getEndDate() {
 		return endDate;
