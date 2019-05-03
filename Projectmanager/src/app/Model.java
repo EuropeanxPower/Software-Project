@@ -13,7 +13,7 @@ public class Model{
     Project SortPick = new Project("Sort-Pick", createCalendar(2019,5,1), createCalendar(2019,9,1),VWJ);
     private String currentUserID;
     private ArrayList<Developer> userIDs = new ArrayList<Developer>(Arrays.asList(VWJ,NIC,CP,TMY));
-    private ArrayList<Project> projectNames = new ArrayList<Project>(Arrays.asList(TeleKipper, SortPick));
+    public ArrayList<Project> projectNames = new ArrayList<Project>(Arrays.asList(TeleKipper, SortPick));
     private Boolean loggedIn = false;
     private String errorMessage;
     private UI ui;
@@ -40,6 +40,10 @@ public class Model{
 
     public ArrayList<Project> getProjectNames(){
         return projectNames;
+    }
+    
+    public void setUserIDs(ArrayList<Developer> datatable){
+        userIDs = datatable;
     }
 
     public ArrayList<Developer> getUserIDs(){
