@@ -1,14 +1,20 @@
 package app;
 
-class Controller {
+import java.util.Scanner;
+
+public class Controller {
 
     private UI ui;
     private Model model;
+    Scanner input = new Scanner(System.in);
 
-    //Constructor
-    Controller(Model model, UI ui){
-        this.model = model;
-        this.ui = ui;
+    public void readUserInput(){
+        while(true){
+            if(model.getLoggedIn() == false){
+                ui.setScreen(1);
+                model.Login(input.next());
+            }
+        }
     }
 
 }

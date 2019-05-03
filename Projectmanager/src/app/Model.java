@@ -4,18 +4,19 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.GregorianCalendar;
 
-class Model{
+public class Model{
     Developer VWJ = new Developer("VWJ");
-    Developer NA = new Developer("NA");
+    Developer NIC = new Developer("NIC");
     Developer CP = new Developer("CP");
-    Developer TM = new Developer("TM");
-    Project TeleKipper = new Project("Tele-Kipper", 0, 3,TM);
-    Project SortPick = new Project("Sort-Pick", 0, 3,VWJ);
+    Developer TMY = new Developer("TMY");
+    Project TeleKipper = new Project("Tele-Kipper", createCalendar(2019,5,1), createCalendar(2019,7,15),TMY);
+    Project SortPick = new Project("Sort-Pick", createCalendar(2019,5,1), createCalendar(2019,9,1),VWJ);
     private String currentUserID;
-    private ArrayList<Developer> userIDs = new ArrayList<Developer>(Arrays.asList(VWJ,NA,CP,TM));
+    private ArrayList<Developer> userIDs = new ArrayList<Developer>(Arrays.asList(VWJ,NIC,CP,TMY));
     private ArrayList<Project> projectNames = new ArrayList<Project>(Arrays.asList(TeleKipper, SortPick));
     private Boolean loggedIn = false;
     private String errorMessage;
+    private UI ui;
 
     public String getCurrentUserID(){
         return currentUserID;
@@ -51,7 +52,7 @@ class Model{
         for(Developer d : userIDs){
             if (d.getUserId() == userID){
                 loggedIn = true;
-                System.out.println("Logged in");
+                ui.setScreen(2);
                 idExists = true;
             }
         }
@@ -59,7 +60,7 @@ class Model{
         if (!idExists) {
             errorMessage = "User ID doesn't exist";
             new Errorhandler("User ID doesn't exist");
-            System.out.println("User ID doesn't exist");
+            ui.setScreen(3);
         }
     }
 
