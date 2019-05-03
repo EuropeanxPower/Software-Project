@@ -2,7 +2,7 @@ package app;
 
 import java.util.Scanner;
 
-Class UI {
+public class UI {
 
     public UI(){
 
