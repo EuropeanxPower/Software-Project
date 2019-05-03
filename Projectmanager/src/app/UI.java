@@ -9,10 +9,15 @@ import java.util.Scanner;
     // Case 5 is Add New Developer to System
     // Case # is Go to project "..."
 
-public class UI {
+class UI {
 
-    public UI(){
+    private Controller controller;
+    private Model model;
 
+    //Constructor
+    UI(Model model, Controller controller){
+        this.model = model;
+        this.controller = controller;
     }
 
     public void start(){

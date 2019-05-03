@@ -1,24 +1,19 @@
 package app;
 
-/*import java.util.ArrayList;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.GregorianCalendar;
 
 public class Project extends Activity{
-    private String projectmanagerID = "VWJ";
-    public List<Activity> activities = new ArrayList<Activity>();
-    public int startDate;
-    public int endDate;
-    public double projectTime;
+    private Developer projectmanagerID;
+    private List<Activity> activities = new ArrayList<Activity>();
+    private double projectTime;
 
-    public Project(String inputName, int inputStartDate, int inputEndDate, String userID){
+    public Project(String name, GregorianCalendar start, GregorianCalendar end, Developer userID){
         super(name, start, end, userID);
     }
 
-    public void addDeveloper(String userID){
-        developers.add(userID);
-    }
-
-    public void setProjectmanager(String userID){
+    public void setProjectmanager(Developer userID){
         projectmanagerID = userID;
     }
 
@@ -26,18 +21,18 @@ public class Project extends Activity{
         projectTime += totalActivityTime;
     }
     
-    public void addActivity(String activityName, int start, int end, String userID){
+    public void addActivity(String activityName, int start, int end, Developer userID){
         if (findActivity(activityName) != -1) {
             System.out.println("Activity: " + activityName + " already exists");
         } else {
-            activities.add(new Activity(name, start, end, userID));
+            activities.add(new Activity(activityName, start, end, userID));
         }            
     }
 
     public int findActivity(String name) {
         int status = -1;
         for (int a = 0; a < activities.size(); a++) {
-            if (activities.get(a).getActivityName() == name) {
+            if (activities.get(a).getName() == name) {
                 status = a;
             } else {
                 status = -1;
@@ -46,4 +41,4 @@ public class Project extends Activity{
         return status;
     }
 
-}*/
+}
