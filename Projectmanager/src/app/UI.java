@@ -2,7 +2,14 @@ package app;
 
 import java.util.Scanner;
 
-Class UI {
+    // Case 1 is Login Screen
+    // Case 2 is General Overview
+    // Case 3 is Project Overview
+    // Case 4 is Create Project
+    // Case 5 is Add New Developer to System
+    // Case # is Go to project "..."
+
+public class UI {
 
     public UI(){
 
@@ -60,6 +67,17 @@ Class UI {
                 case 6: //Project overview
                     // OPEN controller.userInput
             }
+        }
+    }
+
+    public void GoToProject(String name){
+        if (projectNames.contains(name)){
+            System.out.println("Welcome to " + name);
+        }
+        else{
+            errorMessage = "To be determined";
+            new Errorhandler("To be determined");
+            System.out.println("No project named " + name + " exists");
         }
     }
 
