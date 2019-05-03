@@ -1,27 +1,28 @@
-/*package app;
+package app;
 
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 
 public class Activity {
-    public int startDate;
-    public int endDate;
-    public ArrayList developers;
-    public String name;
+    private GregorianCalendar startDate;
+    private GregorianCalendar endDate;
+    private ArrayList<Developer> developers;
+    private String name;
     private double totalActiviyTime;
     private double estimatedActivityTime;
 
-    public Activity(String name, int start, int end, String userID){
-        this.name = inputName;
-        this.setStartDate(inputStartDate);
-        this.setEndDate(inputEndDate);
+    public Activity(String name, GregorianCalendar start, GregorianCalendar end, Developer userID){
+        this.name = name;
+        this.startDate = start;
+        this.endDate = end;
         developers.add(userID);
     }
 
-    public void addDeveloper(String userID){
+    public void addDeveloper(Developer userID){
         developers.add(userID);
     }
 
-    public ArrayList getdeveloper(){
+    public ArrayList<Developer> getdeveloper(){
         return developers;
     }
 
@@ -33,21 +34,29 @@ public class Activity {
         estimatedActivityTime = inputEstimateTime;
     }
 
-    public int getEndDate() {
+    public GregorianCalendar getEndDate() {
 		return endDate;
+    }
+    
+    public GregorianCalendar getStartDate() {
+        return startDate;
+    }
+
+    public void setEndDate(int year, int month, int day) {
+        GregorianCalendar calendar = new GregorianCalendar();
+        calendar.set(GregorianCalendar.YEAR, year);
+        calendar.set(GregorianCalendar.MONTH, month);
+        calendar.set(GregorianCalendar.DAY_OF_MONTH, day);
+		endDate = calendar;
 	}
 
-	public void setEndDate(int endDate) {
-		this.endDate = endDate;
-	}
-
-	public int getStartDate() {
-		return startDate;
-	}
-
-	public void setStartDate(int startDate) {
-		this.startDate = startDate;
-	}
+    public void setStartDate(int year, int month, int day) {
+        GregorianCalendar calendar = new GregorianCalendar();
+        calendar.set(GregorianCalendar.YEAR, year);
+        calendar.set(GregorianCalendar.MONTH, month);
+        calendar.set(GregorianCalendar.DAY_OF_MONTH, day);
+		startDate = calendar;
+    }
 
     public String getName() {
         return name;
@@ -55,4 +64,4 @@ public class Activity {
 
     
 
-}*/
+}
