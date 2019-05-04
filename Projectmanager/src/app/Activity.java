@@ -10,7 +10,7 @@ public class Activity {
     private String name;
     //private double totalActiviyTime;
     //private double estimatedActivityTime;
-    Model model;
+    private Calender calendar = new Calender();
 
     public Activity(String name, GregorianCalendar start, GregorianCalendar end, Developer userID){
         this.name = name;
@@ -44,11 +44,11 @@ public class Activity {
     }
 
     public void setEndDate(int year, int month, int day) {
-		endDate = model.createCalendar(year, month, day);
+		endDate = calendar.createCalendar(year, month, day);
 	}
 
     public void setStartDate(int year, int month, int day) {
-		startDate = model.createCalendar(year, month, day);
+		startDate = calendar.createCalendar(year, month, day);
     }
 
     public String getName() {

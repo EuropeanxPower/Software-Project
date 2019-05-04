@@ -6,15 +6,13 @@ import java.util.Calendar;
 
 class Calender{
 
-    Calendar getDate() {
-        Calendar c = new GregorianCalendar();
-        Calendar calender = new GregorianCalendar(c.get(Calendar.YEAR),c.get(Calendar.MONTH),c.get(Calendar.DAY_OF_MONTH));
+	 public GregorianCalendar createCalendar(int year, int month, int day){
+	        GregorianCalendar calendar = new GregorianCalendar(0,0,0);
+	        calendar.set(GregorianCalendar.YEAR, year);
+	        calendar.set(GregorianCalendar.MONTH, month);
+	        calendar.set(GregorianCalendar.DAY_OF_MONTH, day);
 
-        return calender;
-
-    }
-
-	public void set(int year, int year2) {
-	}
+	        return calendar;
+	    }
 }
 

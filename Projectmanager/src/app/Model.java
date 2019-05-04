@@ -5,18 +5,19 @@ import java.util.Arrays;
 import java.util.GregorianCalendar;
 
 public class Model{
-    Developer VWJ = new Developer("VWJ");
-    Developer NIC = new Developer("NIC");
-    Developer CP = new Developer("CP");
-    Developer TMY = new Developer("TMY");
-    Project TeleKipper = new Project("Tele-Kipper", createCalendar(2019,5,1), createCalendar(2019,7,15),TMY);
-    Project SortPick = new Project("Sort-Pick", createCalendar(2019,5,1), createCalendar(2019,9,1),VWJ);
+	private Calender calendar = new Calender();
+	private Developer VWJ = new Developer("VWJ");
+	private Developer NIC = new Developer("NIC");
+	private Developer CP = new Developer("CP");
+	private Developer TMY = new Developer("TMY");
+	private Project TeleKipper = new Project("Tele-Kipper", calendar.createCalendar(2019,5,1), calendar.createCalendar(2019,7,15),TMY);
+	private Project SortPick = new Project("Sort-Pick", calendar.createCalendar(2019,5,1), calendar.createCalendar(2019,9,1),VWJ);
     private String currentUserID;
     private ArrayList<Developer> userIDs = new ArrayList<Developer>(Arrays.asList(VWJ,NIC,CP,TMY));
     private ArrayList<Project> projectNames = new ArrayList<Project>(Arrays.asList(TeleKipper, SortPick));
-    private Boolean loggedIn = false;
+    private boolean loggedIn = false;
     private String errorMessage;
-    private UI ui;
+    private UI ui = new UI();
 
     public String getCurrentUserID(){
         return currentUserID;
@@ -26,7 +27,7 @@ public class Model{
         currentUserID = UserID;
     }
 
-    public Boolean getLoggedIn(){
+    public boolean getLoggedIn(){
         return loggedIn;
     }
 
@@ -54,9 +55,10 @@ public class Model{
         this.currentUserID = userID;
         boolean idExists = false;
         for(Developer d : userIDs){
-            if (d.getUserId() == userID){
+            if (d.getUserId().equals(userID)){
                 loggedIn = true;
-                ui.setScreen(2);
+                ui.screen(2);
+                ui.screen(4);
                 idExists = true;
             }
         }
@@ -64,7 +66,7 @@ public class Model{
         if (!idExists) {
             errorMessage = "User ID doesn't exist";
             new Errorhandler("User ID doesn't exist");
-            ui.setScreen(3);
+            ui.screen(3);
         }
     }
 
@@ -83,14 +85,5 @@ public class Model{
             projectNames.add(new Project(name,start,end,userID));
             System.out.println("A project with name " +name+ " has been created");
         }
-    }
-
-    public GregorianCalendar createCalendar(int year, int month, int day){
-        GregorianCalendar calendar = new GregorianCalendar();
-        calendar.set(GregorianCalendar.YEAR, year);
-        calendar.set(GregorianCalendar.MONTH, month);
-        calendar.set(GregorianCalendar.DAY_OF_MONTH, day);
-
-        return calendar;
     }
 }
