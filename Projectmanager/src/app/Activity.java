@@ -6,10 +6,11 @@ import java.util.GregorianCalendar;
 public class Activity {
     private GregorianCalendar startDate;
     private GregorianCalendar endDate;
-    private ArrayList<Developer> developers;
+    private ArrayList<Developer> developers = new ArrayList<Developer>();
     private String name;
-    private double totalActiviyTime;
-    private double estimatedActivityTime;
+    //private double totalActiviyTime;
+    //private double estimatedActivityTime;
+    Model model;
 
     public Activity(String name, GregorianCalendar start, GregorianCalendar end, Developer userID){
         this.name = name;
@@ -26,13 +27,13 @@ public class Activity {
         return developers;
     }
 
-    public void setTotalActivityTime(double inputTime){
+    /*public void setTotalActivityTime(double inputTime){
         totalActiviyTime += inputTime;
     }
 
     public void setEstimateTime(double inputEstimateTime){
         estimatedActivityTime = inputEstimateTime;
-    }
+    }*/
 
     public GregorianCalendar getEndDate() {
 		return endDate;
@@ -43,19 +44,11 @@ public class Activity {
     }
 
     public void setEndDate(int year, int month, int day) {
-        GregorianCalendar calendar = new GregorianCalendar();
-        calendar.set(GregorianCalendar.YEAR, year);
-        calendar.set(GregorianCalendar.MONTH, month);
-        calendar.set(GregorianCalendar.DAY_OF_MONTH, day);
-		endDate = calendar;
+		endDate = model.createCalendar(year, month, day);
 	}
 
     public void setStartDate(int year, int month, int day) {
-        GregorianCalendar calendar = new GregorianCalendar();
-        calendar.set(GregorianCalendar.YEAR, year);
-        calendar.set(GregorianCalendar.MONTH, month);
-        calendar.set(GregorianCalendar.DAY_OF_MONTH, day);
-		startDate = calendar;
+		startDate = model.createCalendar(year, month, day);
     }
 
     public String getName() {

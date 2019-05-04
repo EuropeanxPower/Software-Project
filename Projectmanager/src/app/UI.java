@@ -20,20 +20,27 @@ public class UI {
             switch (screen1){
                 case 1: //Login
                     System.out.println("Please enter your login");
+                    break;
                 case 2:
                     System.out.println("Logged in");
+                    break;
                 case 3:
                     System.out.println("User ID does not exist");
+                    break;
                 case 4: //Overview
                     System.out.println("Press 1 to go to active project.");
                     System.out.println("Press 2 to create new project.");
                     System.out.println("Press 3 to add a new developer to the system.");
+                    break;
                 case 5: //Go to project
                     System.out.println("Enter active project");
+                    break;
                 case 6: //Create project
                     System.out.println("Name of the project:");
+                    break;
                 case 7: //Add developer
                     System.out.println("Name of developer:");
+                    break;
                 case 8: //Project overview
                      // OPEN controller.userInput
             }

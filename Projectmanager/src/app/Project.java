@@ -21,7 +21,7 @@ public class Project extends Activity{
         projectTime += totalActivityTime;
     }
     
-    public void addActivity(String activityName, int start, int end, Developer userID){
+    public void addActivity(String activityName, GregorianCalendar start, GregorianCalendar end, Developer userID){
         if (findActivity(activityName) != -1) {
             System.out.println("Activity: " + activityName + " already exists");
         } else {
