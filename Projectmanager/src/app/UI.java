@@ -40,7 +40,13 @@ public class UI {
                 	System.out.println("Please enter the end date of the project");
                 	break;
                 case 9:
+                    System.out.println("A project with this name already exists.");
+                	break;
+                case 10:
                 	break;
             }
     	}
+    public void projectCreated(String name) {
+        System.out.println("A project with name " +name+ " has been created");
+    }
 }

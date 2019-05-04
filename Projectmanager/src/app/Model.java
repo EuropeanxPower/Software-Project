@@ -67,20 +67,19 @@ public class Model{
         return idExists;
     }
 
-    public void createProject(String name, GregorianCalendar start, GregorianCalendar end, Developer userID){
+    public boolean createProject(String name, GregorianCalendar start, GregorianCalendar end, Developer userID){
         boolean nameExists = false;
         for (Project p : projectNames){
-            if (p.getName() == name){
+            if (name.equals(p.getName())){
                 nameExists = true;
                 errorMessage = "A project with this name already exists";
                 new Errorhandler("A project with this name already exists");
-                System.out.println("A project with this name already exists");
                 break;
             }
         }
         if(!nameExists){
             projectNames.add(new Project(name,start,end,userID));
-            System.out.println("A project with name " +name+ " has been created");
         }
+        return nameExists;
     }
 }

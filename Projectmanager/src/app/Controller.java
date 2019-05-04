@@ -39,7 +39,13 @@ public class Controller {
         			ui.screen(8);
         			String endDate = input.nextLine();
         			GregorianCalendar end = readDate(endDate);
-        			model.createProject(userInput, start, end, model.getCurrentUser());
+        			if(model.createProject(userInput, start, end, model.getCurrentUser())) {
+        				ui.screen(9);
+        				ui.screen(4);
+        			}else {
+        				ui.projectCreated(userInput);
+        				ui.screen(4);
+        			}
         		}else ui.screen(4);
         	}
         }
@@ -51,6 +57,9 @@ public class Controller {
     		parts = input.split("\\.");
     		if(parts.length<3) {
     			parts = input.split(" ");
+    			if(parts.length<3) {
+    				parts = input.split("-");
+    			}
     		}
     	}
     	int day = Integer.parseInt(parts[0]);
