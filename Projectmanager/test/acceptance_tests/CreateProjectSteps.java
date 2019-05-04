@@ -1,6 +1,7 @@
 package acceptance_tests;
 
 import app.Controller;
+import app.Developer;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -13,15 +14,17 @@ import static org.junit.Assert.*;
 public class CreateProjectSteps {
     public Controller controller;
     public LoginSteps login;
+    public Developer developer;
 
     public CreateProjectSteps(Controller controller, LoginSteps loginSteps){
-        this.controller=controller;
-        this.login=loginSteps;
+        this.controller = controller;
+        this.login = loginSteps;
+        //this.developer = developer;
     }
 
     @Given("These Projectnames are contained in the system")
     public void these_Projectnames_are_contained_in_the_system(List<String> dataTable) {
-        controller.projectNames = dataTable;
+        model.projectNames = dataTable;
     }
 
     @Given("Developer is logged in")

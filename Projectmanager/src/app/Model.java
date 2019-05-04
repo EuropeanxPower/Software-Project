@@ -41,6 +41,10 @@ public class Model{
     public ArrayList<Project> getProjectNames(){
         return projectNames;
     }
+    
+    public void setUserIDs(ArrayList<Developer> datatable){
+        userIDs = datatable;
+    }
 
     public ArrayList<Developer> getUserIDs(){
         return userIDs;
