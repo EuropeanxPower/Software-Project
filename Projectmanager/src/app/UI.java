@@ -24,19 +24,23 @@ public class UI {
                     break;
                 case 4: //Overview
                 	System.out.println("Please choose your next action:");
-                    System.out.println("Press 1 to manage an active project.");
-                    System.out.println("Press 2 to create new project.");
+                    System.out.println("Type 1 to manage an active project.");
+                    System.out.println("Type 2 to create new project.");
                     break;
                 case 5: //Go to project
                     System.out.println("Enter active project");
                     break;
                 case 6: //Create project
-                    System.out.println("Name of the project:");
+                    System.out.println("Please enter the name of the project");
                     break;
-                case 7: //Add developer
+                case 7: 
+                	System.out.println("Please enter the start date of the project");
                     break;
-                case 8: //Project overview
-                     // OPEN controller.userInput
+                case 8: 
+                	System.out.println("Please enter the end date of the project");
+                	break;
+                case 9:
+                	break;
             }
     	}
 }

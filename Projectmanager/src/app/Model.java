@@ -12,18 +12,18 @@ public class Model{
 	private Developer TMY = new Developer("TMY");
 	private Project TeleKipper = new Project("Tele-Kipper", calendar.createCalendar(2019,5,1), calendar.createCalendar(2019,7,15),TMY);
 	private Project SortPick = new Project("Sort-Pick", calendar.createCalendar(2019,5,1), calendar.createCalendar(2019,9,1),VWJ);
-    private String currentUserID;
+    private Developer currentUser;
     private ArrayList<Developer> userIDs = new ArrayList<Developer>(Arrays.asList(VWJ,NIC,CP,TMY));
     private ArrayList<Project> projectNames = new ArrayList<Project>(Arrays.asList(TeleKipper, SortPick));
     private boolean loggedIn = false;
     private String errorMessage;
 
     public String getCurrentUserID(){
-        return currentUserID;
+        return currentUser.getUserId();
     }
-
-    public void setCurrentUserID(String UserID){
-        currentUserID = UserID;
+    
+    public Developer getCurrentUser() {
+    	return currentUser;
     }
 
     public boolean getLoggedIn(){
@@ -51,10 +51,10 @@ public class Model{
     }
 
     public boolean Login(String userID){
-        this.currentUserID = userID;
         boolean idExists = false;
         for(Developer d : userIDs){
             if (d.getUserId().equals(userID)){
+            	currentUser = d;
                 loggedIn = true;
                 idExists = true;
             }
@@ -67,7 +67,7 @@ public class Model{
         return idExists;
     }
 
-    public void CreateProject(String name, GregorianCalendar start, GregorianCalendar end, Developer userID){
+    public void createProject(String name, GregorianCalendar start, GregorianCalendar end, Developer userID){
         boolean nameExists = false;
         for (Project p : projectNames){
             if (p.getName() == name){
