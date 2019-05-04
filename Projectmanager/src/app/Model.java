@@ -17,7 +17,6 @@ public class Model{
     private ArrayList<Project> projectNames = new ArrayList<Project>(Arrays.asList(TeleKipper, SortPick));
     private boolean loggedIn = false;
     private String errorMessage;
-    private UI ui = new UI();
 
     public String getCurrentUserID(){
         return currentUserID;
@@ -51,14 +50,12 @@ public class Model{
         return userIDs;
     }
 
-    public void Login(String userID){
+    public boolean Login(String userID){
         this.currentUserID = userID;
         boolean idExists = false;
         for(Developer d : userIDs){
             if (d.getUserId().equals(userID)){
                 loggedIn = true;
-                ui.screen(2);
-                ui.screen(4);
                 idExists = true;
             }
         }
@@ -66,8 +63,8 @@ public class Model{
         if (!idExists) {
             errorMessage = "User ID doesn't exist";
             new Errorhandler("User ID doesn't exist");
-            ui.screen(3);
         }
+        return idExists;
     }
 
     public void CreateProject(String name, GregorianCalendar start, GregorianCalendar end, Developer userID){

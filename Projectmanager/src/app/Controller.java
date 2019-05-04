@@ -17,7 +17,10 @@ public class Controller {
             	while(!model.getLoggedIn()){
             		ui.screen(1);
             		userInput = input.next();
-            		model.Login(userInput);
+            		if (model.Login(userInput)) {
+            			ui.screen(2);
+            			ui.screen(4);
+            		}else ui.screen(3);
             	}
             	screen = 2;
         	case 2:
