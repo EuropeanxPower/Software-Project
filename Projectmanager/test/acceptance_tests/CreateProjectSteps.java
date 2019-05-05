@@ -1,46 +1,60 @@
 package acceptance_tests;
 
-import app.Controller;
+import app.Calender;
 import app.Developer;
+import app.Model;
+import app.Project;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import acceptance_tests.LoginSteps;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
 
 public class CreateProjectSteps {
-    public Controller controller;
-    public LoginSteps login;
-    public Developer developer;
+    private Model model;
+    private Calender calendar;
+    private LoginSteps login;
+    private ArrayList<Project> currentProjects = new ArrayList<>();
 
-    public CreateProjectSteps(Controller controller, LoginSteps loginSteps){
-        this.controller = controller;
-        this.login = loginSteps;
-        //this.developer = developer;
+    public CreateProjectSteps(Model model, LoginSteps loginSteps, Calender calendar){
+        this.model=model;
+        this.login=loginSteps;
+        this.calendar=calendar;
     }
 
     @Given("These Projectnames are contained in the system")
-    public void these_Projectnames_are_contained_in_the_system(List<String> dataTable) {
-        model.projectNames = dataTable;
+    public void these_Projectnames_are_contained_in_the_system(List<String> datatable) {
+        for(String s: datatable){
+            currentProjects.add(new Project(s,calendar.createCalendar(2019,5,1),calendar.createCalendar(2019,9,1),model.getUserIDs().get(1)));
+        }
+        model.setProjectNames(currentProjects);
     }
 
     @Given("Developer is logged in")
     public void developer_is_logged_in() {
-        assertTrue(controller.userIDs.contains(login.currentUserID));
-        assertTrue(controller.loggedIn==true);
+        for (Developer d: model.getUserIDs()){
+            if (d.getUserId()==login.getCurrentUserID()){
+                assertEquals(d.getUserId(),login.getCurrentUserID());
+            }
+        }
     }
 
     @When("Add project with name {string}")
     public void add_project_with_name(String name) {
-        controller.CreateProject(name);
+        model.createProject(name, calendar.createCalendar(2019,5,1),calendar.createCalendar(2019,9,1),new Developer(login.getCurrentUserID()));
     }
 
 
     @Then("A project with name {string} is added")
     public void a_project_with_name_is_added(String name) {
-        assertTrue(controller.projectNames.contains(name));
+        for (Project p: model.getProjectNames()){
+            if (p.getName()==name){
+                assertEquals(p.getName(),name);
+            }
+        }
     }
 }

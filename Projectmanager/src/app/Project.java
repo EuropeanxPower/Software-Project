@@ -16,6 +16,9 @@ public class Project extends Activity{
     public void setProjectmanager(Developer userID){
         projectmanagerID = userID;
     }
+    public Developer getProjectmanager(){
+        return projectmanagerID;
+    }
 
     public void setTotalActivityTime(double totalActivityTime){
         projectTime += totalActivityTime;

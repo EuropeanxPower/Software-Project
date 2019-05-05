@@ -41,6 +41,10 @@ public class Model{
     public ArrayList<Project> getProjectNames(){
         return projectNames;
     }
+
+    public void setProjectNames(ArrayList<Project> datatable){
+        projectNames = datatable;
+    }
     
     public void setUserIDs(ArrayList<Developer> datatable){
         userIDs = datatable;
@@ -50,7 +54,7 @@ public class Model{
         return userIDs;
     }
 
-    public boolean Login(String userID){
+    public boolean Login(String userID) {
         boolean idExists = false;
         for(Developer d : userIDs){
             if (d.getUserId().equals(userID)){
@@ -81,5 +85,36 @@ public class Model{
             projectNames.add(new Project(name,start,end,userID));
         }
         return nameExists;
+    }
+
+    public void addToProject(Developer developer, Project name, Developer inviter){
+        if (name.getProjectmanagerID == null){
+            if (!userIDs.contains(developer)){
+                errorMessage = "User ID doesn't exists";
+                new Errorhandler("User ID doesn't exists");
+            } else {
+                name.add
+            }
+        }
+        else if (name.getProjectmanagerID == inviter){
+            if (!userIDs.contains(developer)){
+                errorMessage = "User ID doesn't exists";
+                new Errorhandler("User ID doesn't exists");
+            } else {
+    
+            } 
+        }
+        else{
+            errorMessage = "Only the projectmanager may add colleages to the project";
+            new Errorhandler("Only the projectmanager may add colleages to the project");
+        }
+    }
+
+    public void addVacation(Developer developer, GregorianCalendar start, GregorianCalendar end) {
+        if (!userIDs.contains(developer)){
+            new Errorhandler("This User ID doesn't exists");
+        } else {
+
+        }
     }
 }

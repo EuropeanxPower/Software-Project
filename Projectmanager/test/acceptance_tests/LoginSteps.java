@@ -13,11 +13,15 @@ import static org.junit.Assert.*;
 
 public class LoginSteps {
     private Model model;
-    private String currentUserID;
+    public String currentUserID;
     private ArrayList<Developer> currentUserIDs = new ArrayList<Developer>();
 
     public LoginSteps(Model model){
         this.model=model;
+    }
+
+    public String getCurrentUserID(){
+        return currentUserID;
     }
 
 
@@ -51,6 +55,7 @@ public class LoginSteps {
     }
 
 }
+
 
 
 
