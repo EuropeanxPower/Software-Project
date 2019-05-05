@@ -1,4 +1,4 @@
-  Feature: Ad to proejct
+  Feature: Log in
   Description: The developer, whom has created the project can invite colleages to the project, 
   and the invited colleages can invite other colleages, 
   but only if there has not been assigned a projectmanager.
@@ -16,25 +16,25 @@
   Scenario: Developer adds a colleage to project
     Given Developer is logged in
     And Developer is a part of "Sort-Pick"
-    And The project "Sort-Pick" does not have a projectmanager
-    When add developer "AL"
+    And The project does not have a projectmanager
+    When Write "add developer" + "AL"
     Then A developer is added
 
   Scenario: Developer cannot add a colleage to project
     Given Developer is logged in
     And Developer is a part of "Sort-Pick"
-    And The project "Sort-Pick" has a projectmanager
-    When add developer "PTRO"
+    And The project has a projectmanager
+    When Write "add developer" + "PTRO"
     Then Errormessage "Only the projectmanager may add colleages to the project"
 
   Scenario: Developer adds a colleage to project
     Given Developer is logged in
     And Developer is a part of "Sort-Pick"
-    When add developer "PPP"
+    When Write "add developer" + "PPP"
     Then Errormessage "User ID does not exist"
 
   Scenario: Projectmanager adds a colleage to project
     Given Developer is logged in
     And Developer is projectmanager of "Sort-Pick"
-    When add developer "PTRO"
+    When Write "add developer" + "PTRO"
     Then A developer is added

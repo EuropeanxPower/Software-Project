@@ -47,6 +47,6 @@ public class UI {
             }
     	}
     public void projectCreated(String name) {
-        System.out.println("A project with name " +name+ " has been created");
+        System.out.println("A project with name " + name + " has been created");
     }
 }

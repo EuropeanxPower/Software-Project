@@ -66,7 +66,7 @@ public class Controller {
     	int month = Integer.parseInt(parts[1]);
     	int year = Integer.parseInt(parts[2]);
     	
-    	return calendar.createCalendar(day, month, year);
+    	return calendar.createCalendar(year, month, day);
     }
 
 }
