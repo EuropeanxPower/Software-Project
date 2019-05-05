@@ -7,7 +7,6 @@ import app.Project;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import acceptance_tests.LoginSteps;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,12 +16,10 @@ import static org.junit.Assert.*;
 public class CreateProjectSteps {
     private Model model;
     private Calender calendar;
-    private LoginSteps login;
     private ArrayList<Project> currentProjects = new ArrayList<>();
 
-    public CreateProjectSteps(Model model, LoginSteps loginSteps, Calender calendar){
+    public CreateProjectSteps(Model model, Calender calendar){
         this.model=model;
-        this.login=loginSteps;
         this.calendar=calendar;
     }
 
@@ -37,15 +34,15 @@ public class CreateProjectSteps {
     @Given("Developer is logged in")
     public void developer_is_logged_in() {
         for (Developer d: model.getUserIDs()){
-            if (d.getUserId()==login.getCurrentUserID()){
-                assertEquals(d.getUserId(),login.getCurrentUserID());
+            if (d==model.getCurrentUser()){
+                assertEquals(d,model.getCurrentUser());
             }
         }
     }
 
     @When("Add project with name {string}")
     public void add_project_with_name(String name) {
-        model.createProject(name, calendar.createCalendar(2019,5,1),calendar.createCalendar(2019,9,1),new Developer(login.getCurrentUserID()));
+        model.createProject(name, calendar.createCalendar(2019,5,1),calendar.createCalendar(2019,9,1),model.getCurrentUser());
     }
 
 
