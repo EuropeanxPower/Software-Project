@@ -23,13 +23,13 @@ public class Project extends Activity{
     public void setTotalActivityTime(double totalActivityTime){
         projectTime += totalActivityTime;
     }
-    
+
     public void addActivity(String activityName, GregorianCalendar start, GregorianCalendar end, Developer userID){
         if (findActivity(activityName) != -1) {
             System.out.println("Activity: " + activityName + " already exists");
         } else {
             activities.add(new Activity(activityName, start, end, userID));
-        }            
+        }
     }
 
     public int findActivity(String name) {
@@ -43,5 +43,4 @@ public class Project extends Activity{
         }
         return status;
     }
-
 }

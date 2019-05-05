@@ -12,6 +12,7 @@ public class Activity {
     //private double estimatedActivityTime;
     private Calender calendar = new Calender();
 
+
     public Activity(String name, GregorianCalendar start, GregorianCalendar end, Developer userID){
         this.name = name;
         this.startDate = start;
@@ -30,31 +31,30 @@ public class Activity {
     /*public void setTotalActivityTime(double inputTime){
         totalActiviyTime += inputTime;
     }
-
     public void setEstimateTime(double inputEstimateTime){
         estimatedActivityTime = inputEstimateTime;
     }*/
 
     public GregorianCalendar getEndDate() {
-		return endDate;
+        return endDate;
     }
-    
+
     public GregorianCalendar getStartDate() {
         return startDate;
     }
 
     public void setEndDate(int year, int month, int day) {
-		endDate = calendar.createCalendar(year, month, day);
-	}
+        endDate = calendar.createCalendar(year, month, day);
+    }
 
     public void setStartDate(int year, int month, int day) {
-		startDate = calendar.createCalendar(year, month, day);
+        startDate = calendar.createCalendar(year, month, day);
     }
 
     public String getName() {
         return name;
     }
 
-    
+
 
 }

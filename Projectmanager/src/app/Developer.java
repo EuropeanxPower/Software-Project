@@ -23,9 +23,6 @@ public class Developer {
         return developersActivities;
     }
 
-
-
-
     public void addProject(Project project){
         boolean projectExists = false;
         for(Project p : projects){
