@@ -16,14 +16,14 @@
   Scenario: Developer adds a colleage to project
     Given Developer is logged in
     And Developer is a part of "Sort-Pick"
-    And The project "Sort-Pick" does not have a projectmanager
+    And The project does not have a projectmanager
     When add developer "AL"
     Then A developer is added
 
   Scenario: Developer cannot add a colleage to project
     Given Developer is logged in
     And Developer is a part of "Sort-Pick"
-    And The project "Sort-Pick" has a projectmanager
+    And The project has a projectmanager
     When add developer "PTRO"
     Then Errormessage "Only the projectmanager may add colleages to the project"
 
@@ -31,7 +31,7 @@
     Given Developer is logged in
     And Developer is a part of "Sort-Pick"
     When add developer "PPP"
-    Then Errormessage "User ID does not exist"
+    Then Errormessage "User ID doesn't exist"
 
   Scenario: Projectmanager adds a colleage to project
     Given Developer is logged in
