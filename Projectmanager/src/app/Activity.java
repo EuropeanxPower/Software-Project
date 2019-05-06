@@ -51,6 +51,7 @@ public class Activity {
     }   
 
     private String setStartDate(String date) {
+        System.out.print(date);
         if (calendar.checkDate(date)){
             if (endDate != null || startDate != null){
                 if (!calendar.compareDates(startDate, endDate)) {

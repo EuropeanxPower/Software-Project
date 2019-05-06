@@ -3,13 +3,18 @@ Feature: Assign projectmanager
   Actors: Developer
 
   Background:
-    Given These User IDs are contained in the system
-      | SKP |
-      | PTRO |
-      | AL |
     Given These Projectnames are contained in the system
       | Tele-Kipper |
       | Sort-Pick |
+    And These User IDs are contained in the system
+      | SKP |
+      | PTRO |
+      | AL |
+    And These User IDs are contained in the project "Sort-Pick"
+      | SKP |
+      | PTRO |
+      | AL |
+
 
   Scenario: Developer assigns projectmanager
     Given Developer is logged in

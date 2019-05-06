@@ -8,7 +8,6 @@ public class Developer {
     private String userID;
     private ArrayList<Project> projects;
     private List<Activity> developersActivities = new ArrayList<Activity>();
-    private List<GregorianCalendar> booked = new ArrayList<GregorianCalendar>();
     //private Boolean isAdministrator;
 
     public Developer(String userID){

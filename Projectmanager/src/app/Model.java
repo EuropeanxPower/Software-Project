@@ -13,7 +13,7 @@ public class Model{
     private Developer currentUser;
     private Project currentProject;
     private ArrayList<Developer> userIDs = new ArrayList<Developer>(Arrays.asList(VWJ,NIC,CP,TMY));
-    private ArrayList<Project> projectNames = new ArrayList<Project>(Arrays.asList(TeleKipper, SortPick));
+    public ArrayList<Project> projectNames = new ArrayList<Project>(Arrays.asList(TeleKipper, SortPick));
     private boolean loggedIn = false;
     private String errorMessage;
 
@@ -56,6 +56,20 @@ public class Model{
 
     public ArrayList<Developer> getUserIDs(){
         return userIDs;
+    }
+
+    public boolean findProject(String name){
+        boolean nameExists = false;
+        for (Project p : projectNames){
+            if(p.getName().equals(name)){
+                nameExists = true;
+            }
+        }
+        if (!nameExists){
+            errorMessage = "Given projectname dosn't exist";
+            new Error("Given projectname dosn't exist");
+        }
+        return nameExists;
     }
 
     public boolean Login(String userID) {
@@ -114,9 +128,11 @@ public class Model{
         }
     }
 
+
+
     public void assignProjectmanager(Developer developer, Project name, Developer assigner){
         if (name.getProjectmanager() == null){
-            if ((name.getdeveloper().contains(developer)) && (name.getdeveloper().contains(assigner))){
+            if (name.getdeveloper().contains(developer)){
                 name.setProjectmanager(developer);
             }
             else {

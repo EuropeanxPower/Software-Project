@@ -3,7 +3,6 @@ package acceptance_tests;
 import app.Developer;
 import app.Model;
 import app.Project;
-import app.Calender;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -13,18 +12,19 @@ import static org.junit.Assert.assertEquals;
 public class AddToProjectSteps {
     private Model model;
     private Developer invited;
-    private Calender calendar;
 
-    public AddToProjectSteps(Model model, Calender calendar){
+    public AddToProjectSteps(Model model){
         this.model=model;
-        this.calendar=calendar;
     }
 
     @Given("Developer is a part of {string}")
     public void developer_is_a_part_of(String name) {
-        model.setCurrentProject(new Project(name,model.getCurrentUser()));
+        if (model.getCurrentProject() == null) {
+            model.setCurrentProject(new Project(name, model.getCurrentUser()));
+        }
         model.getCurrentProject().addDeveloper(model.getCurrentUser());
     }
+
 
     @Given("The project does not have a projectmanager")
     public void the_project_does_not_have_a_projectmanager() {

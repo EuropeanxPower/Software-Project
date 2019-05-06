@@ -10,6 +10,7 @@ public class Project{
     private String projectName;
     private String projectID;
     private ArrayList<Developer> developers = new ArrayList<Developer>();
+    private String errorMessage;
 
     public Project(String name, Developer userID){
         projectName = name;
@@ -72,5 +73,27 @@ public class Project{
             a++;
         }
         return activityList;
+    }
+    public boolean findDeveloper(String userID){
+        boolean userIDExists = false;
+        for (Developer d :  developers){
+            if(d.getUserId().equals(userID)){
+                userIDExists = true;
+            }
+        }
+        if (!userIDExists){
+            new Errorhandler("You don't have access to this project");
+            errorMessage = "You don't have access to this project";
+        }
+        return userIDExists;
+    }
+
+    public String[] getReport(){
+        String[] report = new String[2];
+        report[1] = "Name of the project: " + getName();
+
+
+
+        return report;
     }
 }

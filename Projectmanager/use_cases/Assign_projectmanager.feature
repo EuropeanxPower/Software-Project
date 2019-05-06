@@ -6,6 +6,10 @@ Feature: Assign projectmanager
     Given These Projectnames are contained in the system
       | Tele-Kipper |
       | Sort-Pick |
+    And These User IDs are contained in the system
+      | SKP |
+      | PTRO |
+      | AL |
     And These User IDs are contained in the project "Sort-Pick"
       | SKP |
       | PTRO |

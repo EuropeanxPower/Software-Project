@@ -30,11 +30,7 @@ public class CreateProjectSteps {
 
     @Given("Developer is logged in")
     public void developer_is_logged_in() {
-        for (Developer d: model.getUserIDs()){
-            if (d==model.getCurrentUser()){
-                assertEquals(d,model.getCurrentUser());
-            }
-        }
+        model.Login("SKP");
     }
 
     @When("Add project with name {string}")

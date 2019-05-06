@@ -1,9 +1,9 @@
 package app;
 
 
-class Calender{
+public class Calender{
 
-    Boolean checkDate(String date){
+    public Boolean checkDate(String date){
         if (date.length() != 10){
             return false;
         }
@@ -37,7 +37,7 @@ class Calender{
         return true;
     }
 
-    Boolean compareDates(String startDate, String endDate){
+    public Boolean compareDates(String startDate, String endDate){
         if (Integer.parseInt(startDate.substring(0,3)) > Integer.parseInt(endDate.substring(0,3))){
             return false;
         } else {
@@ -49,7 +49,6 @@ class Calender{
                 }
             }
         }
-
         return true;
     }
 }

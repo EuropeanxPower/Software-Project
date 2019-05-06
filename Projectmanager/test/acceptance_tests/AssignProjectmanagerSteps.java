@@ -1,6 +1,5 @@
 package acceptance_tests;
 
-import app.Calender;
 import app.Developer;
 import app.Model;
 import app.Project;
@@ -16,14 +15,14 @@ public class AssignProjectmanagerSteps {
     private Model model;
     private Developer currentCandidate;
 
+
     public AssignProjectmanagerSteps(Model model){
         this.model=model;
     }
 
     @Given("These User IDs are contained in the project {string}")
     public void these_User_IDs_are_contained_in_the_project(String project, List<String> dataTable) {
-        model.setCurrentProject(new Project(project, model.getCurrentUser()));
-        model.getCurrentProject().addDeveloper(model.getCurrentUser());
+        model.setCurrentProject(new Project(project, new Developer("FGH")));
 
         for(String s: dataTable){
             model.getCurrentProject().addDeveloper(new Developer(s));
@@ -33,6 +32,11 @@ public class AssignProjectmanagerSteps {
     @When("add projectmanager {string}")
     public void add_projectmanager(String id) {
         currentCandidate=new Developer(id);
+        for(Developer d: model.getCurrentProject().getdeveloper()){
+            if (d.getUserId().equals(id)){
+                currentCandidate=d;
+            }
+        }
         model.assignProjectmanager(currentCandidate,model.getCurrentProject(),model.getCurrentUser());
     }
 
