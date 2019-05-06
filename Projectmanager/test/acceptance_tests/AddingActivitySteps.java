@@ -1,6 +1,5 @@
 package acceptance_tests;
 
-import app.Calender;
 import app.Model;
 import app.Project;
 import cucumber.api.java.en.Given;
@@ -14,11 +13,9 @@ import static org.junit.Assert.*;
 public class AddingActivitySteps {
 
     private Model model;
-    private Calender calendar;
 
-    public AddingActivitySteps(Model model, Calender calendar){
+    public AddingActivitySteps(Model model){
         this.model=model;
-        this.calendar=calendar;
     }
 
     @Given("these activities are contained in the project {string}")

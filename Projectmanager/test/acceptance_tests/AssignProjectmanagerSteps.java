@@ -15,11 +15,9 @@ import static org.junit.Assert.*;
 public class AssignProjectmanagerSteps {
     private Model model;
     private Developer currentCandidate;
-    private Calender calendar;
 
-    public AssignProjectmanagerSteps(Model model, Calender calendar){
+    public AssignProjectmanagerSteps(Model model){
         this.model=model;
-        this.calendar=calendar;
     }
 
     @Given("These User IDs are contained in the project {string}")

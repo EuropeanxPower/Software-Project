@@ -1,6 +1,5 @@
 package acceptance_tests;
 
-import app.Calender;
 import app.Developer;
 import app.Model;
 import app.Project;
@@ -15,12 +14,10 @@ import static org.junit.Assert.*;
 
 public class CreateProjectSteps {
     private Model model;
-    private Calender calendar;
     private ArrayList<Project> currentProjects = new ArrayList<>();
 
-    public CreateProjectSteps(Model model, Calender calendar){
+    public CreateProjectSteps(Model model){
         this.model=model;
-        this.calendar=calendar;
     }
 
     @Given("These Projectnames are contained in the system")
