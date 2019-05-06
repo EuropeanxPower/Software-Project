@@ -2,17 +2,36 @@ package app;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.GregorianCalendar;
 
-public class Project extends Activity{
+public class Project{
     private Developer projectmanagerID;
     private List<Activity> activities = new ArrayList<Activity>();
     private double projectTime;
+    private String projectName;
+    private String projectID;
+    private ArrayList<Developer> developers = new ArrayList<Developer>();
 
-    public Project(String name, GregorianCalendar start, GregorianCalendar end, Developer userID){
-        super(name, start, end, userID);
+    public Project(String name, Developer userID){
+        projectName = name;
+        // Call function for setting project ID.
+        developers.add(userID);
+    }
+    public void addDeveloper(Developer userID){
+        if (developers.contains(userID)){
+            new Errorhandler("Developer is already contained in project.");
+        } else{
+        developers.add(userID);
+        }
     }
 
+    public String getName() {
+        return projectName;
+    }
+
+    public ArrayList<Developer> getdeveloper(){
+        return developers;
+    }
+    
     public void setProjectmanager(Developer userID){
         projectmanagerID = userID;
     }
@@ -24,7 +43,8 @@ public class Project extends Activity{
         projectTime += totalActivityTime;
     }
 
-    public void addActivity(String activityName, GregorianCalendar start, GregorianCalendar end, Developer userID){
+
+    public void addActivity(String activityName, String start, String end, Developer userID){
         if (findActivity(activityName) != -1) {
             System.out.println("Activity: " + activityName + " already exists");
         } else {
@@ -42,5 +62,15 @@ public class Project extends Activity{
             }
         }
         return status;
+    }
+
+    public String[] getActivityList(){
+        String[] activityList = new String[activities.size()];
+        int a = 0;
+        for (Activity activity : activities){
+            activityList[a] = activity.getName();
+            a++;
+        }
+        return activityList;
     }
 }

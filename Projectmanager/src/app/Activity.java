@@ -4,24 +4,26 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
 public class Activity {
-    private GregorianCalendar startDate;
-    private GregorianCalendar endDate;
+    private String startDate, endDate;
     private ArrayList<Developer> developers = new ArrayList<Developer>();
     private String name;
     //private double totalActiviyTime;
     //private double estimatedActivityTime;
-    private Calender calendar = new Calender();
+    private Calender calendar;
 
-
-    public Activity(String name, GregorianCalendar start, GregorianCalendar end, Developer userID){
+    public Activity(String name, String startDate, String endDate, Developer userID){
         this.name = name;
-        this.startDate = start;
-        this.endDate = end;
+        this.startDate = setStartDate(startDate);
+        this.endDate = setEndDate(endDate);
         developers.add(userID);
     }
 
     public void addDeveloper(Developer userID){
+        if (developers.contains(userID)){
+            new Errorhandler("Developer is already contained in the activity.");
+        } else{
         developers.add(userID);
+        }
     }
 
     public ArrayList<Developer> getdeveloper(){
@@ -35,26 +37,42 @@ public class Activity {
         estimatedActivityTime = inputEstimateTime;
     }*/
 
-    public GregorianCalendar getEndDate() {
+    private String setEndDate(String date) {
+        calendar.checkDate(date);
+        if (endDate != null || startDate != null){
+            if (!calendar.compareDates(startDate, endDate)) {
+            new Errorhandler("Project must end after the project ends");
+            }
+        } else {
+            endDate = Integer.parseInt(date.substring(0,3)) +"-"+ Integer.parseInt(date.substring(5,6)) +"-"+ Integer.parseInt(date.substring(8,9));
+            return endDate;
+        }
+        return null;
+    }   
+
+    private String setStartDate(String date) {
+        if (calendar.checkDate(date)){
+            if (endDate != null || startDate != null){
+                if (!calendar.compareDates(startDate, endDate)) {
+                new Errorhandler("Project must start before the project ends");
+                }
+            } else {
+                startDate = Integer.parseInt(date.substring(0,3)) +"-"+ Integer.parseInt(date.substring(5,6)) +"-"+ Integer.parseInt(date.substring(8,9));
+                return startDate;
+            }
+        }
+        return null;
+    }
+
+    private String getEndDate() {
         return endDate;
     }
 
-    public GregorianCalendar getStartDate() {
+    public String getStartDate() {
         return startDate;
-    }
-
-    public void setEndDate(int year, int month, int day) {
-        endDate = calendar.createCalendar(year, month, day);
-    }
-
-    public void setStartDate(int year, int month, int day) {
-        startDate = calendar.createCalendar(year, month, day);
     }
 
     public String getName() {
         return name;
     }
-
-
-
 }

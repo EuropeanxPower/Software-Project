@@ -2,16 +2,14 @@ package app;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.GregorianCalendar;
 
 public class Model{
-    private Calender calendar = new Calender();
     private Developer VWJ = new Developer("VWJ");
     private Developer NIC = new Developer("NIC");
     private Developer CP = new Developer("CP");
     private Developer TMY = new Developer("TMY");
-    private Project TeleKipper = new Project("Tele-Kipper", calendar.createCalendar(2019,5,1), calendar.createCalendar(2019,7,15),TMY);
-    private Project SortPick = new Project("Sort-Pick", calendar.createCalendar(2019,5,1), calendar.createCalendar(2019,9,1),VWJ);
+    private Project TeleKipper = new Project("Tele-Kipper",TMY);
+    private Project SortPick = new Project("Sort-Pick",VWJ);
     private Developer currentUser;
     private Project currentProject;
     private ArrayList<Developer> userIDs = new ArrayList<Developer>(Arrays.asList(VWJ,NIC,CP,TMY));
@@ -77,7 +75,7 @@ public class Model{
         return idExists;
     }
 
-    public boolean createProject(String name, GregorianCalendar start, GregorianCalendar end, Developer userID){
+    public boolean createProject(String name, Developer userID){
         boolean nameExists = false;
         for (Project p : projectNames){
             if (name.equals(p.getName())){
@@ -88,7 +86,7 @@ public class Model{
             }
         }
         if(!nameExists){
-            projectNames.add(new Project(name,start,end,userID));
+            projectNames.add(new Project(name,userID));
         }
         return nameExists;
     }
@@ -130,14 +128,14 @@ public class Model{
             if ((name.getProjectmanager()==assigner)&&(name.getdeveloper().contains(developer))) {
                 name.setProjectmanager(developer);
             }
-        }
-        else{
-            errorMessage = "Only the projectmanager can assign a new projectmanager to this project";
-            new Errorhandler("Only the projectmanager can assign a new projectmanager to this project");
+            else{
+                errorMessage = "Only the projectmanager can assign a new projectmanager to this project";
+                new Errorhandler("Only the projectmanager can assign a new projectmanager to this project");
+            }
         }
     }
 
-    public void addVacation(Developer developer, GregorianCalendar start, GregorianCalendar end) {
+    public void addVacation(Developer developer, String start, String end) {
         if (!userIDs.contains(developer)){
             new Errorhandler("This User ID doesn't exists");
         } else {

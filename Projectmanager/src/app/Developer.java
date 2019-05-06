@@ -9,7 +9,7 @@ public class Developer {
     private ArrayList<Project> projects;
     private List<Activity> developersActivities = new ArrayList<Activity>();
     private List<GregorianCalendar> booked = new ArrayList<GregorianCalendar>();
-    private Boolean isAdministrator;
+    //private Boolean isAdministrator;
 
     public Developer(String userID){
         this.userID = userID;
@@ -32,5 +32,4 @@ public class Developer {
 
         }
     }
-
 }

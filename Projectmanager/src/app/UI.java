@@ -1,6 +1,5 @@
 package app;
 
-import java.util.Scanner;
 
 // Case 1 is Login Screen
 // Case 2 is General Overview
@@ -34,15 +33,9 @@ public class UI {
                 System.out.println("Please enter the name of the project");
                 break;
             case 7:
-                System.out.println("Please enter the start date of the project");
-                break;
-            case 8:
-                System.out.println("Please enter the end date of the project");
-                break;
-            case 9:
                 System.out.println("A project with this name already exists.");
                 break;
-            case 10:
+            case 8:
                 break;
         }
     }

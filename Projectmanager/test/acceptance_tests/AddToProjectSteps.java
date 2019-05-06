@@ -22,7 +22,7 @@ public class AddToProjectSteps {
 
     @Given("Developer is a part of {string}")
     public void developer_is_a_part_of(String name) {
-        model.setCurrentProject(new Project(name, calendar.createCalendar(2019,5,1),calendar.createCalendar(2019,9,1),model.getCurrentUser()));
+        model.setCurrentProject(new Project(name,model.getCurrentUser()));
         model.getCurrentProject().addDeveloper(model.getCurrentUser());
     }
 
@@ -53,7 +53,7 @@ public class AddToProjectSteps {
 
     @Given("Developer is projectmanager of {string}")
     public void developer_is_projectmanager_of(String name) {
-        model.setCurrentProject(new Project(name, calendar.createCalendar(2019,5,1),calendar.createCalendar(2019,9,1),model.getCurrentUser()));
+        model.setCurrentProject(new Project(name,model.getCurrentUser()));
         model.getCurrentProject().setProjectmanager(model.getCurrentUser());
     }
 }

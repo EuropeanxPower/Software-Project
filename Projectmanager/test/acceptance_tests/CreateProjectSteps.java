@@ -26,7 +26,7 @@ public class CreateProjectSteps {
     @Given("These Projectnames are contained in the system")
     public void these_Projectnames_are_contained_in_the_system(List<String> datatable) {
         for(String s: datatable){
-            currentProjects.add(new Project(s,calendar.createCalendar(2019,5,1),calendar.createCalendar(2019,9,1),model.getUserIDs().get(1)));
+            currentProjects.add(new Project(s,model.getUserIDs().get(1)));
         }
         model.setProjectNames(currentProjects);
     }
@@ -42,7 +42,7 @@ public class CreateProjectSteps {
 
     @When("Add project with name {string}")
     public void add_project_with_name(String name) {
-        model.createProject(name, calendar.createCalendar(2019,5,1),calendar.createCalendar(2019,9,1),model.getCurrentUser());
+        model.createProject(name,model.getCurrentUser());
     }
 
 
