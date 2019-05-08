@@ -106,15 +106,4 @@ public class Project{
         }
         return null;
     }
-
-    public String[] getReport(){
-        String[] report = new String[3];
-        report[0] = "Name of the project: " + getName();
-        report[1] = "Projectmanager: " + getProjectmanager();
-        report[2] = "Developers on the project: " + developers;
-
-
-
-        return report;
-    }
 }

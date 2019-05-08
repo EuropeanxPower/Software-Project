@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aba84a76-e5b7-49ab-94e7-fd231ead7aea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/Activity.class" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/Activity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/Model.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/Project.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/SerialNumbers.class" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/SerialNumbers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/UI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/src/app/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/src/app/Activity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projectmanager/src/app/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/src/app/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projectmanager/src/app/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/src/app/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projectmanager/src/app/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/src/app/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/src/app/SerialNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/src/app/SerialNumbers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/src/app/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/src/app/UI.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,8 +26,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6">
-              <caret line="91" column="26" selection-start-line="91" selection-start-column="26" selection-end-line="91" selection-end-column="26" />
+            <state relative-caret-position="23">
+              <caret line="92" column="26" selection-start-line="92" selection-start-column="26" selection-end-line="92" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -242,7 +232,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557304856349" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557305304154" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -294,12 +284,12 @@
       <workItem from="1557035701513" duration="1220000" />
       <workItem from="1557036954127" duration="9227000" />
       <workItem from="1557123885294" duration="21102000" />
-      <workItem from="1557297848522" duration="6969000" />
+      <workItem from="1557297848522" duration="7218000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38518000" />
+    <option name="totallyTimeSpent" value="38767000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -449,8 +439,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6">
-          <caret line="91" column="26" selection-start-line="91" selection-start-column="26" selection-end-line="91" selection-end-column="26" />
+        <state relative-caret-position="23">
+          <caret line="92" column="26" selection-start-line="92" selection-start-column="26" selection-end-line="92" selection-end-column="26" />
         </state>
       </provider>
     </entry>

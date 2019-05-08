@@ -99,7 +99,7 @@ public class Controller {
                         model.getCurrentProject().addActivity(userInput, userStartDate, userEndDate);
                     }
                     else if("5".equals(userInput)) { //Get projectreport.
-                        report = model.getCurrentProject().getReport();
+                        report = model.getReport();
                         for(int i = 0; i <= report.length-1; i++){
                             System.out.println(report[i]);
                         } 

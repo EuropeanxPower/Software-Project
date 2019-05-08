@@ -173,4 +173,16 @@ public class Model{
 
         }
     }
+
+    public String[] getReport(){
+        String[] report = new String[4];
+        report[0] = "Name of the project: " + getCurrentProject().getName();
+        report[1] = "Projectmanager: " + getCurrentProject().getProjectmanager().getUserId();
+        report[2] = "Developers on the project: ";
+        report[3] = "Activities: ";
+
+
+
+        return report;
+    }
 }
