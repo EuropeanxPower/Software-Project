@@ -5,17 +5,10 @@ import java.util.GregorianCalendar;
 
 class SerialNumbers{
 
-    private Model model;
     GregorianCalendar gcal = new GregorianCalendar();
     private String SN;
     private int counter = 1;
 
-
-    //Constructor
-    public SerialNumbers(Model model){
-        this.model = model;
-
-    }
 
     private String findProjectSN(){
         int year, month;
@@ -39,7 +32,7 @@ class SerialNumbers{
         } else {
             counter = 1;
         }
-        SN = year +""+month1 + "-"+counter1;
+        SN = year+""+month1+"-"+counter1;
         updateCounter();
         return SN;
     }

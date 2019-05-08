@@ -10,10 +10,11 @@ public class Model{
     private Developer TMY = new Developer("TMY");
     private Project TeleKipper = new Project("Tele-Kipper",TMY);
     private Project SortPick = new Project("Sort-Pick",VWJ);
+    private Project Pesto = new Project("Pesto",NIC);
     private Developer currentUser;
     private Project currentProject;
     private ArrayList<Developer> userIDs = new ArrayList<Developer>(Arrays.asList(VWJ,NIC,CP,TMY));
-    public ArrayList<Project> projectNames = new ArrayList<Project>(Arrays.asList(TeleKipper, SortPick));
+    public ArrayList<Project> projectNames = new ArrayList<Project>(Arrays.asList(TeleKipper, SortPick, Pesto));
     private boolean loggedIn = false;
     private String errorMessage;
 
@@ -70,6 +71,20 @@ public class Model{
             new Error("Given projectname dosn't exist");
         }
         return nameExists;
+    }
+
+    public Project getProject(String name){
+        boolean nameExists = false;    
+        for (Project p : projectNames){
+            if(p.getName().equals(name)){
+                return p;
+            }
+        }
+        if (!nameExists){
+            errorMessage = "Given projectname dosn't exist";
+            new Error("Given projectname dosn't exist");
+        }
+        return null;
     }
 
     public boolean Login(String userID) {
@@ -157,5 +172,17 @@ public class Model{
         } else {
 
         }
+    }
+
+    public String[] getReport(){
+        String[] report = new String[4];
+        report[0] = "Name of the project: " + getCurrentProject().getName();
+        report[1] = "Projectmanager: " + getCurrentProject().getProjectmanager().getUserId();
+        report[2] = "Developers on the project: ";
+        report[3] = "Activities: ";
+
+
+
+        return report;
     }
 }
