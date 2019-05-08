@@ -10,7 +10,7 @@ class SerialNumbers{
     private int counter = 1;
 
 
-    private String findProjectSN(){
+    private String createProjectSN(){
         int year, month;
         String counter1 = "", month1;
         year = gcal.get(Calendar.YEAR)%100;
@@ -50,7 +50,7 @@ class SerialNumbers{
     }
 
     public String getProjectSN(){
-        return findProjectSN();
+        return createProjectSN();
     }
 
     

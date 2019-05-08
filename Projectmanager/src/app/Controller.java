@@ -32,42 +32,55 @@ public class Controller {
                 case 2: // General Overview Functions
                     ui.screen(4); 
                     userInput = input.nextLine();
-                    if("1".equals(userInput)) {
+                    if("1".equals(userInput)) { //Go to/Manage project
                         ui.screen(5);
                         userInput = input.nextLine();
                         if (model.findProject(userInput)) {
                             model.setCurrentProject(model.getProject(userInput));
                             ui.setProjectName(userInput);
                             if (model.getCurrentProject().findDeveloper(model.getCurrentUser().getUserId())) {
-                                ui.screen(10);
                                 screen = 3;
                             } else {
                                 ui.screen(11);
                             }
                         }
-                    } else if ("2".equals(userInput)) {
+                    } else if ("2".equals(userInput)) { //Create new project
                         ui.screen(7);
                         userInput = input.nextLine();
                         if (model.createProject(userInput, model.getCurrentUser())) {
                             ui.screen(8);
                         } else {
+                            ui.setProjectName(userInput);
                             ui.getProjectName();
                             ui.screen(9);
                         }
+                    } else if ("3".equals(userInput)) { //Logout
+                        model.logout(model.getCurrentUser().getUserId());
+                        screen = 1;
                     }
+            
                     break;
                 case 3: // Project Overview Functions
                     ui.screen(10);
                     userInput = input.nextLine();
-                    if("1".equals(userInput)) { //Manage project.
-                        
+                    if("1".equals(userInput)) { //Manage an active activity.
+                        ui.screen(28);
+                        userInput = input.nextLine();
+                        System.out.println(userInput);
+                        if (model.getCurrentProject().findActivity(userInput) != -1){
+                            model.getCurrentProject().setCurrentActivity(model.getCurrentProject().getActivity(userInput));
+                            ui.setActivityName(userInput);
+                            screen = 4;
+                        } else {
+                            System.out.println("FML");
+                        }
                     }
                     else if("2".equals(userInput)) { //Assign project manager.
                         if(model.getCurrentProject().getProjectmanager() == null) {
                                 ui.screen(15);
                                 userInput = input.nextLine();
                                 if (model.getCurrentProject().findDeveloper(userInput)){
-                                    model.getCurrentProject().setProjectmanager(model.getCurrentProject().getDeveloper(userInput));
+                                    model.assignProjectmanager(model.getCurrentProject().getDeveloper(userInput),model.getCurrentProject(),model.getCurrentUser());
                                     ui.screen(24);
                                 }else {
                                     ui.screen(25);
@@ -82,21 +95,28 @@ public class Controller {
                         }
                     }
                     else if("3".equals(userInput)) { //Add developer to project.
-                        
+                        ui.screen(17);
+                        userInput = input.nextLine();
+                        if (model.findDeveloper(userInput)){
+                            model.getCurrentProject().addDeveloper(model.getDeveloper(userInput));
+                            ui.screen(26);
+                        } else{
+                            ui.screen(3);
+                        }
                     }
                     else if("4".equals(userInput)) { //Add an activity to project.
-                        //ui.screen();
-                        ui.screen(12);
+                        ui.screen(12); // Getting activity name
                         userInput = input.nextLine();
-                        if (model.getCurrentProject().findActivity(userInput) != -1){
-                            ui.screen(21); //Activity already exists
-                            break;
-                        }
                         ui.screen(19); // Getting startdate
                         userStartDate = input.nextLine();
                         ui.screen(20); // Getting enddate
-                        userEndDate = input.nextLine();                        
-                        model.getCurrentProject().addActivity(userInput, userStartDate, userEndDate);
+                        userEndDate = input.nextLine();                   
+                        if(!model.getCurrentProject().addActivity(userInput, userStartDate, userEndDate)){
+                            ui.screen(21); //Activity already exists
+                        }else{
+                            ui.setActivityName(userInput);
+                            ui.screen(22);
+                        }
                     }
                     else if("5".equals(userInput)) { //Get projectreport.
                         report = model.getReport();
@@ -104,14 +124,20 @@ public class Controller {
                             System.out.println(report[i]);
                         } 
                         model.getCurrentProject().activityList();
+                        //model.getCurrentProject().developerList();
+                        ui.screen(27);
+                        userInput = input.nextLine();
                     }
                     else if("6".equals(userInput)) {//Return to general overview.
-                        ui.screen(4);
                         screen = 2;
                     }
                     break;
                 case 4: // Activity Overview Functions
-                    
+                    ui.screen(30);
+                    userInput = input.nextLine();
+                    if ("5".equals(userInput)){
+                        screen = 3;
+                    }
                 break;
             }
         }
