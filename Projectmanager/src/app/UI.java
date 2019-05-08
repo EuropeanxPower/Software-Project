@@ -1,5 +1,6 @@
 package app;
 
+import javax.sound.sampled.SourceDataLine;
 
 // Case 1 is Login Screen
 // Case 2 is General Overview
@@ -33,6 +34,7 @@ public class UI {
                 break;
             case 6: //Go to project unsuccesful
                 System.out.println("The given project does not exist.");
+                break;
             case 7: //Create project
                 System.out.println("Please enter the name of the project.");
                 break;
@@ -54,7 +56,7 @@ public class UI {
                 break;
             case 11: //Go to project unsuccesful - userID doesn't have access to the project.
                 System.out.println("You do not have access to the project: " + activeProject);
-
+                break;
             case 12: //Go to activity
                 System.out.println("Please enter the name of the activity.");
                 break;
@@ -71,9 +73,39 @@ public class UI {
                 System.out.println("The user ID does not exist or is not a part of this project.");
                 break;
             case 17: //Add developer to 
+                break;
+            case 18: //Get projectreport.
+
+                break;
+            case 19: //Start date of an activity
+                System.out.println("Please enter the start date of the activity in given format 'YYYY-MM-DD'.");
+                break;
+            case 20: //End date of an activity
+                System.out.println("Please enter the end date of the activity in given format 'YYYY-MM-DD'.");
+                break;
+            case 21: //Create activity failed
+                System.out.println("A activity with this name already exists.");
+                break;
+            case 22: //Successful activity Creation
+                System.out.println("A activity with name " + activeProject + " has been created.");
+                break;
+            case 23: //Incorrect dates
+                System.out.println("This is not a valid date.");
+                break;
+            case 24: //Projectmanager set
+                System.out.println("The projectmanager of " +activeProject+ " has been set.");
+                break;
+            case 25: // Developer not part of project
+                System.out.println("The given developer is not a part of the current project or does not exist.");
+                break;
         }
     }
-    public void getProjectName(String name) {
+
+    public String getProjectName() {
+        return activeProject;
+    }
+
+    public void setProjectName(String name){
         activeProject = name;
     }
 }

@@ -9,13 +9,13 @@ public class Activity {
     private String name;
     //private double totalActiviyTime;
     //private double estimatedActivityTime;
-    private Calender calendar;
+    private Calender calendar = new Calender();
 
-    public Activity(String name, String startDate, String endDate, Developer userID){
+    public Activity(String name, String startDate, String endDate){
         this.name = name;
         this.startDate = setStartDate(startDate);
         this.endDate = setEndDate(endDate);
-        developers.add(userID);
+        //developers.add(userID);
     }
 
     public void addDeveloper(Developer userID){
@@ -51,7 +51,6 @@ public class Activity {
     }   
 
     private String setStartDate(String date) {
-        System.out.print(date);
         if (calendar.checkDate(date)){
             if (endDate != null || startDate != null){
                 if (!calendar.compareDates(startDate, endDate)) {

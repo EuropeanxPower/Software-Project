@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Project{
-    private Developer projectmanagerID;
+    private Developer projectmanager;
+    private SerialNumbers sn;
     private List<Activity> activities = new ArrayList<Activity>();
     private double projectTime;
     private String projectName;
@@ -14,9 +15,10 @@ public class Project{
 
     public Project(String name, Developer userID){
         projectName = name;
-        // Call function for setting project ID.
+        //projectID = sn.getProjectSN();
         developers.add(userID);
     }
+
     public void addDeveloper(Developer userID){
         if (developers.contains(userID)){
             new Errorhandler("Developer is already contained in project.");
@@ -34,10 +36,10 @@ public class Project{
     }
     
     public void setProjectmanager(Developer userID){
-        projectmanagerID = userID;
+        projectmanager = userID;
     }
     public Developer getProjectmanager(){
-        return projectmanagerID;
+        return projectmanager;
     }
 
     public void setTotalActivityTime(double totalActivityTime){
@@ -45,11 +47,11 @@ public class Project{
     }
 
 
-    public void addActivity(String activityName, String start, String end, Developer userID){
+    public void addActivity(String activityName, String start, String end){
         if (findActivity(activityName) != -1) {
             System.out.println("Activity: " + activityName + " already exists");
         } else {
-            activities.add(new Activity(activityName, start, end, userID));
+            activities.add(new Activity(activityName, start, end));
         }
     }
 
@@ -65,15 +67,18 @@ public class Project{
         return status;
     }
 
-    public String[] getActivityList(){
+    public void activityList(){
         String[] activityList = new String[activities.size()];
         int a = 0;
         for (Activity activity : activities){
             activityList[a] = activity.getName();
             a++;
         }
-        return activityList;
+        for (int i = 0; i <= activityList.length -1;i++){
+            System.out.println(activityList[i]);
+        }
     }
+    
     public boolean findDeveloper(String userID){
         boolean userIDExists = false;
         for (Developer d :  developers){
@@ -88,9 +93,25 @@ public class Project{
         return userIDExists;
     }
 
+    public Developer getDeveloper(String name){
+        boolean nameExists = false;    
+        for (Developer d : developers){
+            if(d.getUserId().equals(name)){
+                return d;
+            }
+        }
+        if (!nameExists){
+            errorMessage = "Given developer is not a part of the project or does not exist";
+            new Error("Given developer is not a port of the project or does not exist");
+        }
+        return null;
+    }
+
     public String[] getReport(){
-        String[] report = new String[2];
-        report[1] = "Name of the project: " + getName();
+        String[] report = new String[3];
+        report[0] = "Name of the project: " + getName();
+        report[1] = "Projectmanager: " + getProjectmanager();
+        report[2] = "Developers on the project: " + developers;
 
 
 

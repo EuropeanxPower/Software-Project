@@ -4,23 +4,17 @@
     <list default="true" id="aba84a76-e5b7-49ab-94e7-fd231ead7aea" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/Activity.class" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/Activity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/Calender.class" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/Calender.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/Developer.class" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/Developer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/Model.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/Project.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/SerialNumbers.class" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/SerialNumbers.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/UI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/out/test/Software-Project/Assign_projectmanager.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/out/test/Software-Project/Assign_projectmanager.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/src/app/Calender.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/src/app/Calender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projectmanager/src/app/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/src/app/Activity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projectmanager/src/app/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/src/app/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/src/app/Developer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/src/app/Developer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projectmanager/src/app/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/src/app/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projectmanager/src/app/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/src/app/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projectmanager/src/app/SerialNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/src/app/SerialNumbers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projectmanager/src/app/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/src/app/UI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/test/acceptance_tests/AddToProjectSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/test/acceptance_tests/AddToProjectSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/test/acceptance_tests/AssignProjectmanagerSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/test/acceptance_tests/AssignProjectmanagerSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/test/acceptance_tests/CreateProjectSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/test/acceptance_tests/CreateProjectSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/use_cases/Assign_projectmanager.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/use_cases/Assign_projectmanager.feature" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,11 +33,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="84" column="43" selection-start-line="84" selection-start-column="43" selection-end-line="84" selection-end-column="43" />
+            <state relative-caret-position="6">
+              <caret line="91" column="26" selection-start-line="91" selection-start-column="26" selection-end-line="91" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Project.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="73" column="21" lean-forward="true" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1017#1018#0" expanded="true" />
+                <element signature="e#1056#1057#0" expanded="true" />
+                <element signature="e#1098#1099#0" expanded="true" />
+                <element signature="e#1135#1136#0" expanded="true" />
+                <element signature="e#1229#1230#0" expanded="true" />
+                <element signature="e#1277#1278#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -51,8 +63,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/UI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="72" column="40" selection-start-line="72" selection-start-column="40" selection-end-line="72" selection-end-column="40" />
+            <state relative-caret-position="358">
+              <caret line="102" selection-start-line="102" selection-end-line="102" />
+              <folding>
+                <element signature="e#4350#4351#0" expanded="true" />
+                <element signature="e#4386#4387#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -60,38 +76,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Developer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="136">
+              <caret line="20" column="51" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#426#427#0" expanded="true" />
-                <element signature="e#462#463#0" expanded="true" />
-                <element signature="e#494#495#0" expanded="true" />
-                <element signature="e#523#524#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Project.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="96" column="22" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#234#244#0" expanded="true" />
-                <element signature="e#348#359#0" expanded="true" />
-                <element signature="e#789#790#0" expanded="true" />
-                <element signature="e#823#824#0" expanded="true" />
-                <element signature="e#872#873#0" expanded="true" />
-                <element signature="e#905#906#0" expanded="true" />
-                <element signature="e#419#420#0" expanded="true" />
-                <element signature="e#460#461#0" expanded="true" />
-                <element signature="e#502#503#0" expanded="true" />
+                <element signature="e#347#348#0" expanded="true" />
+                <element signature="e#383#384#0" expanded="true" />
+                <element signature="e#415#416#0" expanded="true" />
+                <element signature="e#444#445#0" expanded="true" />
+                <element signature="e#498#499#0" expanded="true" />
                 <element signature="e#541#542#0" expanded="true" />
-                <element signature="e#606#607#0" expanded="true" />
-                <element signature="e#654#655#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -100,12 +94,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Model.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-15">
-              <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+            <state relative-caret-position="374">
+              <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#539#550#0" expanded="true" />
-                <element signature="e#641#650#0" expanded="true" />
                 <element signature="e#800#801#0" expanded="true" />
                 <element signature="e#834#835#0" expanded="true" />
                 <element signature="e#881#882#0" expanded="true" />
@@ -134,14 +126,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/SerialNumbers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+            <state relative-caret-position="187">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1265#1266#0" expanded="true" />
-                <element signature="e#1289#1290#0" expanded="true" />
-                <element signature="e#1262#1263#0" expanded="true" />
-                <element signature="e#1300#1301#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -150,15 +138,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Activity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="53">
-              <caret line="57" column="17" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
+            <state relative-caret-position="152">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#201#212#0" expanded="true" />
-                <element signature="e#753#754#0" expanded="true" />
-                <element signature="e#786#787#0" expanded="true" />
+                <element signature="e#2254#2255#0" expanded="true" />
                 <element signature="e#2284#2285#0" expanded="true" />
+                <element signature="e#2320#2321#0" expanded="true" />
                 <element signature="e#2352#2353#0" expanded="true" />
+                <element signature="e#2383#2384#0" expanded="true" />
                 <element signature="e#2410#2411#0" expanded="true" />
               </folding>
             </state>
@@ -168,7 +156,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Calender.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
+            <state relative-caret-position="663">
               <caret line="39" column="11" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
             </state>
           </provider>
@@ -200,11 +188,11 @@
         <option value="$PROJECT_DIR$/Projectmanager/src/app/Calender.java" />
         <option value="$PROJECT_DIR$/Projectmanager/src/app/Activity.java" />
         <option value="$PROJECT_DIR$/Projectmanager/src/app/SerialNumbers.java" />
-        <option value="$PROJECT_DIR$/Projectmanager/src/app/Model.java" />
-        <option value="$PROJECT_DIR$/Projectmanager/src/app/UI.java" />
         <option value="$PROJECT_DIR$/Projectmanager/src/app/Developer.java" />
-        <option value="$PROJECT_DIR$/Projectmanager/src/app/Project.java" />
+        <option value="$PROJECT_DIR$/Projectmanager/src/app/UI.java" />
+        <option value="$PROJECT_DIR$/Projectmanager/src/app/Model.java" />
         <option value="$PROJECT_DIR$/Projectmanager/src/app/Controller.java" />
+        <option value="$PROJECT_DIR$/Projectmanager/src/app/Project.java" />
       </list>
     </option>
   </component>
@@ -218,8 +206,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -254,7 +242,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557151147729" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557304856349" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -306,17 +294,17 @@
       <workItem from="1557035701513" duration="1220000" />
       <workItem from="1557036954127" duration="9227000" />
       <workItem from="1557123885294" duration="21102000" />
+      <workItem from="1557297848522" duration="6969000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31549000" />
+    <option name="totallyTimeSpent" value="38518000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18255034" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1852349" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -325,7 +313,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4022663" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28611898" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -362,43 +350,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Calendar.java" />
-    <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Calender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="39" column="11" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/SerialNumbers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1265#1266#0" expanded="true" />
-            <element signature="e#1289#1290#0" expanded="true" />
-            <element signature="e#1262#1263#0" expanded="true" />
-            <element signature="e#1300#1301#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="57" column="17" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#201#212#0" expanded="true" />
-            <element signature="e#753#754#0" expanded="true" />
-            <element signature="e#786#787#0" expanded="true" />
-            <element signature="e#2284#2285#0" expanded="true" />
-            <element signature="e#2352#2353#0" expanded="true" />
-            <element signature="e#2410#2411#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -406,14 +357,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Model.java">
+    <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/SerialNumbers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
-          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#539#550#0" expanded="true" />
-            <element signature="e#641#650#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Calender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="11" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2254#2255#0" expanded="true" />
+            <element signature="e#2284#2285#0" expanded="true" />
+            <element signature="e#2320#2321#0" expanded="true" />
+            <element signature="e#2352#2353#0" expanded="true" />
+            <element signature="e#2383#2384#0" expanded="true" />
+            <element signature="e#2410#2411#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/UI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="102" selection-start-line="102" selection-end-line="102" />
+          <folding>
+            <element signature="e#4350#4351#0" expanded="true" />
+            <element signature="e#4386#4387#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#800#801#0" expanded="true" />
             <element signature="e#834#835#0" expanded="true" />
             <element signature="e#881#882#0" expanded="true" />
@@ -438,53 +431,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/UI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="72" column="40" selection-start-line="72" selection-start-column="40" selection-end-line="72" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Developer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="136">
+          <caret line="20" column="51" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#426#427#0" expanded="true" />
-            <element signature="e#462#463#0" expanded="true" />
-            <element signature="e#494#495#0" expanded="true" />
-            <element signature="e#523#524#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="96" column="22" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#234#244#0" expanded="true" />
-            <element signature="e#348#359#0" expanded="true" />
-            <element signature="e#789#790#0" expanded="true" />
-            <element signature="e#823#824#0" expanded="true" />
-            <element signature="e#872#873#0" expanded="true" />
-            <element signature="e#905#906#0" expanded="true" />
-            <element signature="e#419#420#0" expanded="true" />
-            <element signature="e#460#461#0" expanded="true" />
-            <element signature="e#502#503#0" expanded="true" />
+            <element signature="e#347#348#0" expanded="true" />
+            <element signature="e#383#384#0" expanded="true" />
+            <element signature="e#415#416#0" expanded="true" />
+            <element signature="e#444#445#0" expanded="true" />
+            <element signature="e#498#499#0" expanded="true" />
             <element signature="e#541#542#0" expanded="true" />
-            <element signature="e#606#607#0" expanded="true" />
-            <element signature="e#654#655#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="84" column="43" selection-start-line="84" selection-start-column="43" selection-end-line="84" selection-end-column="43" />
+        <state relative-caret-position="6">
+          <caret line="91" column="26" selection-start-line="91" selection-start-column="26" selection-end-line="91" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="73" column="21" lean-forward="true" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1017#1018#0" expanded="true" />
+            <element signature="e#1056#1057#0" expanded="true" />
+            <element signature="e#1098#1099#0" expanded="true" />
+            <element signature="e#1135#1136#0" expanded="true" />
+            <element signature="e#1229#1230#0" expanded="true" />
+            <element signature="e#1277#1278#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
