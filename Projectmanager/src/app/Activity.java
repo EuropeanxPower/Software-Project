@@ -44,7 +44,11 @@ public class Activity {
             new Errorhandler("Project must end after the project ends");
             }
         } else {
-            endDate = Integer.parseInt(date.substring(0,3)) +"-"+ Integer.parseInt(date.substring(5,6)) +"-"+ Integer.parseInt(date.substring(8,9));
+            try{
+            	endDate = Integer.parseInt(date.substring(0,3)) +"-"+ Integer.parseInt(date.substring(5,6)) +"-"+ Integer.parseInt(date.substring(8,9));
+            }catch(Exception e) {
+            	
+            }
             return endDate;
         }
         return null;
@@ -57,7 +61,11 @@ public class Activity {
                 new Errorhandler("Project must start before the project ends");
                 }
             } else {
-                startDate = Integer.parseInt(date.substring(0,3)) +"-"+ Integer.parseInt(date.substring(5,6)) +"-"+ Integer.parseInt(date.substring(8,9));
+                try{
+                	startDate = Integer.parseInt(date.substring(0,3)) +"-"+ Integer.parseInt(date.substring(5,6)) +"-"+ Integer.parseInt(date.substring(8,9));
+                }catch(Exception e) {
+                	
+                }
                 return startDate;
             }
         }
