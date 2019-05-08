@@ -5,17 +5,18 @@ import java.util.List;
 
 public class Project{
     private Developer projectmanager;
-    private SerialNumbers sn;
+    private SerialNumbers sn = new SerialNumbers();
     private List<Activity> activities = new ArrayList<Activity>();
     private double projectTime;
     private String projectName;
     private String projectID;
     private ArrayList<Developer> developers = new ArrayList<Developer>();
     private String errorMessage;
+    private Activity currentActivity;
 
     public Project(String name, Developer userID){
         projectName = name;
-        //projectID = sn.getProjectSN();
+        projectID = sn.getProjectSN();
         developers.add(userID);
     }
 
@@ -27,8 +28,20 @@ public class Project{
         }
     }
 
+    public String getProjectSN(){
+        return projectID;
+    }
+
     public String getName() {
         return projectName;
+    }
+
+    public void setCurrentActivity(Activity activity){
+        currentActivity = activity;
+    }
+
+    public Activity getCurrentActivity(){
+        return currentActivity;
     }
 
     public ArrayList<Developer> getdeveloper(){
@@ -46,36 +59,55 @@ public class Project{
         projectTime += totalActivityTime;
     }
 
-
-    public void addActivity(String activityName, String start, String end){
+    public boolean addActivity(String activityName, String start, String end){
+        boolean activityAdded;
         if (findActivity(activityName) != -1) {
-            System.out.println("Activity: " + activityName + " already exists");
+            activityAdded = false;
         } else {
             activities.add(new Activity(activityName, start, end));
+            activityAdded = true;
         }
+        return activityAdded;
     }
 
     public int findActivity(String name) {
-        int status = -1;
         for (int a = 0; a < activities.size(); a++) {
-            if (activities.get(a).getName() == name) {
-                status = a;
-            } else {
-                status = -1;
+            if (activities.get(a).getName().equals(name)) {
+                return a;
             }
         }
-        return status;
+        return -1;
+    }
+
+    public Activity getActivity(String name){
+        boolean nameExists = false;    
+        for (Activity a : activities){
+            if(a.getName().equals(name)){
+                return a;
+            }
+        }
+        if (!nameExists){
+            errorMessage = "Given activity doesn't exist";
+            new Error("Given activity doesn't exist");
+        }
+        return null;
     }
 
     public void activityList(){
-        String[] activityList = new String[activities.size()];
-        int a = 0;
         for (Activity activity : activities){
-            activityList[a] = activity.getName();
-            a++;
+            System.out.println("Activityname: " + activity.getName() + ", startdate: " + activity.getStartDate() + ", enddate: " + activity.getEndDate());
         }
-        for (int i = 0; i <= activityList.length -1;i++){
-            System.out.println(activityList[i]);
+    }
+
+    public void developerList(){
+        String[] developerList = new String[developers.size()];
+        int d = 0;
+        for (Developer developer : developers){
+            developerList[d] = developer.getUserId();
+            d++;
+        }
+        for (int i = 0; i <= developerList.length - 1; i++){
+            System.out.println(developerList[i]);
         }
     }
     

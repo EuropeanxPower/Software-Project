@@ -1,7 +1,6 @@
 package app;
 
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
 
 public class Activity {
     private String startDate, endDate;
@@ -13,8 +12,8 @@ public class Activity {
 
     public Activity(String name, String startDate, String endDate){
         this.name = name;
-        this.startDate = setStartDate(startDate);
-        this.endDate = setEndDate(endDate);
+        setStartDate(startDate);
+        setEndDate(endDate);
         //developers.add(userID);
     }
 
@@ -37,34 +36,38 @@ public class Activity {
         estimatedActivityTime = inputEstimateTime;
     }*/
 
-    private String setEndDate(String date) {
+    private void setEndDate(String date) {
         calendar.checkDate(date);
         if (endDate != null || startDate != null){
             if (!calendar.compareDates(startDate, endDate)) {
             new Errorhandler("Project must end after the project ends");
             }
         } else {
-            endDate = Integer.parseInt(date.substring(0,3)) +"-"+ Integer.parseInt(date.substring(5,6)) +"-"+ Integer.parseInt(date.substring(8,9));
-            return endDate;
+            try{
+                endDate = Integer.parseInt(date.substring(0,3)) +"-"+ Integer.parseInt(date.substring(5,6)) +"-"+ Integer.parseInt(date.substring(8,9));
+            }catch(Exception e){
+
+            }
         }
-        return null;
     }   
 
-    private String setStartDate(String date) {
+    private void setStartDate(String date) {
         if (calendar.checkDate(date)){
             if (endDate != null || startDate != null){
                 if (!calendar.compareDates(startDate, endDate)) {
                 new Errorhandler("Project must start before the project ends");
                 }
             } else {
-                startDate = Integer.parseInt(date.substring(0,3)) +"-"+ Integer.parseInt(date.substring(5,6)) +"-"+ Integer.parseInt(date.substring(8,9));
-                return startDate;
+                try {
+                    startDate = Integer.parseInt(date.substring(0,3)) +"-"+ Integer.parseInt(date.substring(5,6)) +"-"+ Integer.parseInt(date.substring(8,9));
+                }catch(Exception e){
+
+                }
             }
         }
-        return null;
     }
 
-    private String getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 

@@ -73,6 +73,34 @@ public class Model{
         return nameExists;
     }
 
+    public boolean findDeveloper(String name){
+        boolean nameExists = false;
+        for (Developer d : userIDs){
+            if(d.getUserId().equals(name)){
+                nameExists = true;
+            }
+        }
+        if (!nameExists){
+            errorMessage = "Given developer does not exist";
+            new Error("Given developer does not exist");
+        }
+        return nameExists;
+    }
+
+    public Developer getDeveloper(String name){
+        boolean nameExists = false;
+        for (Developer d: userIDs){
+            if(d.getUserId().equals(name)){
+                return d;
+            }
+            if (!nameExists){
+                errorMessage = "Given developer does not exist";
+                new Error("Given developer does not exist");
+            }
+        }
+        return null;
+    }
+
     public Project getProject(String name){
         boolean nameExists = false;    
         for (Project p : projectNames){
@@ -96,12 +124,15 @@ public class Model{
                 idExists = true;
             }
         }
-
         if (!idExists) {
             errorMessage = "User ID doesn't exist";
             new Errorhandler("User ID doesn't exist");
         }
         return idExists;
+    }
+
+    public void logout(String userID){
+        loggedIn = false;
     }
 
     public boolean createProject(String name, Developer userID){
@@ -175,11 +206,11 @@ public class Model{
     }
 
     public String[] getReport(){
-        String[] report = new String[4];
-        report[0] = "Name of the project: " + getCurrentProject().getName();
+        String[] report = new String[2];
+        report[0] = "Name of the project: " + getCurrentProject().getName() + " and the project ID: " + getCurrentProject().getProjectSN();
         report[1] = "Projectmanager: " + getCurrentProject().getProjectmanager().getUserId();
-        report[2] = "Developers on the project: ";
-        report[3] = "Activities: ";
+        //report[2] = "Developers on the project: ";
+        //report[3] = "Activities: ";
 
 
 
