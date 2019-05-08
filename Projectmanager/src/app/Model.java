@@ -88,7 +88,7 @@ public class Model{
     }
 
     public void addToProject(Developer developer, Project name, Developer inviter){
-        if (name.getProjectmanagerID == null){
+        if (name.getProjectmanager() == null){
             if (!userIDs.contains(developer)){
                 errorMessage = "User ID doesn't exists";
                 new Errorhandler("User ID doesn't exists");
@@ -96,7 +96,7 @@ public class Model{
                 name.add
             }
         }
-        else if (name.getProjectmanagerID == inviter){
+        else if (name.getProjectmanager() == inviter){
             if (!userIDs.contains(developer)){
                 errorMessage = "User ID doesn't exists";
                 new Errorhandler("User ID doesn't exists");
