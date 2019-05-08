@@ -95,8 +95,12 @@ public class Project{
 
     public void activityList(){
         for (Activity activity : activities){
-            System.out.println("Activityname: " + activity.getName() + ", startdate: " + activity.getStartDate() + ", enddate: " + activity.getEndDate());
+            System.out.println(activity.getName() + ", startdate: " + activity.getStartDate() + ", enddate: " + activity.getEndDate());
         }
+    }
+
+    public List getActivityList(){
+        return activities;
     }
 
     public void developerList(){
@@ -113,9 +117,13 @@ public class Project{
     
     public boolean findDeveloper(String userID){
         boolean userIDExists = false;
-        for (Developer d :  developers){
-            if(d.getUserId().equals(userID)){
-                userIDExists = true;
+        if (developers.isEmpty()){
+            return false;
+        } else {
+            for (Developer d :  developers){
+                if(d.getUserId().equals(userID)){
+                    userIDExists = true;
+                }
             }
         }
         if (!userIDExists){

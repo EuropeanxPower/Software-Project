@@ -29,14 +29,19 @@ public class UI {
                 System.out.println("Please choose your next action:");
                 System.out.println("Type 1 to manage an active project.");
                 System.out.println("Type 2 to create new project.");
-                System.out.println("Type 3 to logout.");
+                System.out.println("Type 3 to add a new developer to the system.");
+                System.out.println("Type 4 to logout.");
                 break;
+
+            //Manage project    
             case 2: //Go to project
                 System.out.println("Enter active project.");
                 break;
             case 3: //Go to project unsuccesful
                 System.out.println("The given project does not exist.");
                 break;
+
+            //Create new project
             case 4: //Create project
                 System.out.println("Please enter the name of the project.");
                 break;
@@ -48,6 +53,26 @@ public class UI {
                 break;
             case 7: //Go to project unsuccesful - userID doesn't have access to the project.
                 System.out.println("You do not have access to the project: " + activeProject);
+                break;
+
+            //Create new developer
+            case 8: //New developer ID
+                System.out.println("Please enter the userID of the new developer.");
+                break;
+            case 9: //New developer have been added
+                System.out.println("The new developer " + userID + " have been added to the system");
+                break;
+            case 10: //The userID may only contain...
+                System.out.println("The userID may only contain letters");
+                break;
+            case 11: //The userID may not contain more then 4 characters
+                System.out.println("The userID may not contain more then 4 characters");
+                break;
+            case 12: //The userID must contain atleast 1 character
+                System.out.println("The userID must contain atleast 1 character");
+                break;
+            case 13: //The userID already exists
+                System.out.println("The userID " + userID + " already exists");
                 break;
         }
     }
@@ -95,7 +120,7 @@ public class UI {
                 System.out.println("The developer " + userID + " is now a part of " +activeProject+ ".");
                 break;
             case 7: //Given developer doesn't exist 
-                System.out.println("The developer" + userID + " doesn't exist");
+                System.out.println("The developer" + userID + " does not exist");
                 break;
 
             //3 - Add a new project:
@@ -123,7 +148,7 @@ public class UI {
                 System.out.println("Please enter the name of the active you wish to manage.");
                 break;
             case 15: //Go to activity unsuccesfully
-                System.out.println("The given activity, " + activeActivity + " doesn't exist.");
+                System.out.println("The given activity, " + activeActivity + " does not exist.");
                 break;
 
             //5 - Assign new project manager
@@ -135,21 +160,77 @@ public class UI {
                 break;
             case 18: //Assign project manager failed
                 System.out.println("The user ID doesn't exist or is not a part of this project.");
-                break;      
+                break;
         }
     }
 
     void activityScreen(int screen){
         switch(screen){
-            case 1: //Activity Overview
+            case 1: //Activity overview for project-manager
                 System.out.println();
-                System.out.println("You are now managing " +activeProject+ " - " +activeActivity);
-                System.out.println("Press 1 to Log Time.");
+                System.out.println("You are now managing " +activeProject+ " - " +activeActivity + ".");
+                System.out.println("Press 1 to log time.");
                 System.out.println("Press 2 to add a developer to this activity.");
                 System.out.println("Press 3 to change the start date.");
                 System.out.println("Press 4 to change the end date.");
-                System.out.println("Press 5 to return to Project Overview.");
-            break;
+                System.out.println("Press 5 to pull list of developers on given activity.");
+                System.out.println("Press 6 to return to Project Overview.");
+                break;
+            case 2: //Activity overview for normal developer
+                System.out.println();
+                System.out.println("You are now managing " +activeProject+ " - " +activeActivity + ".");
+                System.out.println("Press 1 to log time.");
+                System.out.println("Press 2 to add a developer to this activity.");
+                System.out.println("Press 3 to pull list of developers on given activity.");
+                System.out.println("Press 4 to return to Project Overview.");
+                break;
+
+            //1 - Log time to activity
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+
+            //2 - Add developer to activity
+            case 8: //Add new developer to activity
+                System.out.println("Please enter the user ID of the developer you wish to add");
+                break;
+            case 9: //Given developer is now added to the project 
+                System.out.println("The developer " + userID + " is now a part of " +activeActivity+ ".");
+                break;
+            case 10: //Given developer doesn't exist 
+                System.out.println("The developer " + userID + " does not exist or does not have access to this project.");
+                break;
+
+            //3 AND 4 - Change start or end date
+            case 11: //Change start date to new activity
+                System.out.println("Please enter the new start date of the activity, in the given format 'YYYY-MM-DD'.");
+                break; 
+            case 12: //Change end date to new activity
+                System.out.println("Please enter the end date of the activity, in the given format 'YYYY-MM-DD'.");
+                break;
+            case 13: //The date has been changed
+                System.out.println("The date has been succesfully changed.");
+                break;
+            case 14: //The start date is after the end date
+                System.out.println("The start date must be before the end date.");
+                break;
+            case 15: //The end date is before the start date
+                System.out.println("The end date must be after the start date.");
+                break;
+            case 16: //Invalid date
+                System.out.println("The given date is not valid.");
+                break;
+
+            //5 - Developer list on activity
+            case 17: //Print developer list
+                System.out.println("Developers on this activity:");
         }
     }
 

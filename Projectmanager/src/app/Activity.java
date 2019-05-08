@@ -36,7 +36,7 @@ public class Activity {
         estimatedActivityTime = inputEstimateTime;
     }*/
 
-    private void setEndDate(String date) {
+    public void setEndDate(String date) {
         calendar.checkDate(date);
         if (endDate != null || startDate != null){
             if (!calendar.compareDates(startDate, endDate)) {
@@ -51,7 +51,7 @@ public class Activity {
         }
     }   
 
-    private void setStartDate(String date) {
+    public void setStartDate(String date) {
         if (calendar.checkDate(date)){
             if (endDate != null || startDate != null){
                 if (!calendar.compareDates(startDate, endDate)) {
@@ -77,5 +77,11 @@ public class Activity {
 
     public String getName() {
         return name;
+    }
+
+    public void printDevelopers(){
+        for (Developer d : developers){
+            System.out.println(d.getUserId());
+        }
     }
 }

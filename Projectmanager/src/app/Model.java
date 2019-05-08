@@ -68,9 +68,19 @@ public class Model{
         }
         if (!nameExists){
             errorMessage = "Given projectname dosn't exist";
-            new Error("Given projectname dosn't exist");
+            new Error("Given projectname doesn't exist");
         }
         return nameExists;
+    }
+
+    public boolean checkProjectSN(String SN){
+        boolean snExists = false;
+        for (Project p : projectNames){
+            if(p.getProjectSN().equals(SN)){
+                snExists = true;
+            }
+        }
+        return snExists;
     }
 
     public boolean findDeveloper(String name){
@@ -110,7 +120,8 @@ public class Model{
         }
         if (!nameExists){
             errorMessage = "Given projectname dosn't exist";
-            new Error("Given projectname dosn't exist");
+            new Error("Given projectname doe" +
+                    "sn't exist");
         }
         return null;
     }
@@ -205,15 +216,32 @@ public class Model{
         }
     }
 
+    public void newDeveloper (Developer developer){
+        String userID = developer.getUserId().toUpperCase();
+        developer.setUserID(userID);
+        /*if (developer.getUserId().matches("^[a-zA-Z]+$")){
+            new Errorhandler("The userID may only contain letters");
+        } else if(developer.getUserId().length() > 4){
+            new Errorhandler("The userID may not contain more then 4 characters");
+        } else if(developer.getUserId().length() < 1){
+            new Errorhandler("The userID must have atleast 1 character");
+        } else if(findDeveloper(userID)){
+            new Errorhandler("The userID already exists");
+        } else {*/
+            userIDs.add(developer);
+        //}
+    }
+
+    public void addDeveloper (String userID){
+        Developer newUserID = new Developer(userID);
+        newDeveloper(newUserID);
+    }
+
     public String[] getReport(){
-        String[] report = new String[2];
+        String[] report = new String[3];
         report[0] = "Name of the project: " + getCurrentProject().getName() + " and the project ID: " + getCurrentProject().getProjectSN();
         report[1] = "Projectmanager: " + getCurrentProject().getProjectmanager().getUserId();
-        //report[2] = "Developers on the project: ";
-        //report[3] = "Activities: ";
-
-
-
+        report[2] = "Activities: ";
         return report;
     }
 }
