@@ -1,7 +1,6 @@
 package app;
 
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 public class Developer {
@@ -16,6 +15,10 @@ public class Developer {
 
     public String getUserId(){
         return userID;
+    }
+
+    public void setUserID(String ID){
+        userID = ID;
     }
 
     public List<Activity> getDevelopersActivities(){

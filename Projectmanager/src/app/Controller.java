@@ -58,15 +58,33 @@ public class Controller {
                             ui.getProjectName();
                             ui.startScreen(5);
                         }
-                    } else if ("3".equals(userInput)) { //Logout
+                    } else if ("3".equals(userInput)) {
+                        ui.startScreen(8);
+                        userInput = input.nextLine();
+                        if (!userInput.toUpperCase().matches("^[a-zA-Z]+$")) {
+                            ui.startScreen(10);
+                        } else if (userInput.length() > 4) {
+                            ui.startScreen(11);
+                        } else if (userInput.length() < 1) {
+                            ui.startScreen(12);
+                        } else if (model.findDeveloper(userInput)) {
+                            ui.startScreen(13);
+                        } else {
+                            model.addDeveloper(userInput);
+                            ui.setUserID(userInput);
+                            ui.startScreen(9);
+                        }
+
+                        //Logout option
+                    } else if ("4".equals(userInput)) {
                         model.logout(model.getCurrentUser().getUserId());
                         screen = 1;
                     }
                     break;
-                
+
                 // Project Overview Functions
-                case 3: 
-                
+                case 3:
+
                     // INIT PROJECT OVERVIEW
                     if (model.getCurrentProject().getProjectmanager() == null) {
                         ui.projectScreen(1);
@@ -86,7 +104,7 @@ public class Controller {
                             report = model.getReport();
                             for(int i = 0; i <= report.length-1; i++){
                                 System.out.println(report[i]);
-                            } 
+                            }
                             model.getCurrentProject().activityList();
                             //model.getCurrentProject().developerList();
                         } else if ("2".equals(userInput)){ // Add developer to project
@@ -119,19 +137,70 @@ public class Controller {
                         if ("1".equals(userInput)){ // Manage active project
                             manageActivity(input);
                         } else if ("2".equals(userInput)){
-
+                            for (int i = 0; i < model.getCurrentProject().getActivityList().size(); i++){
+                                System.out.println(model.getCurrentProject().getActivityList().indexOf(1));
+                            }
                         } else if ("3".equals(userInput)){
                             screen = 2;
                         }
                     }
                     break;
                 case 4: // Activity Overview Functions
-                    ui.activityScreen(1);
-                    userInput = input.nextLine();
-                    if ("5".equals(userInput)){
-                        screen = 3;
+                // PROJECT MANAGER FUNCTIONS ACTIVITY
+                    if (model.getCurrentProject().getProjectmanager().getUserId() == model.getCurrentUser().getUserId()){
+                        ui.activityScreen(1);
+                        userInput = input.nextLine();
+                        if ("1".equals(userInput)){
+                            userInput = input.nextLine();
+                        }else if ("2".equals(userInput)){
+                            ui.activityScreen(8);
+                            userInput = input.nextLine();
+                            if (model.getCurrentProject().findDeveloper(userInput)) {
+                                model.getCurrentProject().getCurrentActivity().addDeveloper(model.getDeveloper(userInput));
+                                ui.setUserID(userInput);
+                                ui.activityScreen(9);
+                            } else {
+                                ui.setUserID(userInput);
+                                ui.activityScreen(10);
+                            }
+                        }else if ("3".equals(userInput)){
+                            ui.activityScreen(11);
+                            userInput = input.nextLine();
+                            model.getCurrentProject().getCurrentActivity().setStartDate(userInput);
+                            
+                        }else if ("4".equals(userInput)){
+                            ui.activityScreen(11);
+                            userInput = input.nextLine();
+                                model.getCurrentProject().getCurrentActivity().setEndDate(userInput);
+                        }else if ("5".equals(userInput)){
+                            getDevelopersActivity();
+                        }else if ("6".equals(userInput)){
+                            screen = 3;
+                        }
+                // DEVELOPER FUNCTIONS ACTIVITY
+                    } else {
+                        ui.activityScreen(2);
+                        userInput = input.nextLine();
+                        if ("1".equals(userInput)){
+                            userInput = input.nextLine();
+                        }else if ("2".equals(userInput)){
+                            //ui.activityScreen();
+                            userInput = input.nextLine();
+                            if (model.getCurrentProject().findDeveloper(userInput)) {
+                                model.getCurrentProject().getCurrentActivity().addDeveloper(model.getDeveloper(userInput));
+                                ui.setUserID(userInput);
+                                //ui.activityScreen();
+                            } else {
+                                ui.setUserID(userInput);
+                                //ui.activityScreen();
+                            }
+                        }else if ("3".equals(userInput)){
+                            getDevelopersActivity();
+                        }else if ("4".equals(userInput)){
+                            screen = 3;
+                        }
                     }
-                break;
+                    break;
             }
         }
     }
@@ -170,5 +239,10 @@ public class Controller {
         } else {
             ui.projectScreen(15);
         }
+    }
+
+    private void getDevelopersActivity(){
+        ui.activityScreen(17);
+        model.getCurrentProject().getCurrentActivity().printDevelopers();
     }
 }
