@@ -266,8 +266,8 @@ public class Model{
                 return a;
             }
         return -1;
-    }
 
+    }
     public void addDeveloperActivity(Developer userID){
         if ((getCurrentProject().getProjectmanager() != currentUser) && (!getCurrentProject().getCurrentActivity().getdeveloper().contains(currentUser))){
             new Errorhandler("You are not the project manager nor assigned to this task.");

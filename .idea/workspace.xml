@@ -2,35 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aba84a76-e5b7-49ab-94e7-fd231ead7aea" name="Default Changelist" comment="Frokostpause">
-      <change afterPath="$PROJECT_DIR$/Projectmanager/test/acceptance_tests/Add_to_activity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/acceptance_tests/AddToProjectSteps.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/acceptance_tests/AddingActivitySteps.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/acceptance_tests/AssignProjectmanagerSteps.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/acceptance_tests/CreateProjectSteps.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/acceptance_tests/DelegationSteps.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/acceptance_tests/LoginSteps.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/Activity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/Developer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/Model.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/Project.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/SerialNumbers.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/out/production/Software-Project/app/UI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/out/test/Software-Project/Activity_Delegation.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/out/test/Software-Project/Activity_Delegation.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/out/test/Software-Project/Invite_to_activity.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/out/test/Software-Project/Invite_to_activity.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/out/test/Software-Project/Log_in.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/out/test/Software-Project/Log_in.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/src/app/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/src/app/Activity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projectmanager/src/app/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/src/app/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projectmanager/src/app/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/src/app/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/src/app/SerialNumbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/src/app/SerialNumbers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projectmanager/src/app/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/src/app/Project.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projectmanager/src/app/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/src/app/UI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/test/acceptance_tests/AssignProjectmanagerSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/test/acceptance_tests/AssignProjectmanagerSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/test/acceptance_tests/DelegationSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/test/acceptance_tests/DelegationSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/test/acceptance_tests/LoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/test/acceptance_tests/LoginSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/use_cases/Activity_Delegation.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/use_cases/Activity_Delegation.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/use_cases/Invite_to_activity.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/use_cases/Invite_to_activity.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projectmanager/use_cases/Log_in.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Projectmanager/use_cases/Log_in.feature" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,10 +15,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Software_Project$All_in_Software_Project.ic" NAME="All in Software-Project Coverage Results" MODIFIED="1557476785162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Software_Project$Feature__Log_in.ic" NAME="Feature: Log_in Coverage Results" MODIFIED="1557476814183" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cucumber.api.cli.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/Software_Project$All_in_Software_Project.ic" NAME="All in Software-Project Coverage Results" MODIFIED="1557476785162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CoverageViewManager">
     <option name="myElementSize" value="209" />
@@ -50,19 +26,35 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Projectmanager/use_cases/Activity_Delegation.feature">
+        <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Model.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="18" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Projectmanager/use_cases/Invite_to_activity.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+            <state relative-caret-position="590">
+              <caret line="269" column="5" selection-start-line="269" selection-start-column="5" selection-end-line="269" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#593#604#0" expanded="true" />
+                <element signature="e#695#704#0" expanded="true" />
+                <element signature="e#861#862#0" expanded="true" />
+                <element signature="e#895#896#0" expanded="true" />
+                <element signature="e#942#943#0" expanded="true" />
+                <element signature="e#974#975#0" expanded="true" />
+                <element signature="e#1015#1016#0" expanded="true" />
+                <element signature="e#1052#1053#0" expanded="true" />
+                <element signature="e#1087#1088#0" expanded="true" />
+                <element signature="e#1118#1119#0" expanded="true" />
+                <element signature="e#1156#1157#0" expanded="true" />
+                <element signature="e#1191#1192#0" expanded="true" />
+                <element signature="e#1239#1240#0" expanded="true" />
+                <element signature="e#1275#1276#0" expanded="true" />
+                <element signature="e#1325#1326#0" expanded="true" />
+                <element signature="e#1360#1361#0" expanded="true" />
+                <element signature="e#1424#1425#0" expanded="true" />
+                <element signature="e#1464#1465#0" expanded="true" />
+                <element signature="e#1525#1526#0" expanded="true" />
+                <element signature="e#1560#1561#0" expanded="true" />
+                <element signature="e#1607#1608#0" expanded="true" />
+                <element signature="e#1637#1638#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -70,11 +62,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Project.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1181">
-              <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+            <state relative-caret-position="403">
+              <caret line="80" column="41" selection-start-line="80" selection-start-column="41" selection-end-line="80" selection-end-column="41" />
               <folding>
-                <element signature="e#231#241#0" expanded="true" />
-                <element signature="e#398#409#0" expanded="true" />
                 <element signature="e#1058#1059#0" expanded="true" />
                 <element signature="e#1100#1101#0" expanded="true" />
                 <element signature="e#1143#1144#0" expanded="true" />
@@ -89,8 +79,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/UI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="243" column="5" lean-forward="true" selection-start-line="243" selection-start-column="5" selection-end-line="243" selection-end-column="5" />
+            <state relative-caret-position="357">
+              <caret line="177" column="59" lean-forward="true" selection-start-line="177" selection-start-column="59" selection-end-line="177" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -98,8 +88,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1204">
-              <caret line="174" column="22" selection-start-line="174" selection-start-column="22" selection-end-line="174" selection-end-column="22" />
+            <state relative-caret-position="174">
+              <caret line="204" column="94" selection-start-line="204" selection-start-column="94" selection-end-line="204" selection-end-column="94" />
             </state>
           </provider>
         </entry>
@@ -107,12 +97,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Projectmanager/test/acceptance_tests/Add_to_activity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="39" column="13" lean-forward="true" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+            <state relative-caret-position="629">
+              <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#300#301#0" expanded="true" />
-                <element signature="e#332#333#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,8 +109,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Projectmanager/test/acceptance_tests/LoginSteps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+            <state relative-caret-position="1003">
+              <caret line="61" selection-start-line="61" selection-end-line="61" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#405#416#0" expanded="true" />
@@ -139,7 +127,7 @@
         <entry file="file://$PROJECT_DIR$/Projectmanager/use_cases/Log_in.feature">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="17" column="45" lean-forward="true" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+              <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -148,7 +136,7 @@
         <entry file="file://$PROJECT_DIR$/Projectmanager/test/acceptance_tests/DelegationSteps.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
-              <caret line="25" column="52" lean-forward="true" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
+              <caret line="25" column="52" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -159,8 +147,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Projectmanager/test/acceptance_tests/AddToProjectSteps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="42" column="28" lean-forward="true" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
+            <state relative-caret-position="527">
+              <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -195,17 +183,17 @@
         <option value="$PROJECT_DIR$/Projectmanager/use_cases/Adding_Activity.feature" />
         <option value="$PROJECT_DIR$/Projectmanager/test/acceptance_tests/AddingActivitySteps.java" />
         <option value="$PROJECT_DIR$/Projectmanager/use_cases/Activity_Delegation.feature" />
-        <option value="$PROJECT_DIR$/Projectmanager/src/app/Model.java" />
         <option value="$PROJECT_DIR$/Projectmanager/test/acceptance_tests/AssignProjectmanagerSteps.java" />
         <option value="$PROJECT_DIR$/Projectmanager/use_cases/Invite_to_activity.feature" />
         <option value="$PROJECT_DIR$/Projectmanager/src/app/Activity.java" />
         <option value="$PROJECT_DIR$/Projectmanager/test/acceptance_tests/LoginSteps.java" />
         <option value="$PROJECT_DIR$/Projectmanager/use_cases/Log_in.feature" />
-        <option value="$PROJECT_DIR$/Projectmanager/src/app/Project.java" />
-        <option value="$PROJECT_DIR$/Projectmanager/src/app/UI.java" />
-        <option value="$PROJECT_DIR$/Projectmanager/src/app/Controller.java" />
         <option value="$PROJECT_DIR$/Projectmanager/test/acceptance_tests/DelegationSteps.java" />
         <option value="$PROJECT_DIR$/Projectmanager/test/acceptance_tests/Add_to_activity.java" />
+        <option value="$PROJECT_DIR$/Projectmanager/src/app/Project.java" />
+        <option value="$PROJECT_DIR$/Projectmanager/src/app/Model.java" />
+        <option value="$PROJECT_DIR$/Projectmanager/src/app/UI.java" />
+        <option value="$PROJECT_DIR$/Projectmanager/src/app/Controller.java" />
       </list>
     </option>
   </component>
@@ -221,6 +209,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -269,14 +258,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557492828029" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557494922239" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Projectmanager/lib" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -295,18 +283,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Cucumber java.Feature: Add_to_project">
-    <configuration name="Feature: Activity_Delegation" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="3" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/Projectmanager/use_cases/Activity_Delegation.feature" />
-      <option name="GLUE" value="acceptance_tests" />
-      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="app.Main" />
       <module name="Software-Project" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm3SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: Activity_Delegation" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cucumber.api.cli.*" />
+          <option name="PATTERN" value="app.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -386,60 +369,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <module name="Software-Project" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <module name="Software-Project" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Cucumber java.Feature: Add_to_project" />
         <item itemvalue="Cucumber java.Feature: Log_in" />
         <item itemvalue="Cucumber java.Feature: Invite_to_activity" />
         <item itemvalue="Cucumber java.Feature: Adding_Activity" />
-        <item itemvalue="Cucumber java.Feature: Activity_Delegation" />
       </list>
     </recent_temporary>
   </component>
@@ -457,13 +393,11 @@
       <workItem from="1557036954127" duration="9227000" />
       <workItem from="1557123885294" duration="21102000" />
       <workItem from="1557297848522" duration="24266000" />
+      <workItem from="1557492989028" duration="1932000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Feature__Activity_Delegation - 2019.05.10 at 14h 11m 54s.xml">
-      <configuration name="Feature: Activity_Delegation" configurationId="CucumberJavaRunConfigurationType" />
-    </history-entry>
     <history-entry file="Feature__Activity_Delegation - 2019.05.10 at 14h 13m 34s.xml">
       <configuration name="Feature: Activity_Delegation" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
@@ -491,15 +425,17 @@
     <history-entry file="Feature__Log_in - 2019.05.10 at 14h 43m 02s.xml">
       <configuration name="Feature: Log_in" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
+    <history-entry file="Feature__Add_to_project - 2019.05.10 at 15h 08m 50s.xml">
+      <configuration name="Feature: Add_to_project" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72142000" />
+    <option name="totallyTimeSpent" value="74074000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49769586" visible="true" weight="0.26644295" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49769586" visible="true" weight="0.27046978" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -508,7 +444,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.50230414" side_tool="true" weight="0.1852349" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -518,8 +454,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Messages" order="12" visible="true" weight="0.17705382" />
-      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.3295302" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.17705382" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -529,6 +464,7 @@
       <window_info anchor="right" id="Maven" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.3295302" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49769586" visible="true" weight="0.26644295" />
@@ -602,9 +538,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Projectmanager/use_cases/provided/Log_in.feature">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Projectmanager/use_cases/provided/Log_in.feature" />
     <entry file="file://$PROJECT_DIR$/Projectmanager/test/acceptance_tests/AcceptanceTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -663,40 +597,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1122">
-          <caret line="106" column="50" selection-start-line="106" selection-start-column="50" selection-end-line="106" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#593#604#0" expanded="true" />
-            <element signature="e#695#704#0" expanded="true" />
-            <element signature="e#861#862#0" expanded="true" />
-            <element signature="e#895#896#0" expanded="true" />
-            <element signature="e#942#943#0" expanded="true" />
-            <element signature="e#974#975#0" expanded="true" />
-            <element signature="e#1015#1016#0" expanded="true" />
-            <element signature="e#1052#1053#0" expanded="true" />
-            <element signature="e#1087#1088#0" expanded="true" />
-            <element signature="e#1118#1119#0" expanded="true" />
-            <element signature="e#1156#1157#0" expanded="true" />
-            <element signature="e#1191#1192#0" expanded="true" />
-            <element signature="e#1239#1240#0" expanded="true" />
-            <element signature="e#1275#1276#0" expanded="true" />
-            <element signature="e#1325#1326#0" expanded="true" />
-            <element signature="e#1360#1361#0" expanded="true" />
-            <element signature="e#1424#1425#0" expanded="true" />
-            <element signature="e#1464#1465#0" expanded="true" />
-            <element signature="e#1525#1526#0" expanded="true" />
-            <element signature="e#1560#1561#0" expanded="true" />
-            <element signature="e#1607#1608#0" expanded="true" />
-            <element signature="e#1637#1638#0" expanded="true" />
-            <element signature="e#4045#4046#0" expanded="true" />
-            <element signature="e#4077#4078#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Projectmanager/use_cases/Edit_Activity.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-119" />
@@ -706,13 +606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projectmanager/use_cases/Invite_to_activity.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -747,17 +640,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Projectmanager/use_cases/Log_in.feature">
+    <entry file="file://$PROJECT_DIR$/Projectmanager/use_cases/Invite_to_activity.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="45" lean-forward="true" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+        <state relative-caret-position="408">
+          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projectmanager/test/acceptance_tests/Add_to_activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Projectmanager/test/acceptance_tests/LoginSteps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+        <state relative-caret-position="1003">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#405#416#0" expanded="true" />
@@ -769,13 +672,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Projectmanager/use_cases/Log_in.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projectmanager/test/acceptance_tests/DelegationSteps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="25" column="52" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projectmanager/test/acceptance_tests/AddToProjectSteps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Project.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1181">
-          <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+        <state relative-caret-position="403">
+          <caret line="80" column="41" selection-start-line="80" selection-start-column="41" selection-end-line="80" selection-end-column="41" />
           <folding>
-            <element signature="e#231#241#0" expanded="true" />
-            <element signature="e#398#409#0" expanded="true" />
             <element signature="e#1058#1059#0" expanded="true" />
             <element signature="e#1100#1101#0" expanded="true" />
             <element signature="e#1143#1144#0" expanded="true" />
@@ -786,46 +711,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="590">
+          <caret line="269" column="5" selection-start-line="269" selection-start-column="5" selection-end-line="269" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#593#604#0" expanded="true" />
+            <element signature="e#695#704#0" expanded="true" />
+            <element signature="e#861#862#0" expanded="true" />
+            <element signature="e#895#896#0" expanded="true" />
+            <element signature="e#942#943#0" expanded="true" />
+            <element signature="e#974#975#0" expanded="true" />
+            <element signature="e#1015#1016#0" expanded="true" />
+            <element signature="e#1052#1053#0" expanded="true" />
+            <element signature="e#1087#1088#0" expanded="true" />
+            <element signature="e#1118#1119#0" expanded="true" />
+            <element signature="e#1156#1157#0" expanded="true" />
+            <element signature="e#1191#1192#0" expanded="true" />
+            <element signature="e#1239#1240#0" expanded="true" />
+            <element signature="e#1275#1276#0" expanded="true" />
+            <element signature="e#1325#1326#0" expanded="true" />
+            <element signature="e#1360#1361#0" expanded="true" />
+            <element signature="e#1424#1425#0" expanded="true" />
+            <element signature="e#1464#1465#0" expanded="true" />
+            <element signature="e#1525#1526#0" expanded="true" />
+            <element signature="e#1560#1561#0" expanded="true" />
+            <element signature="e#1607#1608#0" expanded="true" />
+            <element signature="e#1637#1638#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/UI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="243" column="5" lean-forward="true" selection-start-line="243" selection-start-column="5" selection-end-line="243" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projectmanager/test/acceptance_tests/DelegationSteps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="25" column="52" lean-forward="true" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projectmanager/test/acceptance_tests/AddToProjectSteps.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="42" column="28" lean-forward="true" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projectmanager/test/acceptance_tests/Add_to_activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="13" lean-forward="true" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#300#301#0" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="357">
+          <caret line="177" column="59" lean-forward="true" selection-start-line="177" selection-start-column="59" selection-end-line="177" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Projectmanager/src/app/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1204">
-          <caret line="174" column="22" selection-start-line="174" selection-start-column="22" selection-end-line="174" selection-end-column="22" />
+        <state relative-caret-position="174">
+          <caret line="204" column="94" selection-start-line="204" selection-start-column="94" selection-end-line="204" selection-end-column="94" />
         </state>
       </provider>
     </entry>

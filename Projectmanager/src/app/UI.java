@@ -186,7 +186,7 @@ public class UI {
                 System.out.println("Press 1 to change activity name.");
                 System.out.println("Press 2 to change the start date.");
                 System.out.println("Press 3 to change the end date.");
-                System.out.println("Press 4 to return to Project Overview.");
+                System.out.println("Press 4 to return to Activity Overview.");
                 break;
             
             //1 - Log time to activity

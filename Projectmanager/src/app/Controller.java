@@ -20,21 +20,21 @@ public class Controller {
         while(true){
             switch(screen) {
                 case 1: // Login
-                    while(!model.getLoggedIn()){
+                    while (!model.getLoggedIn()) {
                         ui.loginScreen(1);
                         userInput = input.nextLine();
                         if (model.Login(userInput)) {
                             ui.loginScreen(2);
-                        }else ui.loginScreen(3);
+                        } else ui.loginScreen(3);
                     }
                     screen = 2;
                     break;
 
                 // General Overview Functions    
-                case 2: 
-                    ui.startScreen(1); 
+                case 2:
+                    ui.startScreen(1);
                     userInput = input.nextLine();
-                    if("1".equals(userInput)) { //Go to/Manage project
+                    if ("1".equals(userInput)) { //Go to/Manage project
                         ui.startScreen(2);
                         userInput = input.nextLine();
                         if (model.findProject(userInput)) {
@@ -87,71 +87,71 @@ public class Controller {
                     if (model.getCurrentProject().getProjectmanager() == null) {
                         ui.projectScreen(1);
                         userInput = input.nextLine();
-                        if ("1".equals(userInput)){ //Add developer to project
+                        if ("1".equals(userInput)) { //Add developer to project
                             addDeveloperProject(input);
-                        } else if ("2".equals(userInput)){ //Assign the project manager
+                        } else if ("2".equals(userInput)) { //Assign the project manager
                             assignProjectManager(input);
-                        } else if ("3".equals(userInput)){ // Return to the General Overview
+                        } else if ("3".equals(userInput)) { // Return to the General Overview
                             screen = 2;
                         }
-                    // PROJECT MANAGER PROJECT OVERVIEW
-                    } else if (model.getCurrentProject().getProjectmanager().getUserId() == model.getCurrentUser().getUserId()){
+                        // PROJECT MANAGER PROJECT OVERVIEW
+                    } else if (model.getCurrentProject().getProjectmanager().getUserId() == model.getCurrentUser().getUserId()) {
                         ui.projectScreen(2);
                         userInput = input.nextLine();
-                        if ("1".equals(userInput)){ // Pull project report
+                        if ("1".equals(userInput)) { // Pull project report
                             report = model.getReport();
-                            for(int i = 0; i <= report.length-1; i++){
+                            for (int i = 0; i <= report.length - 1; i++) {
                                 System.out.println(report[i]);
                             }
                             model.getCurrentProject().activityList();
                             //model.getCurrentProject().developerList();
-                        } else if ("2".equals(userInput)){ // Add developer to project
+                        } else if ("2".equals(userInput)) { // Add developer to project
                             addDeveloperProject(input);
-                        } else if ("3".equals(userInput)){ // Add a new activity to project
+                        } else if ("3".equals(userInput)) { // Add a new activity to project
                             ui.projectScreen(8); // Getting activity name
                             userInput = input.nextLine();
                             ui.projectScreen(9); // Getting startdate
                             userStartDate = input.nextLine();
                             ui.projectScreen(10); // Getting enddate
                             userEndDate = input.nextLine();
-                            if(!model.addActivity(userInput, userStartDate, userEndDate, model.getCurrentProject())){
+                            if (!model.addActivity(userInput, userStartDate, userEndDate, model.getCurrentProject())) {
                                 ui.projectScreen(12); //Activity already exists
                             } else {
                                 ui.setActivityName(userInput);
                                 ui.projectScreen(11);
                             }
-                        } else if ("4".equals(userInput)){ // Manage active project
+                        } else if ("4".equals(userInput)) { // Manage active project
                             manageActivity(input);
-                        } else if ("5".equals(userInput)){ // Assign a new project manager
+                        } else if ("5".equals(userInput)) { // Assign a new project manager
                             assignProjectManager(input);
-                        } else if ("6".equals(userInput)){ // Return to general overview
+                        } else if ("6".equals(userInput)) { // Return to general overview
                             screen = 2;
                         }
 
-                    // DEVELOPER PROJECT OVERVIEW
+                        // DEVELOPER PROJECT OVERVIEW
                     } else {
                         ui.projectScreen(3);
                         userInput = input.nextLine();
-                        if ("1".equals(userInput)){ // Manage active project
+                        if ("1".equals(userInput)) { // Manage active project
                             manageActivity(input);
-                        } else if ("2".equals(userInput)){
-                            for (int i = 0; i < model.getCurrentProject().getActivityList().size(); i++){
+                        } else if ("2".equals(userInput)) {
+                            for (int i = 0; i < model.getCurrentProject().getActivityList().size(); i++) {
                                 System.out.println(model.getCurrentProject().getActivityList().indexOf(1));
                             }
-                        } else if ("3".equals(userInput)){
+                        } else if ("3".equals(userInput)) {
                             screen = 2;
                         }
                     }
                     break;
                 case 4: // Activity Overview Functions
 
-                // PROJECT MANAGER FUNCTIONS ACTIVITY
-                    if (model.getCurrentProject().getProjectmanager().getUserId() == model.getCurrentUser().getUserId()){
+                    // PROJECT MANAGER FUNCTIONS ACTIVITY
+                    if (model.getCurrentProject().getProjectmanager().getUserId() == model.getCurrentUser().getUserId()) {
                         ui.activityScreen(1);
                         userInput = input.nextLine();
-                        if ("1".equals(userInput)){
+                        if ("1".equals(userInput)) {
                             userInput = input.nextLine();
-                        }else if ("2".equals(userInput)){
+                        } else if ("2".equals(userInput)) {
                             ui.activityScreen(8);
                             userInput = input.nextLine();
                             if (model.getCurrentProject().findDeveloper(userInput)) {
@@ -162,22 +162,21 @@ public class Controller {
                                 ui.setUserID(userInput);
                                 ui.activityScreen(10);
                             }
-                        } else if ("3".equals(userInput)){
-                            screen=5;
-                        }
-                        }else if ("4".equals(userInput)){
+                        } else if ("3".equals(userInput)) {
+                            screen = 5;
+                        } else if ("4".equals(userInput)) {
                             getDevelopersActivity();
-                        }else if ("5".equals(userInput)){
+                        } else if ("5".equals(userInput)) {
                             screen = 3;
                         }
 
-                    // DEVELOPER FUNCTIONS ON ACTIVITY
+                        // DEVELOPER FUNCTIONS ON ACTIVITY
                     } else {
                         ui.activityScreen(2);
                         userInput = input.nextLine();
-                        if ("1".equals(userInput)){
+                        if ("1".equals(userInput)) {
                             userInput = input.nextLine();
-                        }else if ("2".equals(userInput)){
+                        } else if ("2".equals(userInput)) {
                             ui.activityScreen(8);
                             userInput = input.nextLine();
                             if (model.getCurrentProject().findDeveloper(userInput)) {
@@ -188,9 +187,9 @@ public class Controller {
                                 ui.setUserID(userInput);
                                 ui.activityScreen(10);
                             }
-                        }else if ("3".equals(userInput)){
+                        } else if ("3".equals(userInput)) {
                             getDevelopersActivity();
-                        }else if ("4".equals(userInput)){
+                        } else if ("4".equals(userInput)) {
                             screen = 3;
                         }
                     }
@@ -199,32 +198,32 @@ public class Controller {
 
                     ui.activityScreen(3);
                     userInput = input.nextLine();
-                    if ("1".equals(userInput)){
+                    if ("1".equals(userInput)) {
                         ui.activityScreen(17);
                         userInput = input.nextLine();
-                        ui.setActivityName(userInput);
-                        if (!model.findActivity(name)){
+                        if (model.getCurrentProject().findActivity(userInput)) {
                             model.getCurrentProject().getCurrentActivity().setName(userInput);
+                            ui.setActivityName(userInput);
                             ui.activityScreen(18);
                         } else {
                             ui.projectScreen(12);
                         }
-                    }   
-                    } if else ("2".equals(userInput)){
+                    } else if ("2".equals(userInput)) {
                         ui.activityScreen(11);
                         userInput = input.nextLine();
                         model.getCurrentProject().getCurrentActivity().setStartDate(userInput);
-                    } if else ("3".equals(userInput)){
+                    } else if ("3".equals(userInput)) {
                         ui.activityScreen(11);
                         userInput = input.nextLine();
                         model.getCurrentProject().getCurrentActivity().setEndDate(userInput);
-                    } if else ("4".equals(userInput)){
+                    } else if ("4".equals(userInput)) {
                         screen = 4;
                     }
                     break;
             }
         }
     }
+
 
     private void addDeveloperProject(Scanner input) {
         ui.projectScreen(5);

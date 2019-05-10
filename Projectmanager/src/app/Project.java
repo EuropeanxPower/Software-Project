@@ -74,6 +74,22 @@ public class Project{
         return null;
     }
 
+
+    public boolean findActivity(String name){
+        boolean nameExists = false;
+        for (Activity a : activities){
+            if(a.getName().equals(name)){
+                nameExists = true;
+            }
+        }
+        if (!nameExists){
+            errorMessage = "Given activity does not exist";
+            new Error("Given activity does not exist");
+        }
+        return nameExists;
+    }
+
+
     public void activityList(){
         for (Activity activity : activities){
             System.out.println(activity.getName() + ", startdate: " + activity.getStartDate() + ", enddate: " + activity.getEndDate());
