@@ -19,13 +19,13 @@ Background:
     | Budget  |
 
 Scenario: Projectmanager delegate an activity to a member of the project
-Given User is logged in
+Given Developer is logged in
 And Developer is projectmanager of "Sort-Pick"
 When delegate "PTRO" the activity "Design"
 Then "PTRO" are now on the activity with name "Design"
 
 Scenario: Projectmanager delegate an activity to a developer, who isn't on the project
-Given User is logged in
+Given Developer is logged in
 And Developer is projectmanager of "Sort-Pick"
 When delegate "PPP" the activity "Design"
 Then Errormessage "The developer isn't added to the project"

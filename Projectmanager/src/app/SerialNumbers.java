@@ -6,16 +6,13 @@ import java.util.GregorianCalendar;
 class SerialNumbers{
 
     GregorianCalendar gcal = new GregorianCalendar();
-    private Model model;
-    private String SN;
-    private int counter = 1;
-
+    private static int counter = 1;
 
     private String createProjectSN() {
         int year, month;
-        String counter1 = "", month1;
+        String counter1 = "", month1, SN;
         year = gcal.get(Calendar.YEAR) % 100;
-        month = gcal.get(Calendar.MONTH) - 1;
+        month = gcal.get(Calendar.MONTH) ;
 
         if (month < 10) {
             month1 = "0" + month;
@@ -30,20 +27,16 @@ class SerialNumbers{
             counter1 = "0" + counter;
         } else if (counter < 10000) {
             counter1 = "" + counter;
+        } else{
+            counter = 1;
         }
 
         SN = year + "" + month1 + "-" + counter1;
-
+        counter++;
         return SN;
     }
 
-
-    private void updateCounter(){
-        counter++;
-    }
-
     public String getProjectSN(){
-        updateCounter();
         return createProjectSN();
     }
 

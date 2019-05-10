@@ -104,8 +104,8 @@ public class Model{
                 return d;
             }
             if (!nameExists){
-                errorMessage = "Given developer does not exist";
-                new Error("Given developer does not exist");
+                errorMessage = "Given developer doesn't exist";
+                new Errorhandler("Given developer doesn't exist");
             }
         }
         return null;
@@ -268,19 +268,22 @@ public class Model{
         return -1;
     }
 
-    public void addDeveloperActiviy(Developer userID){
-        if (getCurrentProject().getProjectmanager() != currentUser || !getCurrentProject().getCurrentActivity().getdeveloper().contains(currentUser)){
-            errorMessage = "You are not the project manager nor assigned to this task.";
+    public void addDeveloperActivity(Developer userID){
+        if ((getCurrentProject().getProjectmanager() != currentUser) && (!getCurrentProject().getCurrentActivity().getdeveloper().contains(currentUser))){
             new Errorhandler("You are not the project manager nor assigned to this task.");
-        } else if (!getCurrentProject().getdeveloper().contains(userID)){
+            errorMessage = "You are not the project manager nor assigned to this task.";
+        }
+        else if (!getCurrentProject().getdeveloper().contains(userID)){
             new Errorhandler("Developer isn't add to the project");
             errorMessage = "Developer isn't add to the project";
         }    
-        if (getCurrentProject().getCurrentActivity().getdeveloper().contains(userID)){
+        else if (getCurrentProject().getCurrentActivity().getdeveloper().contains(userID)){
             new Errorhandler("Developer is already contained in the activity.");
             errorMessage = "Developer is already contained in the activity.";
-        } else{
+        }
+        else{
         getCurrentProject().getCurrentActivity().getdeveloper().add(userID);
         }
     }
+
 }

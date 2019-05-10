@@ -144,6 +144,7 @@ public class Controller {
                     }
                     break;
                 case 4: // Activity Overview Functions
+
                 // PROJECT MANAGER FUNCTIONS ACTIVITY
                     if (model.getCurrentProject().getProjectmanager().getUserId() == model.getCurrentUser().getUserId()){
                         ui.activityScreen(1);
@@ -154,7 +155,33 @@ public class Controller {
                             ui.activityScreen(8);
                             userInput = input.nextLine();
                             if (model.getCurrentProject().findDeveloper(userInput)) {
-                                model.addDeveloperActiviy(model.getDeveloper(userInput));
+                                model.addDeveloperActivity(model.getDeveloper(userInput));
+                                ui.setUserID(userInput);
+                                ui.activityScreen(9);
+                            } else {
+                                ui.setUserID(userInput);
+                                ui.activityScreen(10);
+                            }
+                        } else if ("3".equals(userInput)){
+                            screen=5;
+                        }
+                        }else if ("4".equals(userInput)){
+                            getDevelopersActivity();
+                        }else if ("5".equals(userInput)){
+                            screen = 3;
+                        }
+
+                    // DEVELOPER FUNCTIONS ON ACTIVITY
+                    } else {
+                        ui.activityScreen(2);
+                        userInput = input.nextLine();
+                        if ("1".equals(userInput)){
+                            userInput = input.nextLine();
+                        }else if ("2".equals(userInput)){
+                            ui.activityScreen(8);
+                            userInput = input.nextLine();
+                            if (model.getCurrentProject().findDeveloper(userInput)) {
+                                model.addDeveloperActivity(model.getDeveloper(userInput));
                                 ui.setUserID(userInput);
                                 ui.activityScreen(9);
                             } else {
@@ -162,41 +189,37 @@ public class Controller {
                                 ui.activityScreen(10);
                             }
                         }else if ("3".equals(userInput)){
-                            ui.activityScreen(11);
-                            userInput = input.nextLine();
-                            model.getCurrentProject().getCurrentActivity().setStartDate(userInput);
+                            getDevelopersActivity();
+                        }else if ("4".equals(userInput)){
+                            screen = 3;
+                        }
+                    }
+                    break;
+                case 5:
 
-                        }else if ("4".equals(userInput)){
-                            ui.activityScreen(11);
-                            userInput = input.nextLine();
-                                model.getCurrentProject().getCurrentActivity().setEndDate(userInput);
-                        }else if ("5".equals(userInput)){
-                            getDevelopersActivity();
-                        }else if ("6".equals(userInput)){
-                            screen = 3;
-                        }
-                // DEVELOPER FUNCTIONS ACTIVITY
-                    } else {
-                        ui.activityScreen(2);
+                    ui.activityScreen(3);
+                    userInput = input.nextLine();
+                    if ("1".equals(userInput)){
+                        ui.activityScreen(17);
                         userInput = input.nextLine();
-                        if ("1".equals(userInput)){
-                            userInput = input.nextLine();
-                        }else if ("2".equals(userInput)){
-                            //ui.activityScreen();
-                            userInput = input.nextLine();
-                            if (model.getCurrentProject().findDeveloper(userInput)) {
-                                model.addDeveloperActiviy(model.getDeveloper(userInput));
-                                ui.setUserID(userInput);
-                                //ui.activityScreen();
-                            } else {
-                                ui.setUserID(userInput);
-                                //ui.activityScreen();
-                            }
-                        }else if ("3".equals(userInput)){
-                            getDevelopersActivity();
-                        }else if ("4".equals(userInput)){
-                            screen = 3;
+                        ui.setActivityName(userInput);
+                        if (!model.findActivity(name)){
+                            model.getCurrentProject().getCurrentActivity().setName(userInput);
+                            ui.activityScreen(18);
+                        } else {
+                            ui.projectScreen(12);
                         }
+                    }   
+                    } if else ("2".equals(userInput)){
+                        ui.activityScreen(11);
+                        userInput = input.nextLine();
+                        model.getCurrentProject().getCurrentActivity().setStartDate(userInput);
+                    } if else ("3".equals(userInput)){
+                        ui.activityScreen(11);
+                        userInput = input.nextLine();
+                        model.getCurrentProject().getCurrentActivity().setEndDate(userInput);
+                    } if else ("4".equals(userInput)){
+                        screen = 4;
                     }
                     break;
             }

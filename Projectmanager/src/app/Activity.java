@@ -21,6 +21,10 @@ public class Activity {
         return developers;
     }
 
+    public void setDevelopers(ArrayList<Developer> team){
+        developers = team;
+    }
+
     /*public void setTotalActivityTime(double inputTime){
         totalActiviyTime += inputTime;
     }
@@ -65,6 +69,10 @@ public class Activity {
 
     public String getStartDate() {
         return startDate;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getName() {
