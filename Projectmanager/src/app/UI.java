@@ -60,19 +60,16 @@ public class UI {
                 System.out.println("Please enter the userID of the new developer.");
                 break;
             case 9: //New developer have been added
-                System.out.println("The new developer " + userID + " have been added to the system");
+                System.out.println("The new developer " + userID.toUpperCase() + " has been added to the system");
                 break;
             case 10: //The userID may only contain...
                 System.out.println("The userID may only contain letters");
                 break;
             case 11: //The userID may not contain more then 4 characters
-                System.out.println("The userID may not contain more then 4 characters");
+                System.out.println("The userID may not contain more then 4 letters");
                 break;
-            case 12: //The userID must contain atleast 1 character
-                System.out.println("The userID must contain atleast 1 character");
-                break;
-            case 13: //The userID already exists
-                System.out.println("The userID " + userID + " already exists");
+            case 12: //The userID already exists
+                System.out.println("The userID " + userID.toUpperCase() + " already exists");
                 break;
         }
     }

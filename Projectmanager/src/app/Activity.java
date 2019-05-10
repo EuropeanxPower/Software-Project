@@ -17,14 +17,6 @@ public class Activity {
         //developers.add(userID);
     }
 
-    public void addDeveloper(Developer userID){
-        if (developers.contains(userID)){
-            new Errorhandler("Developer is already contained in the activity.");
-        } else{
-        developers.add(userID);
-        }
-    }
-
     public ArrayList<Developer> getdeveloper(){
         return developers;
     }

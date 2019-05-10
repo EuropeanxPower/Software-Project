@@ -51,7 +51,12 @@ public class LoginSteps {
 
     @Then("Errormessage {string}")
     public void errormessage(String string) {
-        assertEquals(string, model.getErrorMessage());
+        if (model.getErrorMessage() != null) {
+            assertEquals(string, model.getErrorMessage());
+        }
+        else if (model.getCurrentProject().getErrorMessage() != null){
+            assertEquals(string, model.getCurrentProject().getErrorMessage());
+        }
     }
 
 }

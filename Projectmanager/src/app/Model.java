@@ -216,23 +216,21 @@ public class Model{
         }
     }
 
-    public void newDeveloper (Developer developer){
+    public void newDeveloper (Developer developer) {
         String userID = developer.getUserId().toUpperCase();
-        developer.setUserID(userID);
-        /*if (developer.getUserId().matches("^[a-zA-Z]+$")){
+        if (!userID.toUpperCase().matches("^[a-zA-Z]+$")) {
             new Errorhandler("The userID may only contain letters");
-        } else if(developer.getUserId().length() > 4){
-            new Errorhandler("The userID may not contain more then 4 characters");
-        } else if(developer.getUserId().length() < 1){
-            new Errorhandler("The userID must have atleast 1 character");
-        } else if(findDeveloper(userID)){
-            new Errorhandler("The userID already exists");
-        } else {*/
+        } else if (userID.length() > 4) {
+            new Errorhandler("The userID may not contain more then 4 letters");
+        } else if (findDeveloper(userID.toUpperCase())) {
+            new Errorhandler("The given userID already exists");
+        } else {
+            developer.setUserID(userID);
             userIDs.add(developer);
-        //}
+        }
     }
 
-    public void addDeveloper (String userID){
+    public void addDeveloper (String userID) {
         Developer newUserID = new Developer(userID);
         newDeveloper(newUserID);
     }
@@ -243,5 +241,46 @@ public class Model{
         report[1] = "Projectmanager: " + getCurrentProject().getProjectmanager().getUserId();
         report[2] = "Activities: ";
         return report;
+    }
+
+    public boolean addActivity(String activityName, String start, String end, Project project) {
+        boolean activityAdded;
+        if (findActivity(activityName, project) != -1) {
+            activityAdded = false;
+            errorMessage = "There are already an activity with this name";
+        } else {
+            if (project.getProjectmanager()==currentUser) {
+                project.getActivityList().add(new Activity(activityName, start, end));
+                activityAdded = true;
+            }
+            else{
+                errorMessage = "It's only the projectmanager, who can add an activity";
+                activityAdded = false;
+            }
+        }
+        return activityAdded;
+    }
+    public int findActivity(String name, Project project) {
+        for (int a = 0; a < project.getActivityList().size(); a++)
+            if (project.getActivityList().get(a).getName().equals(name)) {
+                return a;
+            }
+        return -1;
+    }
+
+    public void addDeveloperActiviy(Developer userID){
+        if (getCurrentProject().getProjectmanager() != currentUser || !getCurrentProject().getCurrentActivity().getdeveloper().contains(currentUser)){
+            errorMessage = "You are not the project manager nor assigned to this task.";
+            new Errorhandler("You are not the project manager nor assigned to this task.");
+        } else if (!getCurrentProject().getdeveloper().contains(userID)){
+            new Errorhandler("Developer isn't add to the project");
+            errorMessage = "Developer isn't add to the project";
+        }    
+        if (getCurrentProject().getCurrentActivity().getdeveloper().contains(userID)){
+            new Errorhandler("Developer is already contained in the activity.");
+            errorMessage = "Developer is already contained in the activity.";
+        } else{
+        getCurrentProject().getCurrentActivity().getdeveloper().add(userID);
+        }
     }
 }

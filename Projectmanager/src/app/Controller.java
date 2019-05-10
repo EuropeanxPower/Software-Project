@@ -61,17 +61,15 @@ public class Controller {
                     } else if ("3".equals(userInput)) {
                         ui.startScreen(8);
                         userInput = input.nextLine();
+                        ui.setUserID(userInput);
                         if (!userInput.toUpperCase().matches("^[a-zA-Z]+$")) {
                             ui.startScreen(10);
                         } else if (userInput.length() > 4) {
                             ui.startScreen(11);
-                        } else if (userInput.length() < 1) {
+                        } else if (model.findDeveloper(userInput.toUpperCase())) {
                             ui.startScreen(12);
-                        } else if (model.findDeveloper(userInput)) {
-                            ui.startScreen(13);
                         } else {
                             model.addDeveloper(userInput);
-                            ui.setUserID(userInput);
                             ui.startScreen(9);
                         }
 
@@ -115,8 +113,8 @@ public class Controller {
                             ui.projectScreen(9); // Getting startdate
                             userStartDate = input.nextLine();
                             ui.projectScreen(10); // Getting enddate
-                            userEndDate = input.nextLine();                   
-                            if(!model.getCurrentProject().addActivity(userInput, userStartDate, userEndDate)){
+                            userEndDate = input.nextLine();
+                            if(!model.addActivity(userInput, userStartDate, userEndDate, model.getCurrentProject())){
                                 ui.projectScreen(12); //Activity already exists
                             } else {
                                 ui.setActivityName(userInput);
@@ -156,7 +154,7 @@ public class Controller {
                             ui.activityScreen(8);
                             userInput = input.nextLine();
                             if (model.getCurrentProject().findDeveloper(userInput)) {
-                                model.getCurrentProject().getCurrentActivity().addDeveloper(model.getDeveloper(userInput));
+                                model.addDeveloperActiviy(model.getDeveloper(userInput));
                                 ui.setUserID(userInput);
                                 ui.activityScreen(9);
                             } else {
@@ -167,7 +165,7 @@ public class Controller {
                             ui.activityScreen(11);
                             userInput = input.nextLine();
                             model.getCurrentProject().getCurrentActivity().setStartDate(userInput);
-                            
+
                         }else if ("4".equals(userInput)){
                             ui.activityScreen(11);
                             userInput = input.nextLine();
@@ -187,7 +185,7 @@ public class Controller {
                             //ui.activityScreen();
                             userInput = input.nextLine();
                             if (model.getCurrentProject().findDeveloper(userInput)) {
-                                model.getCurrentProject().getCurrentActivity().addDeveloper(model.getDeveloper(userInput));
+                                model.addDeveloperActiviy(model.getDeveloper(userInput));
                                 ui.setUserID(userInput);
                                 //ui.activityScreen();
                             } else {
@@ -221,6 +219,7 @@ public class Controller {
     private void assignProjectManager(Scanner input){
         ui.projectScreen(16);
         userInput = input.nextLine();
+        ui.setUserID(userInput);
         if (model.getCurrentProject().findDeveloper(userInput)){
             model.assignProjectmanager(model.getCurrentProject().getDeveloper(userInput),model.getCurrentProject(),model.getCurrentUser());
             ui.projectScreen(17);
@@ -232,7 +231,8 @@ public class Controller {
     private void manageActivity(Scanner input){
         ui.projectScreen(14);
         userInput = input.nextLine();
-        if (model.getCurrentProject().findActivity(userInput) != -1){
+        ui.setActivityName(userInput);
+        if (model.findActivity(userInput, model.getCurrentProject()) != -1){
             model.getCurrentProject().setCurrentActivity(model.getCurrentProject().getActivity(userInput));
             ui.setActivityName(userInput);
             screen = 4;
