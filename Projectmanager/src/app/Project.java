@@ -1,5 +1,6 @@
 package app;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +14,7 @@ public class Project{
     private ArrayList<Developer> developers = new ArrayList<Developer>();
     private String errorMessage;
     private Activity currentActivity;
+    private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
     public Project(String name, Developer userID){
         projectName = name;
@@ -44,7 +46,7 @@ public class Project{
         return currentActivity;
     }
 
-    public ArrayList<Developer> getdeveloper(){
+    public ArrayList<Developer> getDevelopers(){
         return developers;
     }
     
@@ -95,7 +97,7 @@ public class Project{
 
     public void activityList(){
         for (Activity activity : activities){
-            System.out.println(activity.getName() + ", startdate: " + activity.getStartDate() + ", enddate: " + activity.getEndDate());
+            System.out.println(activity.getName() + ", startdate: " + sdf.format(activity.getStartDate()) + ", enddate: " + sdf.format(activity.getEndDate()));
         }
     }
 

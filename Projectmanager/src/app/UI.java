@@ -1,12 +1,11 @@
 package app;
 
-import sun.net.www.content.text.plain;
-
 public class UI {
 
     private String activeProject;
     private String activeActivity;
     private String userID;
+    private String[] userIDs;
 
     void loginScreen(int screen){
         switch(screen){
@@ -200,6 +199,16 @@ public class UI {
             //2 - Add developer to activity
             case 8: //Add new developer to activity
                 System.out.println("Please enter the user ID of the developer you wish to add");
+                System.out.println("These are the ones that are available: ");
+                for(String id : userIDs) {
+                	if(id == null) {
+                		System.out.println("None");
+                		break;
+                	}
+                	else {
+                		System.out.print(id + " ");
+                	}
+                }
                 break;
             case 9: //Given developer is now added to the project 
                 System.out.println("The developer " + userID + " is now a part of " +activeActivity+ ".");
@@ -256,5 +265,9 @@ public class UI {
 
     public String getUserID(){
         return userID;
+    }
+    
+    public void setUserIDs(String[] list) {
+    	userIDs = list;
     }
 }

@@ -16,7 +16,7 @@ public class Controller {
     Controller(){
     }
 
-    void readUserInput(){
+    void readUserInput() throws Exception{
         while(true){
             switch(screen) {
                 case 1: // Login
@@ -153,14 +153,15 @@ public class Controller {
                         if ("1".equals(userInput)){
                             userInput = input.nextLine();
                         }else if ("2".equals(userInput)){
+                            String[] userIDs = model.getFreeDevelopers();
+                            ui.setUserIDs(userIDs);
                             ui.activityScreen(8);
                             userInput = input.nextLine();
+                            ui.setUserID(userInput);
                             if (model.getCurrentProject().findDeveloper(userInput)) {
-                                model.getCurrentProject().getCurrentActivity().addDeveloper(model.getDeveloper(userInput));
-                                ui.setUserID(userInput);
+                            	model.addToActivity(userInput);
                                 ui.activityScreen(9);
                             } else {
-                                ui.setUserID(userInput);
                                 ui.activityScreen(10);
                             }
                         }else if ("3".equals(userInput)){

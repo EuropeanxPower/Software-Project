@@ -1,7 +1,11 @@
 package app;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 
 public class Model{
     private Developer VWJ = new Developer("VWJ");
@@ -189,7 +193,7 @@ public class Model{
 
     public void assignProjectmanager(Developer developer, Project name, Developer assigner){
         if (name.getProjectmanager() == null){
-            if (name.getdeveloper().contains(developer)){
+            if (name.getDevelopers().contains(developer)){
                 name.setProjectmanager(developer);
             }
             else {
@@ -198,21 +202,13 @@ public class Model{
             }
         }
         else if (name.getProjectmanager() != null){
-            if ((name.getProjectmanager()==assigner)&&(name.getdeveloper().contains(developer))) {
+            if ((name.getProjectmanager()==assigner)&&(name.getDevelopers().contains(developer))) {
                 name.setProjectmanager(developer);
             }
             else{
                 errorMessage = "Only the projectmanager can assign a new projectmanager to this project";
                 new Errorhandler("Only the projectmanager can assign a new projectmanager to this project");
             }
-        }
-    }
-
-    public void addVacation(Developer developer, String start, String end) {
-        if (!userIDs.contains(developer)){
-            new Errorhandler("This User ID doesn't exists");
-        } else {
-
         }
     }
 
@@ -244,4 +240,29 @@ public class Model{
         report[2] = "Activities: ";
         return report;
     }
+    
+    public void addToActivity(String userID) {
+    	currentProject.getCurrentActivity().addDeveloper(getDeveloper(userID));
+    	getDeveloper(userID).addActivity(currentProject.getCurrentActivity());
+    }
+    
+    public String[] getFreeDevelopers() {
+    	String[] freeDevelopers = new String[currentProject.getDevelopers().size()];
+		int nmbrOfDevs = 0;
+		
+		for(Developer d : currentProject.getDevelopers()) {
+			try {
+				if(!currentProject.getCurrentActivity().getDevelopers().contains(d) && d.isFree(currentProject.getCurrentActivity())) {
+					freeDevelopers[nmbrOfDevs] = d.getUserId();
+					nmbrOfDevs++;
+				}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+    	
+    	return freeDevelopers;
+    }
+    
 }

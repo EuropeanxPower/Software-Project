@@ -1,9 +1,13 @@
 package app;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Activity {
-    private String startDate, endDate;
+    private Date startDate, endDate;
+    private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     private ArrayList<Developer> developers = new ArrayList<Developer>();
     private String name;
     //private double totalActiviyTime;
@@ -25,53 +29,50 @@ public class Activity {
         }
     }
 
-    public ArrayList<Developer> getdeveloper(){
+    public ArrayList<Developer> getDevelopers(){
         return developers;
     }
 
-    /*public void setTotalActivityTime(double inputTime){
-        totalActiviyTime += inputTime;
-    }
-    public void setEstimateTime(double inputEstimateTime){
-        estimatedActivityTime = inputEstimateTime;
-    }*/
-
-    public void setEndDate(String date) {
-        calendar.checkDate(date);
-        if (endDate != null || startDate != null){
-            if (!calendar.compareDates(startDate, endDate)) {
-            new Errorhandler("Project must end after the project ends");
-            }
-        } else {
-            try{
-                endDate = Integer.parseInt(date.substring(0,3)) +"-"+ Integer.parseInt(date.substring(5,6)) +"-"+ Integer.parseInt(date.substring(8,9));
-            }catch(Exception e){
-
-            }
+    public void setStartDate(String start){
+    	if(calendar.checkDate(start)) {
+    		try {
+				startDate = sdf.parse(start);
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}  
+    	}else {
+    		try {
+				startDate = sdf.parse("2020-01-01");
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    	}
+    }   
+    public void setEndDate(String end) {
+        if(calendar.checkDate(end)) {
+        	try {
+				endDate = sdf.parse(end);
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}    
+        }else {
+        	try {
+				endDate = sdf.parse("2020-07-01");
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         }
     }   
 
-    public void setStartDate(String date) {
-        if (calendar.checkDate(date)){
-            if (endDate != null || startDate != null){
-                if (!calendar.compareDates(startDate, endDate)) {
-                new Errorhandler("Project must start before the project ends");
-                }
-            } else {
-                try {
-                    startDate = Integer.parseInt(date.substring(0,3)) +"-"+ Integer.parseInt(date.substring(5,6)) +"-"+ Integer.parseInt(date.substring(8,9));
-                }catch(Exception e){
-
-                }
-            }
-        }
-    }
-
-    public String getEndDate() {
+    public Date getEndDate() {
         return endDate;
     }
 
-    public String getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
