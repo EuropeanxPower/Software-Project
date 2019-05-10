@@ -26,10 +26,9 @@ public class Developer {
 	private Activity test16 = new Activity("16","","");
 	private Activity test17 = new Activity("17","","");
 	private Activity test18 = new Activity("18","","");
-	private Activity test19 = new Activity("19","","");
     private String userID;
     private List<Project> projects = new ArrayList<Project>();
-    private List<Activity> activities = new ArrayList<Activity>(Arrays.asList(test,test1,test2,test3,test4,test5,test6,test7,test8,test9,test10,test11,test12,test13,test14,test15,test16,test17,test18,test19));
+    private List<Activity> activities = new ArrayList<Activity>(Arrays.asList(test,test1,test2,test3,test4,test5,test6,test7,test8,test9,test10,test11,test12,test13,test14,test15,test16,test17,test18));
 
     public Developer(String userID){
         this.userID = userID;

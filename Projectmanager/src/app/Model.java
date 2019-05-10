@@ -288,5 +288,23 @@ public class Model{
     	
     	return freeDevelopers;
     }
+
+    public void addDeveloperActivity(Developer userID){
+        if ((getCurrentProject().getProjectmanager() != currentUser) && (!getCurrentProject().getCurrentActivity().getDevelopers().contains(currentUser))){
+            new Errorhandler("You are not the project manager nor assigned to this task.");
+            errorMessage = "You are not the project manager nor assigned to this task.";
+        }
+        else if (!getCurrentProject().getDevelopers().contains(userID)){
+            new Errorhandler("Developer isn't add to the project");
+            errorMessage = "Developer isn't add to the project";
+        }    
+        else if (getCurrentProject().getCurrentActivity().getDevelopers().contains(userID)){
+            new Errorhandler("Developer is already contained in the activity.");
+            errorMessage = "Developer is already contained in the activity.";
+        }
+        else{
+        getCurrentProject().getCurrentActivity().getDevelopers().add(userID);
+        }
+    }
     
 }
