@@ -25,7 +25,11 @@ public class AssignProjectmanagerSteps {
         model.setCurrentProject(new Project(project, new Developer("FGH")));
 
         for(String s: dataTable){
-            model.getCurrentProject().addDeveloper(new Developer(s));
+            for(Developer d : model.getUserIDs()){
+                if (d.getUserId().equals(s)){
+                    model.getCurrentProject().addDeveloper(new Developer(s));
+                }
+            }
         }
     }
 

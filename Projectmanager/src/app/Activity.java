@@ -48,8 +48,13 @@ public class Activity {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-    	}
-    }   
+        }
+    }
+    
+    public void setDevelopers(ArrayList<Developer> team){
+        developers = team;
+    }
+
     public void setEndDate(String end) {
         if(calendar.checkDate(end)) {
         	try {
@@ -74,6 +79,10 @@ public class Activity {
 
     public Date getStartDate() {
         return startDate;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getName() {

@@ -3,19 +3,27 @@ The projectmanager can add an activity. Here will the projetmanager indicate a s
 and the expected use of time, on Weeknumber-level.\\
 
 Background:
-  Given these activities are contained in the system
+  Given These Projectnames are contained in the system
+    | Tele-Kipper |
+    | Sort-Pick |
+  And These User IDs are contained in the system
+    | SKP |
+    | PTRO |
+    | AL |
+  And These User IDs are contained in the project "Sort-Pick"
+    | SKP |
+    | PTRO |
+    | AL |
+  And these activities are contained in the project "Sort-Pick"
     | Design |
     | Analyse |
     | Budget  |
-  And These Projectnames are contained in the system
-    | Tele-Kipper |
-    | Sort-Pick |
 
 Scenario: Projectmanager add an activity
   Given Developer is logged in
   And Developer is projectmanager of "Sort-Pick"
   When add activity "Implementing"
-  Then An activity is added
+  Then An activity with name "Implementing" is added
 
 Scenario: Developer try to add an activity
   Given Developer is logged in
@@ -26,5 +34,5 @@ Scenario: Developer try to add an activity
 Scenario: Projectmanager indicate a name, which already exists
   Given Developer is logged in
   And Developer is projectmanager of "Sort-Pick"
-  When add activity "Implementing"
+  When add activity "Design"
   Then Errormessage "There are already an activity with this name"

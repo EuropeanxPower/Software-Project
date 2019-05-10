@@ -15,4 +15,4 @@ Feature: Log in
 
   Scenario: User ID doesn't exists
     When Login with "PPP"
-    Then Errormessage "User ID doesn't exists"
+    Then Errormessage "User ID doesn't exist"

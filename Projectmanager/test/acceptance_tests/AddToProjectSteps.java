@@ -53,7 +53,9 @@ public class AddToProjectSteps {
 
     @Given("Developer is projectmanager of {string}")
     public void developer_is_projectmanager_of(String name) {
-        model.setCurrentProject(new Project(name,model.getCurrentUser()));
+        if (model.getCurrentProject() == null) {
+            model.setCurrentProject(new Project(name, model.getCurrentUser()));
+        }
         model.getCurrentProject().setProjectmanager(model.getCurrentUser());
     }
 }

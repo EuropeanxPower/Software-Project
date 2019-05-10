@@ -59,19 +59,16 @@ public class UI {
                 System.out.println("Please enter the userID of the new developer.");
                 break;
             case 9: //New developer have been added
-                System.out.println("The new developer " + userID + " have been added to the system");
+                System.out.println("The new developer " + userID.toUpperCase() + " has been added to the system");
                 break;
             case 10: //The userID may only contain...
                 System.out.println("The userID may only contain letters");
                 break;
             case 11: //The userID may not contain more then 4 characters
-                System.out.println("The userID may not contain more then 4 characters");
+                System.out.println("The userID may not contain more then 4 letters");
                 break;
-            case 12: //The userID must contain atleast 1 character
-                System.out.println("The userID must contain atleast 1 character");
-                break;
-            case 13: //The userID already exists
-                System.out.println("The userID " + userID + " already exists");
+            case 12: //The userID already exists
+                System.out.println("The userID " + userID.toUpperCase() + " already exists");
                 break;
         }
     }
@@ -170,10 +167,9 @@ public class UI {
                 System.out.println("You are now managing " +activeProject+ " - " +activeActivity + ".");
                 System.out.println("Press 1 to log time.");
                 System.out.println("Press 2 to add a developer to this activity.");
-                System.out.println("Press 3 to change the start date.");
-                System.out.println("Press 4 to change the end date.");
-                System.out.println("Press 5 to pull list of developers on given activity.");
-                System.out.println("Press 6 to return to Project Overview.");
+                System.out.println("Press 3 to edit the activity.");
+                System.out.println("Press 4 to pull list of developers on given activity.");
+                System.out.println("Press 5 to return to Project Overview.");
                 break;
             case 2: //Activity overview for normal developer
                 System.out.println();
@@ -183,10 +179,16 @@ public class UI {
                 System.out.println("Press 3 to pull list of developers on given activity.");
                 System.out.println("Press 4 to return to Project Overview.");
                 break;
-
-            //1 - Log time to activity
-            case 3:
+            case 3: //Change activity overview
+                System.out.println();
+                System.out.println("You are now editing the details of " +activeProject+ " - " +activeActivity + ".");
+                System.out.println("Press 1 to change activity name.");
+                System.out.println("Press 2 to change the start date.");
+                System.out.println("Press 3 to change the end date.");
+                System.out.println("Press 4 to return to Activity Overview.");
                 break;
+            
+            //1 - Log time to activity
             case 4:
                 break;
             case 5:
@@ -217,7 +219,7 @@ public class UI {
                 System.out.println("The developer " + userID + " does not exist or does not have access to this project.");
                 break;
 
-            //3 AND 4 - Change start or end date
+            //3 - Edit activity
             case 11: //Change start date to new activity
                 System.out.println("Please enter the new start date of the activity, in the given format 'YYYY-MM-DD'.");
                 break; 
@@ -236,10 +238,17 @@ public class UI {
             case 16: //Invalid date
                 System.out.println("The given date is not valid.");
                 break;
+            case 17: //Please enter the new name of the activity
+                System.out.println("Please enter the new name of the activity");
+                break;
+            case 18: //The activity name was successfully changed
+                System.out.println("The activity name was succesfully changed too " + activeActivity);
+                break;
 
             //5 - Developer list on activity
-            case 17: //Print developer list
+            case 19: //Print developer list
                 System.out.println("Developers on this activity:");
+
         }
     }
 

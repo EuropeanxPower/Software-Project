@@ -61,25 +61,6 @@ public class Project{
         projectTime += totalActivityTime;
     }
 
-    public boolean addActivity(String activityName, String start, String end){
-        boolean activityAdded;
-        if (findActivity(activityName) != -1) {
-            activityAdded = false;
-        } else {
-            activities.add(new Activity(activityName, start, end));
-            activityAdded = true;
-        }
-        return activityAdded;
-    }
-
-    public int findActivity(String name) {
-        for (int a = 0; a < activities.size(); a++) {
-            if (activities.get(a).getName().equals(name)) {
-                return a;
-            }
-        }
-        return -1;
-    }
 
     public Activity getActivity(String name){
         boolean nameExists = false;    
@@ -95,13 +76,29 @@ public class Project{
         return null;
     }
 
+
+    public boolean findActivity(String name){
+        boolean nameExists = false;
+        for (Activity a : activities){
+            if(a.getName().equals(name)){
+                nameExists = true;
+            }
+        }
+        if (!nameExists){
+            errorMessage = "Given activity does not exist";
+            new Error("Given activity does not exist");
+        }
+        return nameExists;
+    }
+
+
     public void activityList(){
         for (Activity activity : activities){
             System.out.println(activity.getName() + ", startdate: " + sdf.format(activity.getStartDate()) + ", enddate: " + sdf.format(activity.getEndDate()));
         }
     }
 
-    public List getActivityList(){
+    public List<Activity> getActivityList(){
         return activities;
     }
 
@@ -147,5 +144,9 @@ public class Project{
             new Error("Given developer is not a port of the project or does not exist");
         }
         return null;
+    }
+
+    public String getErrorMessage(){
+        return errorMessage;
     }
 }
