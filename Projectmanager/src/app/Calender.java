@@ -7,27 +7,27 @@ public class Calender{
         if (date.length() != 10){
             return false;
         }
-        int year = Integer.parseInt(date.substring(0,3));
-        int month = Integer.parseInt(date.substring(5,6));
-        int day = Integer.parseInt(date.substring(8,9));
+        String[] realDate = date.split("-");
+        int year = Integer.parseInt(realDate[0]);
+        int day = Integer.parseInt(realDate[2]);
         if (year < 2000 && year > 2999){
             return false;
         }
-        if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12){
-            if (day < 1 || day > 31){
+        if ("01".equals(realDate[1]) || "03".equals(realDate[1]) || "05".equals(realDate[1]) || "07".equals(realDate[1]) || "8".equals(realDate[1]) || "10".equals(realDate[1]) || "12".equals(realDate[1])){
+            if (day < 01 || day > 31){
                 return false;
             }
-        } else if (month == 4 || month == 6 || month == 9 || month == 11){
-            if (day < 1 || day > 30){
+        } else if ("4".equals(realDate[1]) || "6".equals(realDate[1]) || "9".equals(realDate[1]) || "11".equals(realDate[1])){
+            if (day < 01 || day > 30){
                 return false;
             }
-        } else if (month == 2){
+        } else if ("2".equals(realDate[1])){
             if (year%4 == 0){
-                if (day < 1 || day > 29){
+                if (day < 01 || day > 29){
                     return false;
                 }
             } else {
-                if (day < 1 || day > 28){
+                if (day < 01 || day > 28){
                     return false;
                 }
             }

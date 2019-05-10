@@ -10,8 +10,6 @@ public class Activity {
     private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     private ArrayList<Developer> developers = new ArrayList<Developer>();
     private String name;
-    //private double totalActiviyTime;
-    //private double estimatedActivityTime;
     private Calender calendar = new Calender();
 
     public Activity(String name, String startDate, String endDate){
