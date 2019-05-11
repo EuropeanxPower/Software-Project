@@ -22,7 +22,7 @@ public class Project{
         developers.add(userID);
     }
 
-    //Developer 
+    //add developer to the project
     public void addDeveloper(Developer userID){
         if (developers.contains(userID)){
             new Errorhandler("Developer is already contained in project.");
@@ -31,33 +31,42 @@ public class Project{
         }
     }
 
+    //return serialnumber for the project
     public String getProjectSN(){
         return projectID;
     }
 
+    //return the projectname
     public String getName() {
         return projectName;
     }
 
+    //Set an activity to current Activity
     public void setCurrentActivity(Activity activity){
         currentActivity = activity;
     }
 
+    //return current activity
     public Activity getCurrentActivity(){
         return currentActivity;
     }
 
+    //return the list of developers on the project
     public ArrayList<Developer> getDevelopers(){
         return developers;
     }
-    
+
+    //set a developer as projectmanager
     public void setProjectmanager(Developer userID){
         projectmanager = userID;
     }
+
+    //return projectmanager for the project
     public Developer getProjectmanager(){
         return projectmanager;
     }
 
+    //return an activity
     public Activity getActivity(String name){
         boolean nameExists = false;    
         for (Activity a : activities){
@@ -72,7 +81,7 @@ public class Project{
         return null;
     }
 
-
+    //check if an activity exist
     public boolean findActivity(String name){
         boolean nameExists = false;
         for (Activity a : activities){
@@ -87,12 +96,14 @@ public class Project{
         return nameExists;
     }
 
+    //print a list of activities in the project, with the data
     public void activityList(){
         for (Activity activity : activities){
             System.out.println(activity.getName() + ", startdate: " + sdf.format(activity.getStartDate()) + ", enddate: " + sdf.format(activity.getEndDate()));
         }
     }
 
+    //return a list of the activities in the project
     public List<Activity> getActivityList(){
         return activities;
     }
@@ -108,7 +119,8 @@ public class Project{
             System.out.println(developerList[i]);
         }
     }
-    
+
+    //Check if an developer is a part of the project
     public boolean findDeveloper(String userID){
         boolean userIDExists = false;
         if (developers.isEmpty()){
@@ -127,6 +139,7 @@ public class Project{
         return userIDExists;
     }
 
+    //return developer in the project
     public Developer getDeveloper(String name){
         boolean nameExists = false;    
         for (Developer d : developers){
@@ -140,8 +153,5 @@ public class Project{
         }
         return null;
     }
-
-    public String getErrorMessage(){
-        return errorMessage;
-    }
+    
 }
