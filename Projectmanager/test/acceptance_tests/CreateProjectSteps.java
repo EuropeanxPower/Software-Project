@@ -16,7 +16,7 @@ public class CreateProjectSteps {
     private Model model;
     private ArrayList<Project> currentProjects = new ArrayList<>();
 
-    public CreateProjectSteps(Model model){
+    public CreateProjectSteps(Model model){//Vivian
         this.model=model;
     }
 

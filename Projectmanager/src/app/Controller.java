@@ -237,6 +237,7 @@ public class Controller {
         }
     }
 
+    //
     private void assignProjectManager(Scanner input){
         ui.projectScreen(16);
         userInput = input.nextLine();
@@ -249,6 +250,7 @@ public class Controller {
         }
     }
 
+    //
     private void manageActivity(Scanner input){
         ui.projectScreen(14);
         userInput = input.nextLine();
@@ -262,6 +264,7 @@ public class Controller {
         }
     }
 
+    //
     private void getDevelopersActivity(){
         ui.activityScreen(17);
         model.getCurrentProject().getCurrentActivity().printDevelopers();

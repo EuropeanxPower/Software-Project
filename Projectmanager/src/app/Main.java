@@ -2,7 +2,7 @@ package app;
 
 import java.io.IOException;
 
-//Skrevet af Alle <3
+//Skrevet af Alle
 public class Main {
 
     public static void main(String[] args) throws Exception {

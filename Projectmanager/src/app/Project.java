@@ -22,6 +22,7 @@ public class Project{
         developers.add(userID);
     }
 
+    //Developer 
     public void addDeveloper(Developer userID){
         if (developers.contains(userID)){
             new Errorhandler("Developer is already contained in project.");

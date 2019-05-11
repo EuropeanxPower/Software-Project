@@ -13,7 +13,7 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class Add_to_activity {
+public class Add_to_activity {//Nicklas
     Model model;
 
     public Add_to_activity(Model model){

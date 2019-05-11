@@ -12,7 +12,7 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class AddingActivitySteps {
+public class AddingActivitySteps {//Thomas
 
     private Model model;
     private Calender calendar;

@@ -11,7 +11,7 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class AssignProjectmanagerSteps {
+public class AssignProjectmanagerSteps {//Christian
     private Model model;
     private Developer currentCandidate;
 

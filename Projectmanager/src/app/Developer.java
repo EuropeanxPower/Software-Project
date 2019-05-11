@@ -54,20 +54,12 @@ public class Developer {
         return activities;
     }
 
-	//
-    public void addProject(Project project){
-        boolean projectExists = false;
-        for(Project p : projects){
-            if (p == project) projectExists = true;
-        }
-        if (projectExists){
-
-        }
-    }
+	//Adds an activity to the list of activities
     public void addActivity(Activity activity) {
     	activities.add(activity);
     }
-    
+	
+	//Returns the number of activities a developer is working on on a given date
     public int numberOfActivities (Date date) {
     	int numberOfActivities = 0;
 		for(Activity a : activities) {
@@ -78,7 +70,8 @@ public class Developer {
 		}
     	return numberOfActivities;
     }
-    
+	
+	//Checks if a developer has less than 20 active activities on every date between the start and end date of a given activity
     public boolean isFree(Activity activity) {
     	Date compareDate = activity.getStartDate();
     	Date end = activity.getEndDate();

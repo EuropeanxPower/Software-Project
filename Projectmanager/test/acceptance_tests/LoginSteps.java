@@ -11,7 +11,7 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class LoginSteps {
+public class LoginSteps {//Vivian
     private Model model;
     public String currentUserID;
     private ArrayList<Developer> currentUserIDs = new ArrayList<Developer>();
