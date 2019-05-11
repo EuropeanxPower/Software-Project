@@ -26,10 +26,16 @@ public class DelegationSteps {
                 model.getCurrentProject().setCurrentActivity(ac);
             }
         }
-        for(Developer dev : model.getCurrentProject().getCurrentActivity().getdeveloper()){
+        Boolean tjek=false;
+        for(Developer dev : model.getCurrentProject().getCurrentActivity().getDevelopers()){
             if (dev.getUserId()==d){
                 model.addDeveloperActivity(dev);
+                tjek = true;
             }
+        }
+
+        if (!tjek){
+            model.addDeveloperActivity(model.getDeveloper(d));
         }
 
     }
@@ -42,7 +48,7 @@ public class DelegationSteps {
                 assertEquals(ac.getName(), a);
             }
         }
-        for(Developer dev : model.getCurrentProject().getCurrentActivity().getdeveloper()){
+        for(Developer dev : model.getCurrentProject().getCurrentActivity().getDevelopers()){
             if (dev.getUserId()==d){
                 assertEquals(dev.getUserId(), d);
             }

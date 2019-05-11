@@ -6,7 +6,10 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
+//Skrevet af Thomas
 public class Developer {
+
+	// 19 default activities to make it easier to test if a user is currently working on 20 activities. 
 	private Activity test = new Activity("0","","");
 	private Activity test1 = new Activity("1","","");
 	private Activity test2 = new Activity("2","","");
@@ -27,25 +30,31 @@ public class Developer {
 	private Activity test17 = new Activity("17","","");
 	private Activity test18 = new Activity("18","","");
     private String userID;
-    private List<Project> projects = new ArrayList<Project>();
+	private List<Project> projects = new ArrayList<Project>();
+	//The list of activities a developer is working on
     private List<Activity> activities = new ArrayList<Activity>(Arrays.asList(test,test1,test2,test3,test4,test5,test6,test7,test8,test9,test10,test11,test12,test13,test14,test15,test16,test17,test18));
 
+	//A developer is initialized with a user ID
     public Developer(String userID){
         this.userID = userID;
     }
 
+	//Returns the user ID
     public String getUserId(){
         return userID;
     }
 
+	//Sets the user ID of the developer
     public void setUserID(String ID){
         userID = ID;
     }
 
+	//Returns the list of activities
     public List<Activity> getDevelopersActivities(){
         return activities;
     }
 
+	//
     public void addProject(Project project){
         boolean projectExists = false;
         for(Project p : projects){

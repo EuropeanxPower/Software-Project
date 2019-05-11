@@ -5,7 +5,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Activity {
+//Skrevet af Thomas
+public class Activity { 
     private Date startDate, endDate;
     private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     private ArrayList<Developer> developers = new ArrayList<Developer>();
@@ -16,9 +17,9 @@ public class Activity {
         this.name = name;
         setStartDate(startDate);
         setEndDate(endDate);
-        //developers.add(userID);
     }
 
+    //Adds developer to the list of developers.
     public void addDeveloper(Developer userID){
         if (developers.contains(userID)){
             new Errorhandler("Developer is already contained in the activity.");
@@ -27,10 +28,12 @@ public class Activity {
         }
     }
 
+    //Returns the list of developers 
     public ArrayList<Developer> getDevelopers(){
         return developers;
     }
 
+    //Takes the input and creates the start date. If the input is in the wrong format, a standard date is used.
     public void setStartDate(String start){
     	if(calendar.checkDate(start)) {
     		try {
@@ -49,10 +52,12 @@ public class Activity {
         }
     }
     
+    //Used to create the developers list in the tests.
     public void setDevelopers(ArrayList<Developer> team){
         developers = team;
     }
 
+    //Takes the input and creates the end date. If the input is in the wrong format, a standard date is used.
     public void setEndDate(String end) {
         if(calendar.checkDate(end)) {
         	try {
@@ -71,22 +76,27 @@ public class Activity {
         }
     }   
 
+    //Returns the end date.
     public Date getEndDate() {
         return endDate;
     }
 
+    //Returns the start date.
     public Date getStartDate() {
         return startDate;
     }
 
+    //Sets the name of the activity
     public void setName(String name) {
         this.name = name;
     }
 
+    //Gets the name of the activity
     public String getName() {
         return name;
     }
 
+    //Prints all developers on the project
     public void printDevelopers(){
         for (Developer d : developers){
             System.out.println(d.getUserId());

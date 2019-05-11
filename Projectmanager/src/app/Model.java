@@ -22,39 +22,41 @@ public class Model{
     private boolean loggedIn = false;
     private String errorMessage;
 
-
+    // Returns the logged in user - Christian
     public Developer getCurrentUser() {
         return currentUser;
     }
 
+    // Assigns the current project - Christian
     public void setCurrentProject(Project p){
         currentProject=p;
     }
 
+    // Returns the current project - Christian
     public Project getCurrentProject(){
         return currentProject;
     }
 
+    // Return the loggedIn status - Thomas
     public boolean getLoggedIn(){
         return loggedIn;
     }
-
+    //return the errorMessage - Vivian
     public String getErrorMessage(){
         return errorMessage;
     }
 
-    public void setErrorMessage(String error){
-        errorMessage = error;
-    }
 
     public ArrayList<Project> getProjectNames(){
         return projectNames;
     }
 
+    //For the tests - A given set og projects will be set as the list of projects in the system - Vivian
     public void setProjectNames(ArrayList<Project> datatable){
         projectNames = datatable;
     }
 
+    //For the tests - A given team will be set as the list of users in the system - Vivian
     public void setUserIDs(ArrayList<Developer> datatable){
         userIDs = datatable;
     }
@@ -63,6 +65,7 @@ public class Model{
         return userIDs;
     }
 
+    // Checks is given projectname already exists - Nicklas
     public boolean findProject(String name){
         boolean nameExists = false;
         for (Project p : projectNames){
@@ -72,21 +75,12 @@ public class Model{
         }
         if (!nameExists){
             errorMessage = "Given projectname dosn't exist";
-            new Error("Given projectname doesn't exist");
+            new Errorhandler("Given projectname doesn't exist");
         }
         return nameExists;
     }
 
-    public boolean checkProjectSN(String SN){
-        boolean snExists = false;
-        for (Project p : projectNames){
-            if(p.getProjectSN().equals(SN)){
-                snExists = true;
-            }
-        }
-        return snExists;
-    }
-
+    // Checks is given projectname already exists - Nicklas
     public boolean findDeveloper(String name){
         boolean nameExists = false;
         for (Developer d : userIDs){
@@ -96,11 +90,12 @@ public class Model{
         }
         if (!nameExists){
             errorMessage = "Given developer does not exist";
-            new Error("Given developer does not exist");
+            new Errorhandler("Given developer does not exist");
         }
         return nameExists;
     }
 
+    // Checks if given developer exists and return the user - Nicklas
     public Developer getDeveloper(String name){
         boolean nameExists = false;
         for (Developer d: userIDs){
@@ -109,12 +104,13 @@ public class Model{
             }
             if (!nameExists){
                 errorMessage = "Given projectname dosn't exist";
-                new Error("Given projectname doesn't exist");
+                new Errorhandler("Given projectname doesn't exist");
             }
         }
         return null;
     }
 
+    // Checks if given project exists and return the project - Christian
     public Project getProject(String name){
         boolean nameExists = false;    
         for (Project p : projectNames){
@@ -124,12 +120,12 @@ public class Model{
         }
         if (!nameExists){
             errorMessage = "Given projectname dosn't exist";
-            new Error("Given projectname doe" +
-                    "sn't exist");
+            new Errorhandler("Given projectname doesn't exist");
         }
         return null;
     }
 
+    //Check if the written userID exist in the system - Thomas
     public boolean Login(String userID) {
         boolean idExists = false;
         for(Developer d : userIDs){
@@ -146,10 +142,12 @@ public class Model{
         return idExists;
     }
 
+    // Changes the login boolean to false - Thomas
     public void logout(String userID){
         loggedIn = false;
     }
-
+    
+    //Check if the projectname exist. If not, a new project will be created - Vivian
     public boolean createProject(String name, Developer userID){
         boolean nameExists = false;
         for (Project p : projectNames){
@@ -165,7 +163,8 @@ public class Model{
         }
         return nameExists;
     }
-
+    //All developers can invite to the project, while they are a part of the project and the project does not have a projectmanagaer
+    //If there are a projectmanger, it is only the projectmanager, who can invite more developers to the project - Vivian
     public void addToProject(Developer developer, Project name, Developer inviter){
         if (name.getProjectmanager() == null){
             if (!userIDs.contains(developer)){
@@ -190,7 +189,8 @@ public class Model{
     }
 
 
-
+    //While there aren't a projectmanager, all developers at the project can assign one.
+    //If there are a projectmanager, its only himself, who can assign a new one - Vivian
     public void assignProjectmanager(Developer developer, Project name, Developer assigner){
         if (name.getProjectmanager() == null){
             if (name.getDevelopers().contains(developer)){
@@ -212,6 +212,7 @@ public class Model{
         }
     }
 
+    // Adds the new developer to the system - Nicklas
     public void newDeveloper (Developer developer) {
         String userID = developer.getUserId().toUpperCase();
         if (!userID.toUpperCase().matches("^[a-zA-Z]+$")) {
@@ -226,11 +227,13 @@ public class Model{
         }
     }
 
+    // Adds the new developer - Nicklas
     public void addDeveloper (String userID){
         Developer newUserID = new Developer(userID);
         newDeveloper(newUserID);
     }
 
+    // Print a report for the given project - Nicklas
     public String[] getReport(){
         String[] report = new String[3];
         report[0] = "Name of the project: " + getCurrentProject().getName() + " and the project ID: " + getCurrentProject().getProjectSN();
@@ -239,6 +242,7 @@ public class Model{
         return report;
     }
 
+    // Adds an activity to the current project - Christian
     public boolean addActivity(String activityName, String start, String end, Project project) {
         boolean activityAdded;
         if (findActivity(activityName, project) != -1) {
@@ -256,6 +260,8 @@ public class Model{
         }
         return activityAdded;
     }
+
+    // Find given activity and return its location - Thomas
     public int findActivity(String name, Project project) {
         for (int a = 0; a < project.getActivityList().size(); a++)
             if (project.getActivityList().get(a).getName().equals(name)) {
@@ -264,12 +270,8 @@ public class Model{
         return -1;
 
     }
-    
-    public void addToActivity(String userID) {
-    	currentProject.getCurrentActivity().addDeveloper(getDeveloper(userID));
-    	getDeveloper(userID).addActivity(currentProject.getCurrentActivity());
-    }
-    
+ 
+    //  - Thomas 
     public String[] getFreeDevelopers() {
     	String[] freeDevelopers = new String[currentProject.getDevelopers().size()];
 		int nmbrOfDevs = 0;
@@ -289,21 +291,27 @@ public class Model{
     	return freeDevelopers;
     }
 
+    // Add a developer, who is part of the current project to the current activity - Christian
     public void addDeveloperActivity(Developer userID){
         if ((getCurrentProject().getProjectmanager() != currentUser) && (!getCurrentProject().getCurrentActivity().getDevelopers().contains(currentUser))){
-            new Errorhandler("You are not the project manager nor assigned to this task.");
-            errorMessage = "You are not the project manager nor assigned to this task.";
+            new Errorhandler("You can't invite to this activity");
+            errorMessage = "You can't invite to this activity";
+        }
+        else if (!userIDs.contains(userID)){
+            new Errorhandler("User ID doesn't exists");
+            errorMessage = "User ID doesn't exists";
         }
         else if (!getCurrentProject().getDevelopers().contains(userID)){
-            new Errorhandler("Developer isn't add to the project");
-            errorMessage = "Developer isn't add to the project";
+            new Errorhandler("The developer isn't added to the project");
+            errorMessage = "The developer isn't added to the project";
         }    
         else if (getCurrentProject().getCurrentActivity().getDevelopers().contains(userID)){
             new Errorhandler("Developer is already contained in the activity.");
             errorMessage = "Developer is already contained in the activity.";
         }
         else{
-        getCurrentProject().getCurrentActivity().getDevelopers().add(userID);
+            currentProject.getCurrentActivity().addDeveloper(userID);
+            userID.addActivity(currentProject.getCurrentActivity());
         }
     }
     

@@ -9,7 +9,7 @@ import cucumber.api.java.en.When;
 
 import static org.junit.Assert.assertEquals;
 
-public class AddToProjectSteps {
+public class AddToProjectSteps {//Vivian
     private Model model;
     private Developer invited;
 

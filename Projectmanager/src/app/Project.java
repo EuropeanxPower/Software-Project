@@ -4,11 +4,11 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+//Skrevet af Vivian
 public class Project{
     private Developer projectmanager;
     private SerialNumbers sn = new SerialNumbers();
     private List<Activity> activities = new ArrayList<Activity>();
-    private double projectTime;
     private String projectName;
     private String projectID;
     private ArrayList<Developer> developers = new ArrayList<Developer>();
@@ -57,11 +57,6 @@ public class Project{
         return projectmanager;
     }
 
-    public void setTotalActivityTime(double totalActivityTime){
-        projectTime += totalActivityTime;
-    }
-
-
     public Activity getActivity(String name){
         boolean nameExists = false;    
         for (Activity a : activities){
@@ -90,7 +85,6 @@ public class Project{
         }
         return nameExists;
     }
-
 
     public void activityList(){
         for (Activity activity : activities){

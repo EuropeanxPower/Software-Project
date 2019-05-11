@@ -12,7 +12,6 @@ Background:
   And These User IDs are contained in the project "Sort-Pick"
     | SKP |
     | PTRO |
-    | AL |
   And these activities are contained in the project "Sort-Pick"
     | Design |
     | Analyse |
@@ -27,5 +26,5 @@ Then "PTRO" are now on the activity with name "Design"
 Scenario: Projectmanager delegate an activity to a developer, who isn't on the project
 Given Developer is logged in
 And Developer is projectmanager of "Sort-Pick"
-When delegate "PPP" the activity "Design"
+When delegate "AL" the activity "Design"
 Then Errormessage "The developer isn't added to the project"

@@ -3,13 +3,14 @@ Feature: Create project
   Actors: Developer
 
   Background:
-    Given These Projectnames are contained in the system
-      | Tele-Kipper |
-      | Sort-Pick |
-    And These User IDs are contained in the system
+    Given These User IDs are contained in the system
       | SKP |
       | PTRO |
       | AL |
+    And These Projectnames are contained in the system
+      | Tele-Kipper |
+      | Sort-Pick |
+
 
   Scenario: Developer add a project
     Given Developer is logged in
@@ -19,4 +20,4 @@ Feature: Create project
   Scenario: Developer indicates a name, which already exists
     Given Developer is logged in
     When Add project with name "Tele-Kipper"
-    Then Errormessage "There is already a project with this name"
+    Then Errormessage "A project with this name already exists"

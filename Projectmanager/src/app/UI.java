@@ -1,5 +1,6 @@
 package app;
 
+// Skrevet af Nicklas
 public class UI {
 
     private String activeProject;
@@ -165,19 +166,17 @@ public class UI {
             case 1: //Activity overview for project-manager
                 System.out.println();
                 System.out.println("You are now managing " +activeProject+ " - " +activeActivity + ".");
-                System.out.println("Press 1 to log time.");
-                System.out.println("Press 2 to add a developer to this activity.");
-                System.out.println("Press 3 to edit the activity.");
-                System.out.println("Press 4 to pull list of developers on given activity.");
-                System.out.println("Press 5 to return to Project Overview.");
+                System.out.println("Press 1 to add a developer to this activity.");
+                System.out.println("Press 2 to edit the activity.");
+                System.out.println("Press 3 to pull list of developers on given activity.");
+                System.out.println("Press 4 to return to project overview.");
                 break;
             case 2: //Activity overview for normal developer
                 System.out.println();
                 System.out.println("You are now managing " +activeProject+ " - " +activeActivity + ".");
-                System.out.println("Press 1 to log time.");
-                System.out.println("Press 2 to add a developer to this activity.");
-                System.out.println("Press 3 to pull list of developers on given activity.");
-                System.out.println("Press 4 to return to Project Overview.");
+                System.out.println("Press 1 to add a developer to this activity.");
+                System.out.println("Press 2 to pull list of developers on given activity.");
+                System.out.println("Press 3 to return to project overview.");
                 break;
             case 3: //Change activity overview
                 System.out.println();
@@ -185,20 +184,10 @@ public class UI {
                 System.out.println("Press 1 to change activity name.");
                 System.out.println("Press 2 to change the start date.");
                 System.out.println("Press 3 to change the end date.");
-                System.out.println("Press 4 to return to Activity Overview.");
-                break;
-            
-            //1 - Log time to activity
-            case 4:
-                break;
-            case 5:
-                break;
-            case 6:
-                break;
-            case 7:
+                System.out.println("Press 4 to return to activity overview.");
                 break;
 
-            //2 - Add developer to activity
+            //1 - Add developer to activity
             case 8: //Add new developer to activity
                 System.out.println("Please enter the user ID of the developer you wish to add");
                 System.out.println("These are the ones that are available: ");
@@ -219,7 +208,7 @@ public class UI {
                 System.out.println("The developer " + userID + " does not exist or does not have access to this project.");
                 break;
 
-            //3 - Edit activity
+            //2 - Edit activity
             case 11: //Change start date to new activity
                 System.out.println("Please enter the new start date of the activity, in the given format 'YYYY-MM-DD'.");
                 break; 
@@ -245,7 +234,7 @@ public class UI {
                 System.out.println("The activity name was succesfully changed too " + activeActivity);
                 break;
 
-            //5 - Developer list on activity
+            //3 - Developer list on activity
             case 19: //Print developer list
                 System.out.println("Developers on this activity:");
 

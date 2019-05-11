@@ -26,13 +26,13 @@ public class AddingActivitySteps {
     public void these_activities_are_contained_in_the_project(String project, List<String> dataTable) {
         model.setCurrentProject(new Project(project, model.getCurrentUser()));
         for(String s: dataTable){
-        model.addActivity(s,"2019/05/01","2019/09/01",model.getCurrentProject());
+        model.addActivity(s,"2019-05-01","2019-09-01",model.getCurrentProject());
         }
     }
 
     @When("add activity {string}")
     public void add_activity(String string) {
-        model.addActivity(string,"2019/05/01","2019/09/01",model.getCurrentProject());
+        model.addActivity(string,"2019-05-01","2019-09-01",model.getCurrentProject());
     }
 
     @Then("An activity with name {string} is added")
