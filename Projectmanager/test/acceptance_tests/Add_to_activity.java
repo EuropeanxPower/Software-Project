@@ -3,6 +3,7 @@ package acceptance_tests;
 import app.Activity;
 import app.Developer;
 import app.Model;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -12,7 +13,7 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class Add_to_activity {
+public class Add_to_activity {//Nicklas
     Model model;
 
     public Add_to_activity(Model model){
@@ -39,10 +40,16 @@ public class Add_to_activity {
                 model.getCurrentProject().setCurrentActivity(ac);
             }
         }
-        for(Developer dev : model.getCurrentProject().getCurrentActivity().getdeveloper()){
+        Boolean check = false;
+        for(Developer dev : model.getCurrentProject().getCurrentActivity().getDevelopers()){
             if (dev.getUserId()==d){
                 model.addDeveloperActivity(dev);
+                check=true;
             }
+        }
+
+        if (!check){
+            model.addDeveloperActivity(model.getDeveloper(d));
         }
 
     }

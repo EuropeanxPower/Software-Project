@@ -3,22 +3,19 @@ package app;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-class SerialNumbers{
+// Skrevet af Nicklas
+class SerialNumbers{ 
 
     GregorianCalendar gcal = new GregorianCalendar();
     private static int counter = 1;
 
-    private String createProjectSN() {
-        int year, month;
-        String counter1 = "", month1, SN;
-        year = gcal.get(Calendar.YEAR) % 100;
-        month = gcal.get(Calendar.MONTH) ;
 
-        if (month < 10) {
-            month1 = "0" + month;
-        } else {
-            month1 = "" + month;
-        }
+    // Creates a serialnumber for a project
+    private String createProjectSN() {
+        int year;
+        String counter1 = "", SN;
+        year = gcal.get(Calendar.YEAR);
+
         if (counter < 10) {
             counter1 = "000" + counter;
         } else if (counter < 100) {
@@ -31,18 +28,13 @@ class SerialNumbers{
             counter = 1;
         }
 
-        SN = year + "" + month1 + "-" + counter1;
+        SN = year + "-" + counter1;
         counter++;
         return SN;
     }
 
+    // Returns the found project S/N
     public String getProjectSN(){
         return createProjectSN();
     }
-
-    
-
-
-
-
 }
