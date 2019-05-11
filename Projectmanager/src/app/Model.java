@@ -265,11 +265,6 @@ public class Model{
 
     }
     
-    public void addToActivity(String userID) {
-    	currentProject.getCurrentActivity().addDeveloper(getDeveloper(userID));
-    	getDeveloper(userID).addActivity(currentProject.getCurrentActivity());
-    }
-    
     public String[] getFreeDevelopers() {
     	String[] freeDevelopers = new String[currentProject.getDevelopers().size()];
 		int nmbrOfDevs = 0;
@@ -303,7 +298,8 @@ public class Model{
             errorMessage = "Developer is already contained in the activity.";
         }
         else{
-        getCurrentProject().getCurrentActivity().getDevelopers().add(userID);
+        	currentProject.getCurrentActivity().addDeveloper(userID);
+        	userID.addActivity(currentProject.getCurrentActivity());
         }
     }
     

@@ -158,7 +158,7 @@ public class Controller {
                             userInput = input.nextLine();
                             ui.setUserID(userInput);
                             if (model.getCurrentProject().findDeveloper(userInput)) {
-                            	model.addToActivity(userInput);
+                            	model.addDeveloperActivity(model.getDeveloper(userInput));
                                 ui.activityScreen(9);
                             } else {
                                 ui.activityScreen(10);

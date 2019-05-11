@@ -46,15 +46,6 @@ public class Developer {
         return activities;
     }
 
-    public void addProject(Project project){
-        boolean projectExists = false;
-        for(Project p : projects){
-            if (p == project) projectExists = true;
-        }
-        if (projectExists){
-
-        }
-    }
     public void addActivity(Activity activity) {
     	activities.add(activity);
     }
