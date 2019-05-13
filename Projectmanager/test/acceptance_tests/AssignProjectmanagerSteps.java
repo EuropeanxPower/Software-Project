@@ -36,7 +36,7 @@ public class AssignProjectmanagerSteps {//Christian
     @When("add projectmanager {string}")
     public void add_projectmanager(String id) {
         currentCandidate=new Developer(id);
-        for(Developer d: model.getCurrentProject().getdeveloper()){
+        for(Developer d: model.getCurrentProject().getDevelopers()){
             if (d.getUserId().equals(id)){
                 currentCandidate=d;
             }
