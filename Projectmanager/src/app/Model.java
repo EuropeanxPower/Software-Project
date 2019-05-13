@@ -46,7 +46,7 @@ public class Model{
         return errorMessage;
     }
 
-
+    //Returns the list of projects - Nicklas
     public ArrayList<Project> getProjectNames(){
         return projectNames;
     }
@@ -61,6 +61,7 @@ public class Model{
         userIDs = datatable;
     }
 
+    //Returns the list of users - Nicklas
     public ArrayList<Developer> getUserIDs(){
         return userIDs;
     }
@@ -271,7 +272,7 @@ public class Model{
 
     }
  
-    //  - Thomas 
+    // Returns an array of userIDs of developers available in the whole period of an activity - Thomas 
     public String[] getFreeDevelopers() {
     	String[] freeDevelopers = new String[currentProject.getDevelopers().size()];
 		int nmbrOfDevs = 0;
